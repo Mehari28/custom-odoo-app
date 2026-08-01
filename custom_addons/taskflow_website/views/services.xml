@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+
+    <template
+        id="services_page"
+        name="TaskFlow Services"
+    >
+
+
+        <t t-call="website.layout">
+
+
+
+            <section class="services-page">
+
+
+
+                <div class="container">
+
+
+
+
+
+                    <!-- HEADER -->
+
+
+                    <div class="services-header">
+
+
+                        <h1>
+
+                            Our Services
+
+                        </h1>
+
+
+
+                        <p>
+
+                            We provide complete digital solutions
+                            to help businesses automate,
+                            integrate and grow.
+
+                        </p>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <!-- SERVICES LIST -->
+
+
+                    <div class="services-grid">
+
+
+
+                        <t t-foreach="services" t-as="service">
+
+
+
+                            <div class="service-card">
+
+
+
+
+
+                                <!-- ICON -->
+
+
+                                <div class="service-icon">
+
+
+                                    <i t-att-class="'fa ' + service.icon"/>
+
+
+                                </div>
+
+
+
+
+
+
+                                <!-- TITLE -->
+
+
+                                <h2>
+
+
+                                    <t t-esc="service.name"/>
+
+
+                                </h2>
+
+
+
+
+
+
+                                <!-- SHORT DESCRIPTION -->
+
+
+                                <p>
+
+
+                                    <t t-esc="service.short_description"/>
+
+
+                                </p>
+
+
+
+
+
+
+
+
+                                <!-- DETAILS BUTTON -->
+
+
+                                <a
+                                    t-att-href="'/service/' + str(service.id)"
+                                    class="learn-more"
+                                >
+
+
+                                    Learn More →
+
+
+                                </a>
+
+
+
+
+                            </div>
+
+
+
+
+                        </t>
+
+
+
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+
+
+            </section>
+
+
+
+
+        </t>
+
+
+
+    </template>
+
+
+
+</odoo>

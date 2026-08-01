@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+
+    <template
+        id="contact_thank_you"
+        name="Contact Thank You"
+    >
+
+
+        <t t-call="website.layout">
+
+
+            <section class="contact-hero">
+
+
+                <div class="container">
+
+
+                    <h1>
+                        Thank You!
+                    </h1>
+
+
+
+                    <p>
+                        Your request has been received.
+                        Our team will contact you soon.
+                    </p>
+
+
+
+
+                    <a href="/"
+                       class="contact-button">
+
+                        Back To Home →
+
+                    </a>
+
+
+                </div>
+
+
+            </section>
+
+
+        </t>
+
+
+    </template>
+
+
+</odoo>

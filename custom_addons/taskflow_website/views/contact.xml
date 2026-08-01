@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+
+    <template
+        id="contact_page"
+        name="Contact TaskFlow"
+    >
+
+
+        <t t-call="website.layout">
+
+
+
+            <!-- CONTACT HERO -->
+
+
+            <section class="contact-hero">
+
+
+                <div class="container">
+
+
+                    <h1>
+
+                        Let's Build Something Great Together
+
+                    </h1>
+
+
+
+                    <p>
+
+                        Contact TaskFlow Solutions for ERP,
+                        automation and digital transformation solutions.
+
+                    </p>
+
+
+                </div>
+
+
+            </section>
+
+
+
+
+
+
+
+            <!-- CONTACT SECTION -->
+
+
+            <section class="contact-section">
+
+
+                <div class="container">
+
+
+                    <div class="contact-grid">
+
+
+
+
+
+                        <!-- INFORMATION -->
+
+
+                        <div class="contact-card">
+
+
+                            <h2>
+
+                                Get In Touch
+
+                            </h2>
+
+
+
+                            <p>
+
+                                Our team is ready to help your
+                                business improve operations through
+                                smart technology.
+
+                            </p>
+
+
+
+
+
+                            <div class="contact-item">
+
+
+                                <strong>
+
+                                    Email
+
+                                </strong>
+
+
+                                <p>
+
+                                    info@taskflowsolutions.com
+
+                                </p>
+
+
+                            </div>
+
+
+
+
+
+                            <div class="contact-item">
+
+
+                                <strong>
+
+                                    Phone
+
+                                </strong>
+
+
+                                <p>
+
+                                    +250 XXX XXX XXX
+
+                                </p>
+
+
+                            </div>
+
+
+
+
+
+                            <div class="contact-item">
+
+
+                                <strong>
+
+                                    Location
+
+                                </strong>
+
+
+                                <p>
+
+                                    Kigali, Rwanda
+
+                                </p>
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <!-- FORM -->
+
+
+                        <div class="contact-card">
+
+
+                            <h2>
+
+                                Request A Demo
+
+                            </h2>
+
+
+
+
+
+
+                            <form
+                                action="/contact/submit"
+                                method="post"
+                            >
+
+
+
+                                <!-- CSRF TOKEN -->
+
+                                <input
+                                    type="hidden"
+                                    name="csrf_token"
+                                    t-att-value="request.csrf_token()"
+                                />
+
+
+
+
+
+                                <!-- SERVICE -->
+
+                                <t t-if="service">
+
+
+                                    <label>
+
+                                        Interested Service
+
+                                    </label>
+
+
+
+                                    <input
+                                        type="text"
+                                        readonly="readonly"
+                                        t-att-value="service.name"
+                                    />
+
+
+
+                                    <input
+                                        type="hidden"
+                                        name="service_id"
+                                        t-att-value="service.id"
+                                    />
+
+
+
+                                </t>
+
+
+
+
+
+
+
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Your Name"
+                                    required="required"
+                                />
+
+
+
+
+
+
+
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Email Address"
+                                    required="required"
+                                />
+
+
+
+
+
+
+
+
+                                <input
+                                    type="text"
+                                    name="company"
+                                    placeholder="Company Name"
+                                />
+
+
+
+
+
+
+
+
+                                <textarea
+                                    name="message"
+                                    rows="5"
+                                    placeholder="Tell us about your project">
+                                </textarea>
+
+
+
+
+
+
+
+                                <button
+                                    type="submit"
+                                >
+
+                                    Send Message
+
+
+                                </button>
+
+
+
+                            </form>
+
+
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </section>
+
+
+
+
+
+        </t>
+
+
+
+    </template>
+
+
+
+</odoo>

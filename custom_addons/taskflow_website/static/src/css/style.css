@@ -1,0 +1,2401 @@
+/* ==========================================
+   GLOBAL SETTINGS
+========================================== */
+
+body {
+    font-family: "Inter", "Segoe UI", sans-serif;
+    color: #1f2937;
+    line-height: 1.8;
+}
+
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.taskflow-hero {
+
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #1d4ed8
+    );
+
+    color:white;
+
+    padding:80px 0;
+
+}
+
+
+.hero-content {
+
+    max-width:750px;
+
+    animation: fadeUp 1s ease;
+
+}
+
+
+.hero-content h1 {
+
+    font-size:55px;
+    line-height:1.2;
+    font-weight:800;
+    margin-bottom:30px;
+
+}
+
+
+.hero-content h1 span {
+
+    color:#38bdf8;
+
+}
+
+
+
+.hero-content p {
+
+    font-size:20px;
+    margin-bottom:40px;
+    color:#e2e8f0;
+
+}
+
+
+
+
+.hero-buttons a {
+
+    display:inline-block;
+
+    padding:15px 35px;
+
+    margin-right:20px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+
+.btn-primary {
+
+    background:#38bdf8;
+
+    color:white;
+
+}
+
+
+.btn-secondary {
+
+    border:2px solid white;
+
+    color:white;
+
+}
+
+
+.hero-buttons a:hover {
+
+    transform:translateY(-5px);
+
+}
+
+
+
+
+/* ==========================================
+   ABOUT PAGE
+========================================== */
+
+
+.about-section {
+
+
+    padding:100px 0;
+
+    background:#f8fafc;
+
+
+}
+
+
+
+.about-section h1 {
+
+
+    font-size:45px;
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+.about-section p {
+
+
+    max-width:850px;
+
+    margin:20px auto;
+
+    text-align:center;
+
+    font-size:19px;
+
+}
+
+
+
+
+/* ABOUT CARDS */
+
+
+.about-cards {
+
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:30px;
+
+    margin-top:60px;
+
+
+}
+
+
+
+.about-card {
+
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+.about-card:hover {
+
+
+    transform:translateY(-10px);
+
+
+}
+
+
+
+
+.about-card h3 {
+
+
+    color:#2563eb;
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+
+/* ==========================================
+   SERVICES PAGE
+========================================== */
+
+
+.services-page {
+
+
+    padding:100px 0;
+
+    background:#ffffff;
+
+}
+
+
+
+.services-wrapper {
+
+
+    display:flex;
+
+    gap:50px;
+
+    margin-top:60px;
+
+
+}
+
+
+
+
+.services-sidebar {
+
+
+    width:280px;
+
+
+}
+
+
+
+.service-btn {
+
+
+    width:100%;
+
+    padding:18px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#f1f5f9;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:600;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.service-btn:hover,
+.service-btn.active {
+
+
+    background:#2563eb;
+
+    color:white;
+
+
+}
+
+
+
+
+.service-display {
+
+
+    flex:1;
+
+    background:#f8fafc;
+
+    padding:50px;
+
+    border-radius:25px;
+
+
+}
+
+
+
+.service-content {
+
+
+    animation:fadeUp .5s ease;
+
+
+}
+
+
+
+.service-content h2 {
+
+
+    font-size:35px;
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.service-content li {
+
+
+    margin:12px 0;
+
+}
+
+
+
+/* ==========================================
+   CONTACT PAGE
+========================================== */
+
+
+.contact-section {
+
+
+    padding:100px 0;
+
+}
+
+
+
+.contact-section h1 {
+
+
+    text-align:center;
+
+    font-size:45px;
+
+
+}
+
+
+
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+
+@keyframes fadeUp {
+
+
+from {
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+
+}
+
+
+to {
+
+    opacity:1;
+
+    transform:translateY(0);
+
+
+}
+
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+
+@media(max-width:900px){
+
+
+.about-cards{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.services-wrapper{
+
+flex-direction:column;
+
+}
+
+
+
+.hero-content h1{
+
+font-size:38px;
+
+}
+
+
+
+}
+
+/* ==========================================
+   ABOUT HERO
+========================================== */
+
+.about-hero {
+
+    min-height: 65vh;
+
+    display:flex;
+
+    align-items:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #020617,
+        #2563eb
+    );
+
+    color:white;
+
+    padding:80px 0;
+
+}
+
+
+.about-content {
+
+    max-width:800px;
+
+    animation:fadeUp 1s ease;
+
+}
+
+
+.about-content h1 {
+
+    font-size:55px;
+
+    line-height:1.2;
+
+    font-weight:800;
+
+    margin-bottom:25px;
+
+}
+
+
+.about-content p {
+
+    font-size:21px;
+
+    color:#dbeafe;
+
+}
+
+
+
+
+
+/* ==========================================
+   COMPANY STORY
+========================================== */
+
+
+.story-section {
+
+    padding:100px 0;
+
+    background:white;
+
+}
+
+
+
+.two-column {
+
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+
+}
+
+
+
+.story-section h2 {
+
+
+    font-size:42px;
+
+    margin-bottom:25px;
+
+    color:#0f172a;
+
+
+}
+
+
+
+.story-section p {
+
+
+    font-size:18px;
+
+    margin-bottom:20px;
+
+    color:#475569;
+
+
+}
+
+
+
+
+
+/* IMAGE SIDE */
+
+.about-image {
+
+
+    display:flex;
+
+    justify-content:center;
+
+
+}
+
+
+.image-box {
+
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:30px;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #38bdf8
+    );
+
+
+    color:white;
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    font-size:28px;
+
+    font-weight:800;
+
+
+    letter-spacing:3px;
+
+
+    box-shadow:
+
+    0 25px 50px rgba(0,0,0,.15);
+
+
+    animation:floatBox 4s infinite ease-in-out;
+
+
+}
+
+
+
+
+@keyframes floatBox {
+
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+
+}
+
+
+
+
+
+
+/* ==========================================
+   MISSION VISION VALUES
+========================================== */
+
+
+.mission-section {
+
+
+    padding:80px 0;
+
+    background:#f8fafc;
+
+
+}
+
+
+.about-cards {
+
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:35px;
+
+
+}
+
+
+
+.about-card {
+
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.08);
+
+
+    transition:.4s;
+
+
+}
+
+
+
+.about-card:hover {
+
+
+    transform:translateY(-12px);
+
+
+}
+
+
+
+
+.about-card h3 {
+
+
+    color:#2563eb;
+
+    font-size:25px;
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+/* ==========================================
+   WHY CHOOSE US
+========================================== */
+
+
+.why-section {
+
+
+    padding:100px 0;
+
+    background:white;
+
+
+}
+
+
+
+.why-section h2 {
+
+
+    text-align:center;
+
+    font-size:42px;
+
+    margin-bottom:60px;
+
+
+}
+
+
+
+
+.feature-grid {
+
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:35px;
+
+
+}
+
+
+
+.feature-card {
+
+
+    padding:35px;
+
+    background:#f8fafc;
+
+    border-radius:20px;
+
+
+    border-left:
+
+    5px solid #2563eb;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+.feature-card:hover {
+
+
+    transform:translateY(-8px);
+
+
+}
+
+
+
+
+.feature-card h3 {
+
+
+    color:#1d4ed8;
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+
+
+/* ==========================================
+   CTA SECTION
+========================================== */
+
+
+.cta-section {
+
+
+    padding:80px 0;
+
+    text-align:center;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #1d4ed8,
+        #38bdf8
+    );
+
+
+    color:white;
+
+
+}
+
+
+
+.cta-section h2 {
+
+
+    font-size:42px;
+
+    margin-bottom:35px;
+
+
+}
+
+
+
+
+.cta-section .btn-primary {
+
+
+    background:white;
+
+    color:#2563eb;
+
+    padding:15px 40px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+
+}
+
+
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+
+@media(max-width:900px){
+
+
+.two-column{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.about-cards,
+
+.feature-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.about-content h1{
+
+font-size:38px;
+
+}
+
+
+
+}
+
+/* ==========================================
+   CONTACT PAGE
+========================================== */
+
+
+.contact-hero {
+
+    padding:90px 0;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #2563eb
+    );
+
+    color:white;
+
+}
+
+
+
+.contact-hero h1 {
+
+    font-size:50px;
+
+    margin-bottom:20px;
+
+    font-weight:800;
+
+}
+
+
+
+.contact-hero p {
+
+    font-size:20px;
+
+    color:#dbeafe;
+
+}
+
+
+
+
+
+.contact-section {
+
+    padding:100px 0;
+
+    background:#f8fafc;
+
+}
+
+
+
+.contact-grid {
+
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+
+    gap:50px;
+
+
+}
+
+
+
+
+.contact-card {
+
+
+    background:white;
+
+
+    padding:45px;
+
+
+    border-radius:25px;
+
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.08);
+
+
+    animation:fadeUp .8s ease;
+
+
+}
+
+
+
+
+.contact-card h2 {
+
+
+    font-size:32px;
+
+    margin-bottom:25px;
+
+    color:#1e293b;
+
+
+}
+
+
+
+.contact-card p {
+
+
+    color:#475569;
+
+    font-size:17px;
+
+}
+
+
+
+
+.contact-item {
+
+
+    margin-top:25px;
+
+    padding-bottom:15px;
+
+    border-bottom:1px solid #e2e8f0;
+
+
+}
+
+
+
+.contact-item strong {
+
+
+    color:#2563eb;
+
+    font-size:18px;
+
+
+}
+
+
+
+
+
+/* FORM */
+
+
+.contact-card input,
+.contact-card textarea {
+
+
+    width:100%;
+
+
+    padding:15px;
+
+
+    margin-bottom:20px;
+
+
+    border-radius:12px;
+
+
+    border:1px solid #cbd5e1;
+
+
+    font-size:16px;
+
+
+}
+
+
+
+
+.contact-card textarea {
+
+
+    resize:none;
+
+
+}
+
+
+
+.contact-card button {
+
+
+    width:100%;
+
+
+    padding:16px;
+
+
+    border:none;
+
+
+    border-radius:50px;
+
+
+    background:#2563eb;
+
+
+    color:white;
+
+
+    font-size:18px;
+
+
+    font-weight:700;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.contact-card button:hover {
+
+
+    background:#1d4ed8;
+
+
+    transform:translateY(-5px);
+
+
+}
+
+
+
+
+
+@media(max-width:900px){
+
+
+.contact-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.contact-hero h1{
+
+font-size:36px;
+
+}
+
+
+}
+
+/* ==========================================
+   SERVICES PAGE
+========================================== */
+
+
+/* HERO */
+
+.services-hero {
+
+    padding:100px 0;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #020617,
+        #2563eb
+    );
+
+    color:white;
+
+}
+
+
+
+.services-hero h1 {
+
+    font-size:52px;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.services-hero p {
+
+    max-width:750px;
+
+    margin:auto;
+
+    font-size:20px;
+
+    color:#dbeafe;
+
+}
+
+
+
+
+
+/* MAIN SECTION */
+
+
+.services-main {
+
+    padding:100px 0;
+
+    background:#f8fafc;
+
+}
+
+
+
+
+
+.services-wrapper {
+
+
+    display:grid;
+
+    grid-template-columns:330px 1fr;
+
+    gap:60px;
+
+    align-items:start;
+
+
+}
+
+
+
+
+
+/* SIDEBAR */
+
+
+.services-sidebar {
+
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:25px;
+
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.08);
+
+
+}
+
+
+
+
+
+.service-btn {
+
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+
+    padding:20px;
+
+
+    margin-bottom:15px;
+
+
+    border:none;
+
+
+    border-radius:15px;
+
+
+    background:#f1f5f9;
+
+
+    color:#334155;
+
+
+    font-size:16px;
+
+
+    font-weight:700;
+
+
+    text-align:left;
+
+
+    cursor:pointer;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+
+
+.service-btn span {
+
+
+    color:#2563eb;
+
+    font-weight:800;
+
+}
+
+
+
+
+
+.service-btn:hover {
+
+
+    transform:translateX(8px);
+
+    background:#dbeafe;
+
+
+}
+
+
+
+
+
+.service-btn.active {
+
+
+    background:#2563eb;
+
+    color:white;
+
+
+    transform:translateX(10px);
+
+
+}
+
+
+
+
+.service-btn.active span {
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+
+
+
+/* CONTENT AREA */
+
+
+.service-display {
+
+
+    background:white;
+
+
+    min-height:420px;
+
+
+    padding:50px;
+
+
+    border-radius:30px;
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.08);
+
+
+}
+
+
+
+
+
+.service-content {
+
+
+    display:none;
+
+
+    animation:serviceFade .5s ease;
+
+
+}
+
+
+
+
+
+.service-content.active {
+
+
+    display:block;
+
+
+}
+
+
+
+
+.service-content h2 {
+
+
+    font-size:38px;
+
+
+    color:#0f172a;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+.service-content p {
+
+
+    font-size:18px;
+
+
+    color:#475569;
+
+
+    line-height:1.8;
+
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+
+
+.service-content ul {
+
+
+    list-style:none;
+
+    padding:0;
+
+
+}
+
+
+
+
+.service-content li {
+
+
+    padding:15px 20px;
+
+    margin-bottom:12px;
+
+
+    background:#f8fafc;
+
+
+    border-left:5px solid #2563eb;
+
+
+    border-radius:10px;
+
+
+    font-size:17px;
+
+
+}
+
+
+
+
+
+@keyframes serviceFade {
+
+
+from {
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+
+to {
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* RESPONSIVE */
+
+
+@media(max-width:900px){
+
+
+.services-wrapper {
+
+
+grid-template-columns:1fr;
+
+
+}
+
+
+
+.services-hero h1 {
+
+
+font-size:38px;
+
+
+}
+
+
+
+.service-display {
+
+
+padding:30px;
+
+
+}
+
+
+
+}
+
+/* ==========================
+   SERVICES PAGE
+========================== */
+
+
+.services-page {
+
+    padding: 80px 0;
+
+    background:
+    linear-gradient(
+        135deg,
+        #f8fafc,
+        #eef2ff
+    );
+
+}
+
+
+
+.services-header {
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+
+
+.services-header h1 {
+
+    font-size:48px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+
+
+.services-header p {
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:18px;
+
+    color:#6b7280;
+
+}
+
+
+
+
+.services-grid {
+
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:30px;
+
+
+}
+
+
+
+
+
+.service-card {
+
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+
+    box-shadow:
+    0 15px 35px
+    rgba(0,0,0,0.08);
+
+
+    transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+
+
+    position:relative;
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+.service-card:hover {
+
+
+    transform:
+    translateY(-10px);
+
+
+    box-shadow:
+    0 25px 50px
+    rgba(0,0,0,0.15);
+
+
+}
+
+
+
+
+
+.service-icon {
+
+
+    width:70px;
+
+    height:70px;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    border-radius:50%;
+
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+
+    color:white;
+
+
+    font-size:30px;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+.service-card h3 {
+
+
+    font-size:24px;
+
+    margin-bottom:15px;
+
+    color:#111827;
+
+
+}
+
+
+
+
+
+.short-description {
+
+
+    font-weight:600;
+
+    color:#2563eb;
+
+
+}
+
+
+
+
+
+.service-card p {
+
+
+    color:#6b7280;
+
+    line-height:1.7;
+
+
+}
+
+
+
+
+
+.service-link {
+
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    color:#2563eb;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+
+}
+
+
+
+
+
+.service-card::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+
+    width:100%;
+
+    height:5px;
+
+
+    background:
+    linear-gradient(
+        90deg,
+        #2563eb,
+        #9333ea
+    );
+
+
+}
+
+
+
+
+@media(max-width:992px){
+
+
+    .services-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+    .services-grid{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+
+}
+
+/* ==========================
+   SERVICE DETAIL PAGE
+========================== */
+
+
+.service-detail-page {
+
+    padding: 80px 0;
+
+    background: #f8fafc;
+
+}
+
+
+
+.back-services {
+
+    display: inline-block;
+
+    margin-bottom: 40px;
+
+    text-decoration: none;
+
+    color: #2563eb;
+
+    font-weight: 600;
+
+}
+
+
+
+.service-detail-header {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+}
+
+
+
+.service-detail-icon {
+
+    width: 90px;
+
+    height: 90px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 40px;
+
+}
+
+
+
+.service-detail-header h1 {
+
+    margin-top: 25px;
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+}
+
+
+
+.service-subtitle {
+
+    font-size: 20px;
+
+    color: #64748b;
+
+}
+
+
+
+.service-detail-card {
+
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+    line-height: 1.8;
+
+}
+
+
+
+.service-detail-card h3 {
+
+
+    font-size: 28px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.service-detail-card ul {
+
+
+    margin-top: 20px;
+
+    padding-left: 25px;
+
+}
+
+
+
+.service-contact-box {
+
+
+    margin-top: 50px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    background: #2563eb;
+
+    color:white;
+
+    border-radius:16px;
+
+}
+
+
+
+.contact-button {
+
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:12px 30px;
+
+    background:white;
+
+    color:#2563eb;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+/* =====================================
+   SERVICE DETAIL PAGE
+===================================== */
+
+
+.service-detail-page {
+
+    padding: 80px 0;
+
+    background: #f8fafc;
+
+}
+
+
+
+
+.back-services {
+
+    display: inline-block;
+
+    margin-bottom: 40px;
+
+    color: #2563eb;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+}
+
+
+
+.back-services:hover {
+
+    text-decoration: underline;
+
+}
+
+
+
+
+
+
+/* SERVICE HEADER */
+
+
+.service-detail-header {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+}
+
+
+
+.service-detail-icon {
+
+    width: 90px;
+
+    height: 90px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 40px;
+
+}
+
+
+
+.service-detail-header h1 {
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+}
+
+
+
+.service-subtitle {
+
+    margin-top: 15px;
+
+    font-size: 20px;
+
+    color: #6b7280;
+
+}
+
+
+
+
+
+
+
+/* DETAIL CONTENT */
+
+
+.service-detail-card {
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+    margin-bottom: 50px;
+
+}
+
+
+
+
+.service-detail-card h2 {
+
+    font-size: 30px;
+
+    color: #111827;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.service-detail-card h3 {
+
+    margin-top: 30px;
+
+    margin-bottom: 15px;
+
+    color: #2563eb;
+
+    font-size: 22px;
+
+}
+
+
+
+
+.service-detail-card p {
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #4b5563;
+
+}
+
+
+
+
+
+.service-detail-card ul {
+
+    padding-left: 25px;
+
+}
+
+
+
+.service-detail-card li {
+
+    margin-bottom: 10px;
+
+    font-size: 16px;
+
+    color: #374151;
+
+}
+
+
+
+
+
+.service-detail-card li::marker {
+
+    color: #2563eb;
+
+}
+
+
+
+
+
+
+
+/* CONTACT CTA */
+
+
+.service-contact-box {
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1e40af
+    );
+
+    color:white;
+
+    padding:50px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+}
+
+
+
+
+
+.service-contact-box h2 {
+
+    font-size:32px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+.service-contact-box p {
+
+    font-size:18px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+
+.contact-button {
+
+    display:inline-block;
+
+    background:white;
+
+    color:#2563eb;
+
+    padding:14px 35px;
+
+    border-radius:8px;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+}
+
+
+
+
+.contact-button:hover {
+
+    background:#f1f5f9;
+
+}
+
+
+
+
+
+
+/* MOBILE RESPONSIVE */
+
+
+@media(max-width:768px){
+
+
+    .service-detail-header h1{
+
+        font-size:32px;
+
+    }
+
+
+
+    .service-detail-card{
+
+        padding:25px;
+
+    }
+
+
+
+    .service-contact-box{
+
+        padding:30px;
+
+    }
+
+
+}

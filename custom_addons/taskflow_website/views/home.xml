@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+
+    <template id="homepage" name="TaskFlow Homepage">
+
+
+        <t t-call="website.layout">
+
+
+            <!-- HERO SECTION -->
+
+            <section class="taskflow-hero">
+
+
+                <div class="container">
+
+
+                    <div class="hero-content">
+
+
+                        <h1>
+
+                            Build Smarter Businesses With
+
+                            <span>
+                                Intelligent ERP Solutions
+                            </span>
+
+                        </h1>
+
+
+                        <p>
+
+                            TaskFlow Solutions helps businesses
+                            automate operations, manage workflows,
+                            and grow with powerful Odoo solutions.
+
+                        </p>
+
+
+
+                        <div class="hero-buttons">
+
+
+                            <a href="/contact"
+                               class="btn-primary">
+
+                                Request Demo
+
+                            </a>
+
+
+
+                            <a href="/services"
+                               class="btn-secondary">
+
+                                Explore Services
+
+                            </a>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+
+
+            <!-- INTRO SECTION -->
+
+
+            <section class="trust-section">
+
+
+                <div class="container">
+
+
+                    <h2>
+
+                        Digital Transformation Partner
+
+                    </h2>
+
+
+                    <p>
+
+                        We help organizations improve
+                        efficiency through ERP,
+                        automation and technology.
+
+                    </p>
+
+
+
+                    <!-- FEATURE CARDS -->
+
+
+                    <div class="feature-grid">
+
+
+
+                        <div class="feature-card">
+
+
+                            <div class="feature-icon">
+
+                                ⚙️
+
+                            </div>
+
+
+                            <h3>
+
+                                Odoo ERP Solutions
+
+                            </h3>
+
+
+                            <p>
+
+                                Customized ERP systems
+                                designed around your
+                                business processes.
+
+                            </p>
+
+
+                        </div>
+
+
+
+
+
+                        <div class="feature-card">
+
+
+                            <div class="feature-icon">
+
+                                🚀
+
+                            </div>
+
+
+                            <h3>
+
+                                Business Automation
+
+                            </h3>
+
+
+                            <p>
+
+                                Automate repetitive tasks
+                                and improve operational
+                                efficiency.
+
+                            </p>
+
+
+                        </div>
+
+
+
+
+
+                        <div class="feature-card">
+
+
+                            <div class="feature-icon">
+
+                                🔗
+
+                            </div>
+
+
+                            <h3>
+
+                                System Integration
+
+                            </h3>
+
+
+                            <p>
+
+                                Connect your systems
+                                through reliable API
+                                integrations.
+
+                            </p>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+            </section>
+
+
+
+
+
+
+            <!-- STATISTICS SECTION -->
+
+
+            <section class="stats-section">
+
+
+                <div class="container">
+
+
+                    <div class="stats-grid">
+
+
+
+                        <div class="stat-card">
+
+
+                            <h2 class="counter"
+                                data-target="500">
+
+                                0
+
+                            </h2>
+
+
+                            <p>
+
+                                Business Processes Automated
+
+                            </p>
+
+
+                        </div>
+
+
+
+
+
+
+                        <div class="stat-card">
+
+
+                            <h2 class="counter"
+                                data-target="50">
+
+                                0
+
+                            </h2>
+
+
+                            <p>
+
+                                ERP Implementations
+
+                            </p>
+
+
+                        </div>
+
+
+
+
+
+
+                        <div class="stat-card">
+
+
+                            <h2 class="counter"
+                                data-target="99">
+
+                                0
+
+                            </h2>
+
+
+                            <p>
+
+                                Customer Satisfaction %
+
+                            </p>
+
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+
+        </t>
+
+
+    </template>
+
+
+</odoo>

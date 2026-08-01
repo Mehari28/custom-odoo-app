@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+
+    <!-- LIST VIEW -->
+    <record id="task_tree_view" model="ir.ui.view">
+        <field name="name">task.management.list</field>
+        <field name="model">task.management</field>
+
+        <field name="arch" type="xml">
+            <list>
+
+                <field name="name"/>
+                <field name="assigned_to"/>
+                <field name="deadline"/>
+
+                <field name="priority"/>
+
+                <field name="state"/>
+
+            </list>
+        </field>
+
+    </record>
+
+
+
+    <!-- FORM VIEW -->
+
+    <record id="task_form_view" model="ir.ui.view">
+
+        <field name="name">task.management.form</field>
+
+        <field name="model">task.management</field>
+
+
+        <field name="arch" type="xml">
+
+            <form>
+
+
+                <header>
+
+
+                    <button
+                        name="action_start"
+                        type="object"
+                        string="Start Task"
+                        class="btn-primary"
+                        invisible="state != 'draft'"
+                    />
+
+
+                    <button
+                        name="action_done"
+                        type="object"
+                        string="Mark Done"
+                        class="btn-success"
+                        invisible="state != 'progress'"
+                    />
+
+
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,progress,done"
+                    />
+
+
+                </header>
+
+
+
+                <sheet>
+
+
+                    <group>
+
+
+                        <field name="name"/>
+
+
+                        <field name="description"/>
+
+
+                        <field name="assigned_to"/>
+
+
+                        <field name="deadline"/>
+
+
+                        <field name="priority"/>
+
+
+                    </group>
+
+
+                </sheet>
+
+
+            </form>
+
+        </field>
+
+    </record>
+
+
+
+
+    <!-- SEARCH VIEW -->
+
+    <record id="task_search_view" model="ir.ui.view">
+
+
+        <field name="name">task.management.search</field>
+
+
+        <field name="model">task.management</field>
+
+
+        <field name="arch" type="xml">
+
+
+            <search>
+
+
+                <field name="name"/>
+
+                <field name="assigned_to"/>
+
+                <field name="state"/>
+
+
+                <filter
+                    string="Draft"
+                    name="draft"
+                    domain="[('state','=','draft')]"
+                />
+
+
+                <filter
+                    string="In Progress"
+                    name="progress"
+                    domain="[('state','=','progress')]"
+                />
+
+
+                <filter
+                    string="Done"
+                    name="done"
+                    domain="[('state','=','done')]"
+                />
+
+
+            </search>
+
+
+        </field>
+
+
+    </record>
+
+
+
+
+    <!-- ACTION -->
+
+    <record id="task_action" model="ir.actions.act_window">
+
+        <field name="name">Tasks</field>
+
+        <field name="res_model">task.management</field>
+
+        <field name="view_mode">list,form</field>
+
+    </record>
+
+
+
+
+    <!-- MENU -->
+
+
+    <menuitem
+        id="task_management_root"
+        name="Task Management"
+    />
+
+
+    <menuitem
+        id="task_menu"
+        name="Tasks"
+        parent="task_management_root"
+        action="task_action"
+    />
+
+
+</odoo>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+
+    <record id="service_erp" model="taskflow.service">
+
+        <field name="name">
+            Odoo ERP Solutions
+        </field>
+
+        <field name="short_description">
+            Complete ERP implementation and customization.
+        </field>
+
+        <field name="description">
+            We design and customize Odoo ERP solutions
+            that match your business workflow,
+            automate operations and improve efficiency.
+        </field>
+
+        <field name="icon">
+            fa-cogs
+        </field>
+
+    </record>
+
+
+
+    <record id="service_website" model="taskflow.service">
+
+        <field name="name">
+            Website Development
+        </field>
+
+        <field name="short_description">
+            Modern business websites built with Odoo.
+        </field>
+
+        <field name="description">
+            Responsive websites, customer portals
+            and digital platforms designed for your business.
+        </field>
+
+        <field name="icon">
+            fa-globe
+        </field>
+
+    </record>
+
+
+
+
+    <record id="service_api" model="taskflow.service">
+
+        <field name="name">
+            API Integration
+        </field>
+
+        <field name="short_description">
+            Connect your systems through reliable APIs.
+        </field>
+
+        <field name="description">
+            We integrate payment systems,
+            third-party applications and business platforms.
+        </field>
+
+        <field name="icon">
+            fa-link
+        </field>
+
+    </record>
+
+
+
+
+
+    <record id="service_automation" model="taskflow.service">
+
+        <field name="name">
+            Business Automation
+        </field>
+
+        <field name="short_description">
+            Automate repetitive business processes.
+        </field>
+
+        <field name="description">
+            Workflow automation, notifications,
+            approvals and intelligent business rules.
+        </field>
+
+        <field name="icon">
+            fa-bolt
+        </field>
+
+    </record>
+
+
+
+
+    <record id="service_support" model="taskflow.service">
+
+        <field name="name">
+            Technical Support
+        </field>
+
+        <field name="short_description">
+            Continuous maintenance and support.
+        </field>
+
+        <field name="description">
+            We provide ongoing technical assistance,
+            improvements and system monitoring.
+        </field>
+
+        <field name="icon">
+            fa-life-ring
+        </field>
+
+    </record>
+
+
+
+</odoo>
