@@ -1,102 +1,58 @@
 {
-    'name': 'TaskFlow Website',
+    "name": "TaskFlow Website",
 
-    'version': '19.0.1.0.0',
+    "version": "19.0.1.0.0",
 
-    'summary': 'Professional Company Website built with Odoo',
+    "category": "Website",
 
+    "summary": "TaskFlow Services Website",
 
-    'description': """
+    "description": """
+        TaskFlow website service management module.
+    """,
 
-TaskFlow Solutions Website
+    "depends": [
+        "website",
+        "crm",
+    ],
 
-Features:
-- Modern Landing Page
-- About Section
-- Services Section
-- Dynamic Service Details
-- Contact Form
-- CRM Lead Creation
-- Responsive Design
+    "data": [
 
-""",
+        # Security
+        "security/ir.model.access.csv",
 
+        # Backend
+        "views/service_backend.xml",
+        "views/menu.xml",
 
+        # Website Menu
+        "views/website_menu.xml",
 
-    'author': 'Mehari Kahsay',
-
-
-    'category': 'Website',
-
-
-    'license': 'LGPL-3',
-
-
-
-
-
-    'depends': [
-
-        'website',
-        'crm',
+        # Website Pages
+        "views/home.xml",
+        "views/about.xml",
+        "views/contact.xml",
+        "views/contact_thank_you.xml",
+        "views/services.xml",
+        "views/service_detail.xml",   
 
     ],
 
+    "assets": {
 
+        "web.assets_frontend": [
 
-
-
-    'data': [
-
-        'views/home.xml',
-
-        'views/about.xml',
-
-        'views/services.xml',
-
-        'views/service_detail.xml',
-
-        'views/contact.xml',
-
-        'views/thank_you.xml',
-
-        'views/website_menu.xml',
-
-    ],
-
-
-
-
-
-
-
-    'assets': {
-
-
-        'web.assets_frontend': [
-
-
-            'taskflow_website/static/src/css/style.css',
-
-            'taskflow_website/static/src/js/main.js',
-
+            "taskflow_website/static/src/css/style.css",
+            "taskflow_website/static/src/css/service_detail.css",
+            "taskflow_website/static/src/js/main.js",
 
         ],
 
-
     },
 
+    "installable": True,
 
+    "application": True,
 
-
-
-
-    'installable': True,
-
-
-    'application': True,
-
-
-    'auto_install': False,
-
+    "license": "LGPL-3",
 }

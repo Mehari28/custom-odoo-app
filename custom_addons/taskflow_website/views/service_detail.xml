@@ -3,202 +3,196 @@
 <odoo>
 
 
-    <template
-        id="service_detail_page"
-        name="TaskFlow Service Detail"
+    <template 
+        id="service_detail_page" 
+        name="Service Detail Page"
     >
 
 
         <t t-call="website.layout">
 
 
-            <section class="service-detail-page">
+            <div class="container service-detail-page">
 
 
-                <div class="container">
+                <!-- BACK BUTTON -->
 
+                <div class="service-back">
 
-
-                    <!-- BACK BUTTON -->
-
-                    <a href="/services"
-                       class="back-services">
-
+                    <a href="/services" class="back-btn">
                         ← Back to Services
-
                     </a>
-
-
-
-
-
-
-                    <!-- SERVICE HEADER -->
-
-                    <div class="service-detail-header">
-
-
-
-                        <!-- ICON -->
-
-                        <div class="service-detail-icon">
-
-
-                            <i t-att-class="'fa ' + service.icon"/>
-
-
-                        </div>
-
-
-
-
-
-                        <!-- TITLE -->
-
-                        <h1>
-
-                            <t t-esc="service.name"/>
-
-                        </h1>
-
-
-
-
-
-
-                        <!-- SHORT DESCRIPTION -->
-
-                        <p class="service-subtitle">
-
-
-                            <t t-esc="service.short_description"/>
-
-
-                        </p>
-
-
-
-                    </div>
-
-
-
-
-
-
-
-
-
-                    <!-- SERVICE DETAILS -->
-
-                    <div class="service-detail-card">
-
-
-
-                        <t t-if="service.detailed_description">
-
-
-                            <t t-raw="service.detailed_description"/>
-
-
-
-                        </t>
-
-
-
-                        <t t-else="">
-
-
-                            <h2>
-
-                                About This Service
-
-                            </h2>
-
-
-
-                            <p>
-
-                                Detailed information about this service
-                                will be available soon.
-
-                            </p>
-
-
-                        </t>
-
-
-
-                    </div>
-
-
-
-
-
-
-
-
-
-                    <!-- CONTACT CTA -->
-
-                    <div class="service-contact-box">
-
-
-
-                        <h2>
-
-                            Ready to transform your business?
-
-                        </h2>
-
-
-
-
-
-                        <p>
-
-                            Contact TaskFlow Solutions today and
-                            let's discuss how we can help your business
-                            grow with technology.
-
-                        </p>
-
-
-
-
-
-
-                        <a
-                            t-att-href="'/contact?service=' + str(service.id)"
-                            class="contact-button"
-                        >
-
-                            Contact Us →
-
-                        </a>
-
-
-
-
-                    </div>
-
-
-
-
 
                 </div>
 
 
 
-            </section>
+                <!-- SERVICE HEADER -->
 
+                <section class="service-header">
+
+
+                    <div class="service-icon">
+
+                        <i t-att-class="'fa ' + service.icon"></i>
+
+                    </div>
+
+
+
+                    <h1>
+
+                        <t t-esc="service.name"/>
+
+                    </h1>
+
+
+
+                    <p class="service-short">
+
+                        <t t-esc="service.short_description"/>
+
+                    </p>
+
+
+
+                    <a 
+                        t-att-href="'/contact?service=%s' % service.id"
+                        class="service-main-btn"
+                    >
+
+                        <t t-esc="service.button_text"/>
+
+                    </a>
+
+
+
+                </section>
+
+
+
+
+
+                <!-- OVERVIEW -->
+
+                <section class="detail-section">
+
+
+                    <h2>
+                        Overview
+                    </h2>
+
+
+
+                    <div class="content-box">
+
+                        <div t-field="service.overview"/>
+
+                    </div>
+
+
+                </section>
+
+
+
+
+
+
+
+                <!-- SERVICES OFFERED -->
+
+
+                <section class="detail-section">
+
+
+                    <h2>
+                        What We Offer
+                    </h2>
+
+
+
+                    <div class="content-box">
+
+                        <div t-field="service.service_offer"/>
+
+                    </div>
+
+
+                </section>
+
+
+
+
+
+
+
+                <!-- BENEFITS -->
+
+
+                <section class="detail-section">
+
+
+                    <h2>
+                        Business Benefits
+                    </h2>
+
+
+
+                    <div class="content-box">
+
+                        <div t-field="service.benefits"/>
+
+                    </div>
+
+
+                </section>
+
+
+
+
+
+
+
+                <!-- CTA SECTION -->
+
+
+                <section class="service-cta">
+
+
+                    <h2>
+                        Ready To Transform Your Business?
+                    </h2>
+
+
+
+                    <p>
+                        Contact TaskFlow Solutions today.
+                    </p>
+
+
+
+                    <a 
+                        t-att-href="'/contact?service=%s' % service.id"
+                        class="service-main-btn"
+                    >
+
+                        Contact Experts
+
+                    </a>
+
+
+
+                </section>
+
+
+
+            </div>
 
 
         </t>
 
 
-
     </template>
-
 
 
 </odoo>

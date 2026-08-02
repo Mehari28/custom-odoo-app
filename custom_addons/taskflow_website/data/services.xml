@@ -2,125 +2,303 @@
 
 <odoo>
 
-
-    <record id="service_erp" model="taskflow.service">
-
-        <field name="name">
-            Odoo ERP Solutions
-        </field>
-
-        <field name="short_description">
-            Complete ERP implementation and customization.
-        </field>
-
-        <field name="description">
-            We design and customize Odoo ERP solutions
-            that match your business workflow,
-            automate operations and improve efficiency.
-        </field>
-
-        <field name="icon">
-            fa-cogs
-        </field>
-
-    </record>
+    <data>
 
 
+        <!-- =========================
+             ODOO ERP SOLUTIONS
+        ========================== -->
 
-    <record id="service_website" model="taskflow.service">
+        <record id="taskflow_service_erp" model="taskflow.service">
 
-        <field name="name">
-            Website Development
-        </field>
+            <field name="sequence">10</field>
 
-        <field name="short_description">
-            Modern business websites built with Odoo.
-        </field>
+            <field name="name">Odoo ERP Solutions</field>
 
-        <field name="description">
-            Responsive websites, customer portals
-            and digital platforms designed for your business.
-        </field>
+            <field name="short_description">
+                Complete ERP implementation and customization.
+            </field>
 
-        <field name="icon">
-            fa-globe
-        </field>
+            <field name="overview"><![CDATA[
+                <h3>Odoo ERP Implementation</h3>
 
-    </record>
+                <p>
+                    We help businesses transform their operations through
+                    powerful Odoo ERP solutions that centralize processes,
+                    automate workflows, and improve productivity.
+                </p>
+
+                <p>
+                    Our team configures and customizes Odoo based on your
+                    business requirements, creating a scalable ERP system
+                    that supports future growth.
+                </p>
+            ]]></field>
 
 
+            <field name="service_offer"><![CDATA[
+                <ul>
+                    <li>Complete Odoo ERP implementation</li>
+                    <li>Custom module development</li>
+                    <li>Business workflow automation</li>
+                    <li>ERP customization</li>
+                    <li>Third-party system integration</li>
+                    <li>User training and deployment</li>
+                </ul>
+            ]]></field>
 
 
-    <record id="service_api" model="taskflow.service">
+            <field name="benefits"><![CDATA[
+                <ul>
+                    <li>Centralized business operations</li>
+                    <li>Improved efficiency and productivity</li>
+                    <li>Real-time reporting and analytics</li>
+                    <li>Reduced manual processes</li>
+                    <li>Better business decisions</li>
+                </ul>
+            ]]></field>
 
-        <field name="name">
-            API Integration
-        </field>
 
-        <field name="short_description">
-            Connect your systems through reliable APIs.
-        </field>
+            <field name="icon">fa-cubes</field>
 
-        <field name="description">
-            We integrate payment systems,
-            third-party applications and business platforms.
-        </field>
+            <field name="button_text">Request Demo</field>
 
-        <field name="icon">
-            fa-link
-        </field>
+            <field name="button_link">/contact</field>
 
-    </record>
+            <field name="active">True</field>
+
+        </record>
 
 
 
+        <!-- =========================
+             WEBSITE DEVELOPMENT
+        ========================== -->
+
+        <record id="taskflow_service_website" model="taskflow.service">
+
+            <field name="sequence">20</field>
+
+            <field name="name">Website Development</field>
+
+            <field name="short_description">
+                Professional business websites.
+            </field>
 
 
-    <record id="service_automation" model="taskflow.service">
+            <field name="overview"><![CDATA[
+                <h3>Professional Website Development</h3>
 
-        <field name="name">
-            Business Automation
-        </field>
-
-        <field name="short_description">
-            Automate repetitive business processes.
-        </field>
-
-        <field name="description">
-            Workflow automation, notifications,
-            approvals and intelligent business rules.
-        </field>
-
-        <field name="icon">
-            fa-bolt
-        </field>
-
-    </record>
+                <p>
+                    We design and develop modern responsive websites
+                    that help businesses build a strong online presence.
+                </p>
+            ]]></field>
 
 
+            <field name="service_offer"><![CDATA[
+                <ul>
+                    <li>Business website development</li>
+                    <li>Responsive web design</li>
+                    <li>Website customization</li>
+                    <li>SEO-friendly structure</li>
+                    <li>Website maintenance</li>
+                </ul>
+            ]]></field>
 
 
-    <record id="service_support" model="taskflow.service">
-
-        <field name="name">
-            Technical Support
-        </field>
-
-        <field name="short_description">
-            Continuous maintenance and support.
-        </field>
-
-        <field name="description">
-            We provide ongoing technical assistance,
-            improvements and system monitoring.
-        </field>
-
-        <field name="icon">
-            fa-life-ring
-        </field>
-
-    </record>
+            <field name="benefits"><![CDATA[
+                <ul>
+                    <li>Professional online presence</li>
+                    <li>Improved customer engagement</li>
+                    <li>Better brand visibility</li>
+                    <li>Easy content management</li>
+                </ul>
+            ]]></field>
 
 
+            <field name="icon">fa-globe</field>
+
+            <field name="button_text">Request Demo</field>
+
+            <field name="button_link">/contact</field>
+
+            <field name="active">True</field>
+
+        </record>
+
+
+
+
+        <!-- =========================
+             API INTEGRATION
+        ========================== -->
+
+        <record id="taskflow_service_api" model="taskflow.service">
+
+            <field name="sequence">30</field>
+
+            <field name="name">API Integration</field>
+
+            <field name="short_description">
+                Connect systems together.
+            </field>
+
+
+            <field name="overview"><![CDATA[
+                <h3>System Integration Solutions</h3>
+
+                <p>
+                    We connect different software platforms using APIs
+                    to enable smooth data exchange and automation.
+                </p>
+            ]]></field>
+
+
+            <field name="service_offer"><![CDATA[
+                <ul>
+                    <li>REST API integration</li>
+                    <li>Third-party application connection</li>
+                    <li>Data synchronization</li>
+                    <li>Custom integration solutions</li>
+                </ul>
+            ]]></field>
+
+
+            <field name="benefits"><![CDATA[
+                <ul>
+                    <li>Connected business systems</li>
+                    <li>Reduced manual data entry</li>
+                    <li>Improved workflow efficiency</li>
+                </ul>
+            ]]></field>
+
+
+            <field name="icon">fa-plug</field>
+
+            <field name="button_text">Request Demo</field>
+
+            <field name="button_link">/contact</field>
+
+            <field name="active">True</field>
+
+        </record>
+
+
+
+
+        <!-- =========================
+             BUSINESS AUTOMATION
+        ========================== -->
+
+        <record id="taskflow_service_automation" model="taskflow.service">
+
+            <field name="sequence">40</field>
+
+            <field name="name">Business Automation</field>
+
+            <field name="short_description">
+                Automate repetitive processes.
+            </field>
+
+
+            <field name="overview"><![CDATA[
+                <h3>Business Process Automation</h3>
+
+                <p>
+                    We help businesses automate repetitive tasks,
+                    improve workflows, and increase operational efficiency.
+                </p>
+            ]]></field>
+
+
+            <field name="service_offer"><![CDATA[
+                <ul>
+                    <li>Workflow automation</li>
+                    <li>Email automation</li>
+                    <li>Business process optimization</li>
+                    <li>Custom automation solutions</li>
+                </ul>
+            ]]></field>
+
+
+            <field name="benefits"><![CDATA[
+                <ul>
+                    <li>Reduced operational costs</li>
+                    <li>Faster business processes</li>
+                    <li>Improved productivity</li>
+                </ul>
+            ]]></field>
+
+
+            <field name="icon">fa-cogs</field>
+
+            <field name="button_text">Request Demo</field>
+
+            <field name="button_link">/contact</field>
+
+            <field name="active">True</field>
+
+        </record>
+
+
+
+
+        <!-- =========================
+             TECHNICAL SUPPORT
+        ========================== -->
+
+        <record id="taskflow_service_support" model="taskflow.service">
+
+            <field name="sequence">50</field>
+
+            <field name="name">Technical Support</field>
+
+            <field name="short_description">
+                Continuous system support.
+            </field>
+
+
+            <field name="overview"><![CDATA[
+                <h3>Technical Support Services</h3>
+
+                <p>
+                    We provide continuous technical assistance,
+                    maintenance, troubleshooting, and system improvements.
+                </p>
+            ]]></field>
+
+
+            <field name="service_offer"><![CDATA[
+                <ul>
+                    <li>System troubleshooting</li>
+                    <li>Maintenance and upgrades</li>
+                    <li>User assistance</li>
+                    <li>Technical consultation</li>
+                </ul>
+            ]]></field>
+
+
+            <field name="benefits"><![CDATA[
+                <ul>
+                    <li>Reliable system performance</li>
+                    <li>Reduced downtime</li>
+                    <li>Continuous improvement</li>
+                </ul>
+            ]]></field>
+
+
+            <field name="icon">fa-life-ring</field>
+
+            <field name="button_text">Request Demo</field>
+
+            <field name="button_link">/contact</field>
+
+            <field name="active">True</field>
+
+        </record>
+
+
+    </data>
 
 </odoo>

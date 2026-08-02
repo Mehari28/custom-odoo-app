@@ -12,31 +12,45 @@
         <t t-call="website.layout">
 
 
-            <section class="contact-section">
+
+            <section class="thank-you-page">
 
 
                 <div class="container">
 
 
-                    <div class="contact-card">
+
+                    <div class="thank-you-card">
+
+
+
+                        <div class="thank-you-icon">
+
+
+                            <i class="fa fa-check-circle"></i>
+
+
+                        </div>
+
+
 
 
 
                         <h1>
-
                             Thank You!
-
                         </h1>
+
 
 
 
 
                         <p>
 
-                            Your request has been successfully
-                            submitted.
+                            Your request has been received
+                            successfully.
 
                         </p>
+
 
 
 
@@ -53,14 +67,17 @@
 
 
 
-                        <a
-                            href="/"
-                            class="contact-button"
-                        >
 
-                            Back Home
+                        <a href="/"
+                           class="btn btn-primary">
+
+
+                            Back To Home
+
 
                         </a>
+
+
 
 
 

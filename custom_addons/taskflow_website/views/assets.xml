@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template
+        id="taskflow_assets"
+        inherit_id="website.assets_frontend"
+        name="TaskFlow Website Assets"
+    >
+
+        <xpath expr="." position="inside">
+
+            <!-- Main Website Styles -->
+            <link rel="stylesheet"
+                  type="text/css"
+                  href="/taskflow_website/static/src/css/style.css"/>
+
+            <!-- Service Detail Styles -->
+            <link rel="stylesheet"
+                  type="text/css"
+                  href="/taskflow_website/static/src/css/service_detail.css"/>
+
+        </xpath>
+
+    </template>
+
+</odoo>

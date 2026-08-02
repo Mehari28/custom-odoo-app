@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+
+    <!-- Services Window Action -->
+
+    <record id="taskflow_service_action" model="ir.actions.act_window">
+
+        <field name="name">Services</field>
+
+        <field name="res_model">taskflow.service</field>
+
+        <field name="view_mode">list,form</field>
+
+    </record>
+
+
+
+    <!-- Tree/List View -->
+
+    <record id="view_taskflow_service_tree" model="ir.ui.view">
+
+        <field name="name">taskflow.service.tree</field>
+
+        <field name="model">taskflow.service</field>
+
+        <field name="arch" type="xml">
+
+            <list string="Services">
+
+                <field name="sequence"/>
+
+                <field name="name"/>
+
+                <field name="short_description"/>
+
+                <field name="active"/>
+
+            </list>
+
+        </field>
+
+    </record>
+
+
+
+
+    <!-- Form View -->
+
+    <record id="view_taskflow_service_form" model="ir.ui.view">
+
+        <field name="name">taskflow.service.form</field>
+
+        <field name="model">taskflow.service</field>
+
+        <field name="arch" type="xml">
+
+            <form string="Service">
+
+                <sheet>
+
+                    <group>
+
+                        <field name="sequence"/>
+
+                        <field name="name"/>
+
+                        <field name="short_description"/>
+
+                        <field name="icon"/>
+
+                        <field name="image"/>
+
+                        <field name="active"/>
+
+                    </group>
+
+
+
+                    <notebook>
+
+
+                        <page string="Overview">
+
+                            <field name="overview"/>
+
+                        </page>
+
+
+
+                        <page string="Detailed Description">
+
+                            <field name="detailed_description"/>
+
+                        </page>
+
+
+
+                        <page string="Service Offers">
+
+                            <field name="service_offer"/>
+
+                        </page>
+
+
+
+                        <page string="Benefits">
+
+                            <field name="benefits"/>
+
+                        </page>
+
+
+
+                        <page string="Implementation Process">
+
+                            <field name="implementation_process"/>
+
+                        </page>
+
+
+
+                        <page string="FAQ">
+
+                            <field name="faq"/>
+
+                        </page>
+
+
+                    </notebook>
+
+
+                </sheet>
+
+            </form>
+
+        </field>
+
+    </record>
+
+
+</odoo>

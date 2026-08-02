@@ -8,6 +8,13 @@ document.addEventListener(
     function () {
 
 
+        /*
+        ======================================
+        SERVICE TAB SWITCHING
+        ======================================
+        */
+
+
         const buttons =
             document.querySelectorAll(
                 ".service-btn"
@@ -22,28 +29,161 @@ document.addEventListener(
 
 
         console.log(
-            "Buttons found:",
+            "Service buttons found:",
             buttons.length
         );
 
 
         console.log(
-            "Contents found:",
+            "Service contents found:",
             contents.length
         );
 
 
 
+
         if (
-            buttons.length === 0 ||
-            contents.length === 0
+            buttons.length > 0 &&
+            contents.length > 0
         ) {
 
-            console.log(
-                "No services found"
+
+
+            /*
+            Default first service active
+            */
+
+
+            buttons[0].classList.add(
+                "active"
             );
 
-            return;
+
+            contents[0].classList.add(
+                "active"
+            );
+
+
+
+
+
+
+            /*
+            Service switching
+            */
+
+
+            buttons.forEach(
+                function(button) {
+
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+
+
+                            const serviceId =
+                                this.dataset.service;
+
+
+
+                            console.log(
+                                "Clicked service:",
+                                serviceId
+                            );
+
+
+
+
+
+                            /*
+                            Remove active states
+                            */
+
+
+                            buttons.forEach(
+                                function(btn) {
+
+                                    btn.classList.remove(
+                                        "active"
+                                    );
+
+                                }
+                            );
+
+
+
+                            contents.forEach(
+                                function(content) {
+
+                                    content.classList.remove(
+                                        "active"
+                                    );
+
+                                }
+                            );
+
+
+
+
+
+
+
+                            /*
+                            Activate selected button
+                            */
+
+
+                            this.classList.add(
+                                "active"
+                            );
+
+
+
+
+
+
+                            /*
+                            Display selected content
+                            */
+
+
+                            const selectedContent =
+                                document.getElementById(
+                                    serviceId
+                                );
+
+
+
+                            if (selectedContent) {
+
+
+                                selectedContent.classList.add(
+                                    "active"
+                                );
+
+
+                            } else {
+
+
+                                console.log(
+                                    "Content not found:",
+                                    serviceId
+                                );
+
+
+                            }
+
+
+
+                        }
+                    );
+
+
+                }
+            );
+
 
         }
 
@@ -52,30 +192,31 @@ document.addEventListener(
 
 
         /*
-            Default first service active
+        ======================================
+        FAQ ACCORDION
+        ======================================
         */
 
 
-        buttons[0].classList.add(
-            "active"
+        const faqButtons =
+            document.querySelectorAll(
+                ".faq-question"
+            );
+
+
+
+        console.log(
+            "FAQ buttons found:",
+            faqButtons.length
         );
 
 
-        contents[0].classList.add(
-            "active"
-        );
 
 
 
-
-
-        /*
-            Service switching
-        */
-
-
-        buttons.forEach(
+        faqButtons.forEach(
             function(button) {
+
 
 
                 button.addEventListener(
@@ -84,91 +225,24 @@ document.addEventListener(
 
 
 
-                        const serviceId =
-                            this.dataset.service;
-
-
-
-                        console.log(
-                            "Clicked service:",
-                            serviceId
-                        );
-
-
-
-
-
-                        /*
-                            Remove active states
-                        */
-
-
-                        buttons.forEach(
-                            function(btn) {
-
-                                btn.classList.remove(
-                                    "active"
-                                );
-
-                            }
-                        );
-
-
-
-                        contents.forEach(
-                            function(content) {
-
-                                content.classList.remove(
-                                    "active"
-                                );
-
-                            }
-                        );
-
-
-
-
-
-
-                        /*
-                            Activate selected button
-                        */
-
-
-                        this.classList.add(
-                            "active"
-                        );
-
-
-
-
-
-                        /*
-                            Show selected content
-                        */
-
-
-                        const selectedContent =
-                            document.getElementById(
-                                serviceId
+                        const faqItem =
+                            this.closest(
+                                ".faq-item"
                             );
 
 
 
-                        if (selectedContent) {
+                        if (faqItem) {
 
 
-                            selectedContent.classList.add(
+                            faqItem.classList.toggle(
                                 "active"
                             );
 
 
-                        } else {
-
 
                             console.log(
-                                "Content not found for:",
-                                serviceId
+                                "FAQ toggled"
                             );
 
 
@@ -178,6 +252,7 @@ document.addEventListener(
 
                     }
                 );
+
 
 
             }

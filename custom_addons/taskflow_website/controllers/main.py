@@ -2,7 +2,6 @@ from odoo import http
 from odoo.http import request
 
 
-
 class TaskflowWebsite(http.Controller):
 
 
@@ -19,8 +18,6 @@ class TaskflowWebsite(http.Controller):
 
 
 
-
-
     @http.route(
         '/about',
         auth='public',
@@ -34,9 +31,6 @@ class TaskflowWebsite(http.Controller):
 
 
 
-
-
-
     @http.route(
         '/services',
         auth='public',
@@ -44,11 +38,15 @@ class TaskflowWebsite(http.Controller):
     )
     def services_page(self, **kw):
 
+
         services = request.env[
             'taskflow.service'
-        ].sudo().search([
-            ('active', '=', True)
-        ])
+        ].sudo().search(
+            [
+                ('active', '=', True)
+            ],
+            order='sequence'
+        )
 
 
         return request.render(
@@ -60,12 +58,12 @@ class TaskflowWebsite(http.Controller):
 
 
 
-
-
-
+    # SERVICE DETAIL PAGE
+    # URL:
+    # /services/<service_id>
 
     @http.route(
-        '/service/<int:service_id>',
+        '/services/<int:service_id>',
         auth='public',
         website=True
     )
@@ -78,11 +76,16 @@ class TaskflowWebsite(http.Controller):
 
         service = request.env[
             'taskflow.service'
-        ].sudo().browse(service_id)
+        ].sudo().search(
+            [
+                ('id', '=', service_id),
+                ('active', '=', True)
+            ],
+            limit=1
+        )
 
 
-
-        if not service.exists():
+        if not service:
 
             return request.not_found()
 
@@ -94,10 +97,6 @@ class TaskflowWebsite(http.Controller):
                 'service': service
             }
         )
-
-
-
-
 
 
 
@@ -115,7 +114,6 @@ class TaskflowWebsite(http.Controller):
         service = False
 
 
-
         if kw.get('service'):
 
 
@@ -126,18 +124,12 @@ class TaskflowWebsite(http.Controller):
             )
 
 
-
         return request.render(
             'taskflow_website.contact_page',
             {
                 'service': service
             }
         )
-
-
-
-
-
 
 
 
@@ -154,9 +146,7 @@ class TaskflowWebsite(http.Controller):
     ):
 
 
-
         service_name = ""
-
 
 
         if post.get('service_id'):
@@ -175,41 +165,38 @@ class TaskflowWebsite(http.Controller):
 
 
 
-
-
-
         # CREATE CRM LEAD
-
 
         request.env[
             'crm.lead'
         ].sudo().create({
 
-
-            'name': (
-                service_name +
-                " - " +
-                post.get('name')
-                if service_name
-                else post.get('name')
-            ),
-
-
-
-            'email_from': post.get('email'),
+            'name':
+                (
+                    service_name
+                    + " - "
+                    + post.get('name')
+                    if service_name
+                    else post.get('name')
+                ),
 
 
+            'email_from':
+                post.get('email'),
 
-            'partner_name': post.get('company'),
+
+            'partner_name':
+                post.get('company'),
 
 
+            'description':
+                post.get('message'),
 
-            'description': post.get('message'),
 
+            'type':
+                'lead',
 
         })
-
-
 
 
 

@@ -1917,201 +1917,448 @@ padding:30px;
 
 }
 
-/* ==========================
-   SERVICE DETAIL PAGE
-========================== */
+
+/* =====================================
+   SERVICES PAGE
+===================================== */
 
 
-.service-detail-page {
+.services-page {
 
-    padding: 80px 0;
+    background:#f8fafc;
 
-    background: #f8fafc;
-
-}
-
-
-
-.back-services {
-
-    display: inline-block;
-
-    margin-bottom: 40px;
-
-    text-decoration: none;
-
-    color: #2563eb;
-
-    font-weight: 600;
+    padding:90px 0;
 
 }
 
 
 
-.service-detail-header {
 
-    text-align: center;
+.services-header {
 
-    margin-bottom: 50px;
+    text-align:center;
 
-}
-
-
-
-.service-detail-icon {
-
-    width: 90px;
-
-    height: 90px;
-
-    margin: auto;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #2563eb;
-
-    color: white;
-
-    border-radius: 50%;
-
-    font-size: 40px;
+    margin-bottom:70px;
 
 }
 
 
 
-.service-detail-header h1 {
+.services-header h1 {
 
-    margin-top: 25px;
+    font-size:52px;
 
-    font-size: 42px;
+    font-weight:800;
 
-    font-weight: 700;
-
-}
-
-
-
-.service-subtitle {
-
-    font-size: 20px;
-
-    color: #64748b;
+    color:#111827;
 
 }
 
 
 
-.service-detail-card {
+.services-header p {
 
+    font-size:20px;
 
-    background: white;
-
-    padding: 45px;
-
-    border-radius: 16px;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-
-    line-height: 1.8;
+    color:#6b7280;
 
 }
 
 
 
-.service-detail-card h3 {
 
 
-    font-size: 28px;
 
-    margin-bottom: 20px;
+.services-grid {
+
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+
+    gap:35px;
+
 
 }
 
 
 
-.service-detail-card ul {
 
 
-    margin-top: 20px;
 
-    padding-left: 25px;
+.service-card {
+
+
+    background:white;
+
+    padding:40px 35px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.07);
+
+
+    transition:.35s;
+
 
 }
 
 
 
-.service-contact-box {
 
 
-    margin-top: 50px;
 
-    padding: 40px;
+.service-card:hover {
 
-    text-align: center;
 
-    background: #2563eb;
+    transform:translateY(-12px);
 
-    color:white;
 
-    border-radius:16px;
+    box-shadow:
+
+    0 25px 50px rgba(0,0,0,.12);
+
 
 }
 
 
 
-.contact-button {
+
+
+
+.service-icon {
+
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto auto 25px;
+
+
+    background:#eff6ff;
+
+    border-radius:50%;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+}
+
+
+
+
+.service-icon i {
+
+
+    font-size:40px;
+
+    color:#2563eb;
+
+
+}
+
+
+
+
+
+.service-card h2 {
+
+
+    font-size:25px;
+
+    margin-bottom:20px;
+
+    color:#111827;
+
+
+}
+
+
+
+
+
+.service-card p {
+
+
+    color:#6b7280;
+
+    line-height:1.7;
+
+    min-height:80px;
+
+
+}
+
+
+
+
+
+
+
+.service-link {
 
 
     display:inline-block;
 
-    margin-top:20px;
+    margin-top:25px;
 
-    padding:12px 30px;
-
-    background:white;
 
     color:#2563eb;
 
-    border-radius:8px;
+    font-weight:700;
 
     text-decoration:none;
 
-    font-weight:600;
+
+}
+
+
+
+.service-link:hover {
+
+
+    color:#1d4ed8;
+
+
+}
+
+/* ===========================
+   THANK YOU PAGE
+=========================== */
+
+
+.thank-you-page {
+
+    padding:100px 0;
+
+    background:#f8fafc;
+
+}
+
+
+
+.thank-you-card {
+
+    max-width:600px;
+
+    margin:auto;
+
+    background:white;
+
+    text-align:center;
+
+    padding:60px 40px;
+
+    border-radius:25px;
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.1);
+
+}
+
+
+
+.thank-you-icon i {
+
+    font-size:80px;
+
+    color:#16a34a;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.thank-you-card h1 {
+
+    font-size:45px;
+
+    font-weight:800;
+
+}
+
+
+
+.thank-you-card p {
+
+    font-size:18px;
+
+    color:#6b7280;
+
+    line-height:1.7;
 
 }
 
 /* =====================================
-   SERVICE DETAIL PAGE
+   TASKFLOW NAVBAR ALIGNMENT
+===================================== */
+
+
+header .navbar {
+
+    padding: 15px 0;
+
+}
+
+
+
+header .navbar .container {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+
+/* Website name/logo */
+
+.navbar-brand {
+
+
+    font-size:26px;
+
+    font-weight:700;
+
+    color:#111827 !important;
+
+}
+
+
+
+
+/* Menu container */
+
+.navbar-nav {
+
+
+    display:flex !important;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+
+
+/* Menu items */
+
+.navbar-nav .nav-link {
+
+
+    font-size:16px;
+
+    font-weight:500;
+
+    color:#374151 !important;
+
+    transition:0.3s ease;
+
+
+}
+
+
+
+
+.navbar-nav .nav-link:hover {
+
+
+    color:#2563eb !important;
+
+
+}
+
+
+
+
+/* Active menu */
+
+.navbar-nav .nav-link.active {
+
+
+    color:#2563eb !important;
+
+    font-weight:700;
+
+
+}
+
+
+
+
+/* Mobile adjustment */
+
+@media(max-width:768px){
+
+
+    .navbar-nav {
+
+
+        gap:10px;
+
+    }
+
+
+}
+
+/* =====================================
+   TASKFLOW SERVICE DETAIL PAGE
 ===================================== */
 
 
 .service-detail-page {
 
-    padding: 80px 0;
+    padding:100px 0;
 
-    background: #f8fafc;
+    background:
+    linear-gradient(
+        180deg,
+        #f8fafc,
+        #ffffff
+    );
 
 }
 
 
 
+/* BACK BUTTON */
 
 .back-services {
 
-    display: inline-block;
+    display:inline-flex;
 
-    margin-bottom: 40px;
+    align-items:center;
 
-    color: #2563eb;
+    gap:10px;
 
-    text-decoration: none;
+    margin-bottom:40px;
 
-    font-weight: 600;
+    color:#2563eb;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
 
 }
 
@@ -2119,7 +2366,7 @@ padding:30px;
 
 .back-services:hover {
 
-    text-decoration: underline;
+    transform:translateX(-6px);
 
 }
 
@@ -2127,128 +2374,79 @@ padding:30px;
 
 
 
+/* HERO SECTION */
 
-/* SERVICE HEADER */
+
+.service-hero {
 
 
-.service-detail-header {
+    display:grid;
 
-    text-align: center;
 
-    margin-bottom: 50px;
+    grid-template-columns:
+    1fr 280px;
+
+
+    gap:60px;
+
+
+    align-items:center;
+
+
+    background:white;
+
+
+    padding:60px;
+
+
+    border-radius:30px;
+
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.08);
+
+
+    margin-bottom:70px;
+
 
 }
 
 
 
-.service-detail-icon {
+.service-hero-text h1 {
 
-    width: 90px;
 
-    height: 90px;
+    font-size:50px;
 
-    margin: 0 auto 25px;
 
-    display: flex;
+    font-weight:800;
 
-    align-items: center;
 
-    justify-content: center;
+    color:#0f172a;
 
-    background: #2563eb;
 
-    color: white;
+    margin-bottom:20px;
 
-    border-radius: 50%;
-
-    font-size: 40px;
 
 }
 
 
 
-.service-detail-header h1 {
-
-    font-size: 42px;
-
-    font-weight: 700;
-
-    color: #111827;
-
-}
+.service-tagline {
 
 
-
-.service-subtitle {
-
-    margin-top: 15px;
-
-    font-size: 20px;
-
-    color: #6b7280;
-
-}
+    font-size:20px;
 
 
+    color:#64748b;
 
 
+    line-height:1.8;
 
 
+    margin-bottom:35px;
 
-/* DETAIL CONTENT */
-
-
-.service-detail-card {
-
-    background: white;
-
-    padding: 45px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-
-    margin-bottom: 50px;
-
-}
-
-
-
-
-.service-detail-card h2 {
-
-    font-size: 30px;
-
-    color: #111827;
-
-    margin-bottom: 20px;
-
-}
-
-
-
-.service-detail-card h3 {
-
-    margin-top: 30px;
-
-    margin-bottom: 15px;
-
-    color: #2563eb;
-
-    font-size: 22px;
-
-}
-
-
-
-
-.service-detail-card p {
-
-    font-size: 17px;
-
-    line-height: 1.8;
-
-    color: #4b5563;
 
 }
 
@@ -2256,31 +2454,59 @@ padding:30px;
 
 
 
-.service-detail-card ul {
+.service-hero-image {
 
-    padding-left: 25px;
+
+    width:230px;
+
+
+    height:230px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    margin:auto;
+
+
+    border-radius:50%;
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #38bdf8
+    );
+
+
+    color:white;
+
+
+    box-shadow:
+
+    0 20px 50px rgba(37,99,235,.35);
+
 
 }
 
 
 
-.service-detail-card li {
-
-    margin-bottom: 10px;
-
-    font-size: 16px;
-
-    color: #374151;
-
-}
 
 
+.service-hero-image i {
 
 
+    font-size:90px;
 
-.service-detail-card li::marker {
-
-    color: #2563eb;
 
 }
 
@@ -2290,24 +2516,432 @@ padding:30px;
 
 
 
-/* CONTACT CTA */
+/* SECTION TITLE */
 
 
-.service-contact-box {
+.service-section {
 
-    background: linear-gradient(
+
+    margin-bottom:80px;
+
+
+}
+
+
+
+.service-section h2 {
+
+
+    text-align:center;
+
+
+    font-size:40px;
+
+
+    font-weight:800;
+
+
+    color:#0f172a;
+
+
+    margin-bottom:40px;
+
+
+}
+
+
+
+
+
+
+
+
+/* OVERVIEW CARD */
+
+
+.service-card {
+
+
+    background:white;
+
+
+    padding:50px;
+
+
+    border-radius:25px;
+
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.08);
+
+
+}
+
+
+
+
+.service-card p {
+
+
+    font-size:18px;
+
+
+    color:#475569;
+
+
+    line-height:1.9;
+
+
+}
+
+
+
+
+
+.service-card ul {
+
+
+    padding-left:25px;
+
+
+}
+
+
+
+.service-card li {
+
+
+    margin-bottom:15px;
+
+
+    font-size:17px;
+
+
+}
+
+
+
+
+
+
+
+
+/* FEATURES */
+
+
+.feature-grid {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+
+    gap:25px;
+
+
+}
+
+
+
+
+
+.feature-card {
+
+
+    background:white;
+
+
+    padding:35px 25px;
+
+
+    text-align:center;
+
+
+    border-radius:22px;
+
+
+    box-shadow:
+
+    0 12px 35px rgba(0,0,0,.07);
+
+
+    transition:.35s;
+
+
+}
+
+
+
+
+.feature-card:hover {
+
+
+    transform:translateY(-10px);
+
+
+}
+
+
+
+
+
+.feature-card i {
+
+
+    font-size:45px;
+
+
+    color:#2563eb;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.feature-card h3 {
+
+
+    font-size:22px;
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+
+
+
+
+
+/* IMPLEMENTATION PROCESS */
+
+
+.process-container {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(4,1fr);
+
+
+    gap:25px;
+
+
+}
+
+
+
+
+
+.process-step {
+
+
+    background:white;
+
+
+    padding:35px 25px;
+
+
+    text-align:center;
+
+
+    border-radius:20px;
+
+
+    box-shadow:
+
+    0 12px 30px rgba(0,0,0,.07);
+
+
+}
+
+
+
+
+
+.process-step span {
+
+
+    width:50px;
+
+
+    height:50px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    margin:auto auto 20px;
+
+
+    background:#2563eb;
+
+
+    color:white;
+
+
+    border-radius:50%;
+
+
+    font-size:20px;
+
+
+    font-weight:700;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* FAQ */
+
+
+.faq-container {
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:20px;
+
+
+}
+
+
+
+
+.faq-item {
+
+
+    background:white;
+
+
+    padding:25px;
+
+
+    border-radius:20px;
+
+
+    box-shadow:
+
+    0 12px 30px rgba(0,0,0,.07);
+
+
+}
+
+
+
+
+
+.faq-question {
+
+
+    width:100%;
+
+
+    border:none;
+
+
+    background:none;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    font-size:18px;
+
+
+    font-weight:700;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+.faq-answer {
+
+
+    margin-top:15px;
+
+
+    color:#64748b;
+
+
+}
+
+
+
+
+
+
+
+
+/* CALL TO ACTION */
+
+
+.service-cta {
+
+
+    padding:70px 40px;
+
+
+    text-align:center;
+
+
+    background:
+
+
+    linear-gradient(
         135deg,
         #2563eb,
         #1e40af
     );
 
+
     color:white;
 
-    padding:50px;
 
-    border-radius:15px;
+    border-radius:30px;
 
-    text-align:center;
 
 }
 
@@ -2315,52 +2949,73 @@ padding:30px;
 
 
 
-.service-contact-box h2 {
+.service-cta h2 {
 
-    font-size:32px;
 
-    margin-bottom:15px;
+    font-size:42px;
+
+
+    font-weight:800;
+
 
 }
 
 
 
 
-.service-contact-box p {
+.service-cta p {
+
 
     font-size:18px;
 
-    margin-bottom:30px;
+
+    margin:25px 0 35px;
+
 
 }
+
 
 
 
 
 .contact-button {
 
+
     display:inline-block;
+
+
+    padding:15px 40px;
+
 
     background:white;
 
+
     color:#2563eb;
 
-    padding:14px 35px;
 
-    border-radius:8px;
+    border-radius:50px;
+
 
     font-weight:700;
 
+
     text-decoration:none;
 
+
+    transition:.3s;
+
+
 }
+
 
 
 
 
 .contact-button:hover {
 
-    background:#f1f5f9;
+
+    transform:translateY(-5px);
+
 
 }
 
@@ -2369,33 +3024,269 @@ padding:30px;
 
 
 
-/* MOBILE RESPONSIVE */
-
-
-@media(max-width:768px){
-
-
-    .service-detail-header h1{
-
-        font-size:32px;
-
-    }
 
 
 
-    .service-detail-card{
-
-        padding:25px;
-
-    }
+/* MOBILE */
 
 
+@media(max-width:900px){
 
-    .service-contact-box{
 
-        padding:30px;
 
-    }
+.service-hero {
+
+
+    grid-template-columns:1fr;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+.feature-grid {
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+
+
+.process-container {
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+
+
+.service-hero-text h1 {
+
+
+    font-size:35px;
+
+
+}
+
+
+
+}
+
+/* TASKFLOW MODERN SERVICES DESIGN */
+
+
+.tf-service-hero {
+
+padding:100px 20px;
+
+background:
+linear-gradient(
+135deg,
+#0f172a,
+#2563eb
+);
+
+color:white;
+
+text-align:center;
+
+}
+
+
+
+.tf-service-hero h1 {
+
+font-size:48px;
+
+font-weight:800;
+
+}
+
+
+
+.tf-service-hero p {
+
+font-size:20px;
+
+max-width:750px;
+
+margin:20px auto;
+
+}
+
+
+
+
+.tf-primary-btn {
+
+
+background:#2563eb;
+
+color:white;
+
+padding:14px 35px;
+
+border-radius:40px;
+
+text-decoration:none;
+
+display:inline-block;
+
+margin-top:20px;
+
+transition:.3s;
+
+
+}
+
+
+
+.tf-primary-btn:hover {
+
+background:white;
+
+color:#2563eb;
+
+}
+
+
+
+.tf-services-section {
+
+padding:80px 20px;
+
+}
+
+
+
+.tf-service-box {
+
+
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.08);
+
+
+height:100%;
+
+transition:.4s;
+
+
+}
+
+
+
+.tf-service-box:hover {
+
+
+transform:translateY(-12px);
+
+
+}
+
+
+
+.tf-icon {
+
+
+width:75px;
+
+height:75px;
+
+background:#2563eb;
+
+color:white;
+
+border-radius:50%;
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+font-size:30px;
+
+
+margin-bottom:25px;
+
+
+}
+
+
+
+.tf-service-box h3 {
+
+font-weight:700;
+
+}
+
+
+
+.tf-link {
+
+
+color:#2563eb;
+
+font-weight:600;
+
+text-decoration:none;
+
+}
+
+
+
+
+.tf-process {
+
+
+background:#f8fafc;
+
+padding:80px 20px;
+
+
+}
+
+
+
+.tf-process h4 {
+
+
+font-size:40px;
+
+color:#2563eb;
+
+
+}
+
+
+
+
+.tf-contact-banner {
+
+
+background:#0f172a;
+
+color:white;
+
+padding:80px 20px;
 
 
 }

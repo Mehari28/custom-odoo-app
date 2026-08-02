@@ -2,177 +2,206 @@
 
 <odoo>
 
+<template 
+    id="services_page"
+    name="Services Page"
+>
 
-    <template
-        id="services_page"
-        name="TaskFlow Services"
-    >
+<t t-call="website.layout">
 
 
-        <t t-call="website.layout">
+<section class="tf-service-hero">
 
+<div class="container">
 
+<h1>
+Smart ERP Solutions For Growing Businesses
+</h1>
 
-            <section class="services-page">
+<p>
+We design, customize and implement Odoo solutions
+that help companies automate operations and improve productivity.
+</p>
 
 
+<a href="/contact"
+class="tf-primary-btn">
 
-                <div class="container">
+Request Free Consultation
 
+</a>
 
+</div>
 
+</section>
 
 
-                    <!-- HEADER -->
 
 
-                    <div class="services-header">
+<section class="container tf-services-section">
 
 
-                        <h1>
+<div class="text-center mb-5">
 
-                            Our Services
+<h2>
+Our Services
+</h2>
 
-                        </h1>
 
+<p>
+Solutions designed around your business needs
+</p>
 
 
-                        <p>
+</div>
 
-                            We provide complete digital solutions
-                            to help businesses automate,
-                            integrate and grow.
 
-                        </p>
 
+<div class="row">
 
 
-                    </div>
+<t t-foreach="services" t-as="service">
 
 
+<div class="col-lg-4 col-md-6 mb-4">
 
 
+<div class="tf-service-box">
 
 
+<div class="tf-icon">
 
+<i t-att-class="'fa '+service.icon"/>
 
+</div>
 
-                    <!-- SERVICES LIST -->
 
 
-                    <div class="services-grid">
+<h3>
+<t t-esc="service.name"/>
+</h3>
 
 
 
-                        <t t-foreach="services" t-as="service">
+<p>
+<t t-esc="service.short_description"/>
+</p>
 
 
 
-                            <div class="service-card">
+<a 
+t-att-href="'/services/%s'%service.id"
+class="tf-link">
 
+View Solution →
 
+</a>
 
 
+</div>
 
-                                <!-- ICON -->
 
+</div>
 
-                                <div class="service-icon">
 
+</t>
 
-                                    <i t-att-class="'fa ' + service.icon"/>
 
+</div>
 
-                                </div>
 
+</section>
 
 
 
 
 
-                                <!-- TITLE -->
+<section class="tf-process">
 
+<div class="container">
 
-                                <h2>
 
+<h2 class="text-center">
 
-                                    <t t-esc="service.name"/>
+Our Implementation Process
 
+</h2>
 
-                                </h2>
 
 
+<div class="row text-center mt-5">
 
 
+<div class="col-md-3">
 
+<h4>01</h4>
 
-                                <!-- SHORT DESCRIPTION -->
+<h5>Discovery</h5>
 
+<p>
+Understanding your business requirements.
+</p>
 
-                                <p>
+</div>
 
 
-                                    <t t-esc="service.short_description"/>
 
+<div class="col-md-3">
 
-                                </p>
+<h4>02</h4>
 
+<h5>Planning</h5>
 
+<p>
+Designing the right solution.
+</p>
 
+</div>
 
 
 
 
+<div class="col-md-3">
 
-                                <!-- DETAILS BUTTON -->
+<h4>03</h4>
 
+<h5>Implementation</h5>
 
-                                <a
-                                    t-att-href="'/service/' + str(service.id)"
-                                    class="learn-more"
-                                >
+<p>
+Configuring and customizing Odoo.
+</p>
 
+</div>
 
-                                    Learn More →
 
 
-                                </a>
 
+<div class="col-md-3">
 
+<h4>04</h4>
 
+<h5>Support</h5>
 
-                            </div>
+<p>
+Continuous improvement and assistance.
+</p>
 
+</div>
 
 
 
-                        </t>
+</div>
 
 
+</div>
 
 
-                    </div>
+</section>
 
 
+</t>
 
-
-
-                </div>
-
-
-
-
-            </section>
-
-
-
-
-        </t>
-
-
-
-    </template>
-
+</template>
 
 
 </odoo>
