@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <odoo>
 
     <template
@@ -9,15 +10,23 @@
 
         <xpath expr="." position="inside">
 
+
             <!-- Main Website Styles -->
             <link rel="stylesheet"
                   type="text/css"
                   href="/taskflow_website/static/src/css/style.css"/>
 
+
             <!-- Service Detail Styles -->
             <link rel="stylesheet"
                   type="text/css"
                   href="/taskflow_website/static/src/css/service_detail.css"/>
+
+
+            <!-- Main Website JavaScript -->
+            <script type="module"
+                    src="/taskflow_website/static/src/js/main.js"/>
+
 
         </xpath>
 

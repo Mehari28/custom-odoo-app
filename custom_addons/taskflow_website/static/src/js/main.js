@@ -2,6 +2,66 @@
 
 console.log("TaskFlow JS Loaded");
 
+function animateCounters() {
+
+    const counters =
+        document.querySelectorAll(".counter");
+
+
+    console.log(
+        "Counter elements found:",
+        counters.length
+    );
+
+
+    counters.forEach(
+        function(counter) {
+
+
+            const target =
+                Number(
+                    counter.dataset.target
+                );
+
+
+            let current = 0;
+
+
+            const increment =
+                Math.ceil(
+                    target / 100
+                );
+
+
+            function update() {
+
+
+                current += increment;
+
+
+                if (current >= target) {
+
+                    counter.innerText = target;
+
+                } else {
+
+                    counter.innerText = current;
+
+                    requestAnimationFrame(update);
+
+                }
+
+            }
+
+
+            update();
+
+
+        }
+    );
+
+}
+
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -27,7 +87,6 @@ document.addEventListener(
             );
 
 
-
         console.log(
             "Service buttons found:",
             buttons.length
@@ -41,17 +100,10 @@ document.addEventListener(
 
 
 
-
         if (
             buttons.length > 0 &&
             contents.length > 0
         ) {
-
-
-
-            /*
-            Default first service active
-            */
 
 
             buttons[0].classList.add(
@@ -65,14 +117,6 @@ document.addEventListener(
 
 
 
-
-
-
-            /*
-            Service switching
-            */
-
-
             buttons.forEach(
                 function(button) {
 
@@ -80,7 +124,6 @@ document.addEventListener(
                     button.addEventListener(
                         "click",
                         function () {
-
 
 
                             const serviceId =
@@ -93,13 +136,6 @@ document.addEventListener(
                                 serviceId
                             );
 
-
-
-
-
-                            /*
-                            Remove active states
-                            */
 
 
                             buttons.forEach(
@@ -126,27 +162,10 @@ document.addEventListener(
 
 
 
-
-
-
-
-                            /*
-                            Activate selected button
-                            */
-
-
                             this.classList.add(
                                 "active"
                             );
 
-
-
-
-
-
-                            /*
-                            Display selected content
-                            */
 
 
                             const selectedContent =
@@ -174,7 +193,6 @@ document.addEventListener(
 
 
                             }
-
 
 
                         }
@@ -212,17 +230,13 @@ document.addEventListener(
 
 
 
-
-
         faqButtons.forEach(
             function(button) {
-
 
 
                 button.addEventListener(
                     "click",
                     function () {
-
 
 
                         const faqItem =
@@ -249,10 +263,91 @@ document.addEventListener(
                         }
 
 
-
                     }
                 );
 
+
+            }
+        );
+
+
+
+
+
+        /*
+        ======================================
+        COUNTER ANIMATION
+        ======================================
+        */
+
+
+        const counters =
+            document.querySelectorAll(
+                ".counter"
+            );
+
+
+        console.log(
+            "Counters found:",
+            counters.length
+        );
+
+
+
+        counters.forEach(
+            function(counter) {
+
+
+                const target =
+                    Number(
+                        counter.dataset.target
+                    );
+
+
+                let current = 0;
+
+
+                const increment =
+                    Math.ceil(
+                        target / 80
+                    );
+
+
+
+                function updateCounter() {
+
+
+                    current += increment;
+
+
+
+                    if (current >= target) {
+
+
+                        counter.innerText =
+                            target;
+
+
+                    } else {
+
+
+                        counter.innerText =
+                            current;
+
+
+                        requestAnimationFrame(
+                            updateCounter
+                        );
+
+
+                    }
+
+
+                }
+
+
+
+                updateCounter();
 
 
             }
@@ -262,3 +357,5 @@ document.addEventListener(
 
     }
 );
+
+animateCounters();
