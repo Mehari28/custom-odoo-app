@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_task_management,access.task.management,model_task_management,,1,1,1,1
+access_task_management_user,access.task.management.user,model_task_management,base.group_user,1,1,1,1
+access_task_management_portal,access.task.management.portal,model_task_management,base.group_portal,1,0,0,0
+access_task_management_comment_user,access.task.management.comment.user,model_task_management_comment,base.group_user,1,1,1,1

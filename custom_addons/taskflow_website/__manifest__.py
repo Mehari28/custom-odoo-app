@@ -5,28 +5,41 @@
 
     "category": "Website",
 
+    "author": "TaskFlow",
+
     "summary": "TaskFlow Services Website",
 
     "description": """
         TaskFlow website service management module.
+        Provides service management, website pages,
+        and customized login branding.
     """,
 
     "depends": [
         "website",
+        "web",
         "crm",
     ],
+
 
     "data": [
 
         # Security
         "security/ir.model.access.csv",
 
+
+        # Service Data
+        "data/services.xml",
+
+
         # Backend
         "views/service_backend.xml",
         "views/menu.xml",
 
+
         # Website Menu
         "views/website_menu.xml",
+
 
         # Website Pages
         "views/home.xml",
@@ -34,9 +47,14 @@
         "views/contact.xml",
         "views/contact_thank_you.xml",
         "views/services.xml",
-        "views/service_detail.xml",   
+        "views/service_detail.xml",
+
+
+        # Login Page Branding
+        "views/login.xml",
 
     ],
+
 
     "assets": {
 
@@ -49,6 +67,7 @@
         ],
 
     },
+
 
     "installable": True,
 

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_home_tasks" inherit_id="portal.portal_my_home" name="Task requests portal entry">
+        <xpath expr="//div[@id='portal_common_category']" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Task Requests</t>
+                <t t-set="text">Submit and follow your task requests</t>
+                <t t-set="url" t-value="'/my/tasks'"/>
+                <t t-set="placeholder_count" t-value="'task_request_count'"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="portal_my_tasks" name="My Task Requests">
+        <t t-call="portal.portal_layout">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="mb-0">My Task Requests</h3>
+                <a class="btn btn-primary" href="/my/tasks/new">New Request</a>
+            </div>
+            <div t-if="submitted" class="alert alert-success">Your task request has been submitted.</div>
+            <div class="row g-3 mb-4">
+                <div class="col-md-4"><div class="card h-100"><div class="card-body"><div class="text-muted small">Total requests</div><div class="fs-3 fw-semibold" t-esc="len(tasks)"/></div></div></div>
+                <div class="col-md-4"><div class="card h-100"><div class="card-body"><div class="text-muted small">Awaiting your response</div><div class="fs-3 fw-semibold" t-esc="waiting_count"/></div></div></div>
+                <div class="col-md-4"><div class="card h-100"><div class="card-body"><div class="text-muted small">Completed</div><div class="fs-3 fw-semibold" t-esc="completed_count"/></div></div></div>
+            </div>
+            <div t-if="not tasks" class="alert alert-info">You have not submitted any task requests yet.</div>
+            <div t-if="tasks" class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead><tr><th>Task</th><th>Service</th><th>SLA target</th><th>Priority</th><th>Status</th></tr></thead>
+                    <tbody>
+                        <tr t-foreach="tasks" t-as="task">
+                            <td><a t-att-href="'/my/tasks/%s' % task.id"><span t-field="task.name"/></a></td>
+                            <td><span t-field="task.service_id"/></td>
+                            <td><span t-field="task.sla_deadline"/></td>
+                            <td><span t-esc="dict(task._fields['priority']._description_selection(request.env))[task.priority]"/></td>
+                            <td><span t-esc="dict(task._fields['state']._description_selection(request.env))[task.state]"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_new_task" name="New Task Request">
+        <t t-call="portal.portal_layout">
+            <div class="row"><div class="col-lg-8">
+                <h3>New Task Request</h3>
+                <p class="text-muted">Your request will be reviewed and assigned by our team.</p>
+                <div t-if="error" class="alert alert-danger" t-esc="error"/>
+                <form action="/my/tasks/submit" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="row"><div class="col-md-6 mb-3"><label class="form-label" for="service_id">Service</label><select id="service_id" class="form-select" name="service_id"><option value="">Select a service (optional)</option><option t-foreach="services" t-as="service" t-att-value="service.id" t-att-selected="values.get('service_id') == service.id" t-esc="service.name"/></select></div>
+                    <div class="col-md-6 mb-3"><label class="form-label" for="request_type">Request type</label><select id="request_type" class="form-select" name="request_type"><option value="support" t-att-selected="values.get('request_type', 'support') == 'support'">Support request</option><option value="change" t-att-selected="values.get('request_type') == 'change'">Change request</option><option value="onboarding" t-att-selected="values.get('request_type') == 'onboarding'">Onboarding</option><option value="bug" t-att-selected="values.get('request_type') == 'bug'">Bug report</option><option value="consultation" t-att-selected="values.get('request_type') == 'consultation'">Consultation</option></select></div></div>
+                    <div class="mb-3"><label class="form-label" for="name">Task title</label><input id="name" class="form-control" type="text" name="name" required="required" t-att-value="values.get('name', '')"/></div>
+                    <div class="mb-3"><label class="form-label" for="description">Description</label><textarea id="description" class="form-control" name="description" rows="6" t-esc="values.get('description', '')"/></div>
+                    <div class="row"><div class="col-md-6 mb-3"><label class="form-label" for="deadline">Requested deadline</label><input id="deadline" class="form-control" type="date" name="deadline" t-att-value="values.get('deadline', '')"/></div>
+                    <div class="col-md-6 mb-3"><label class="form-label" for="priority">Priority</label><select id="priority" class="form-select" name="priority"><option value="low" t-att-selected="values.get('priority') == 'low'">Low</option><option value="medium" t-att-selected="values.get('priority', 'medium') == 'medium'">Medium</option><option value="high" t-att-selected="values.get('priority') == 'high'">High</option></select></div></div>
+                    <div class="mb-3"><label class="form-label" for="attachments">Attachments</label><input id="attachments" class="form-control" type="file" name="attachments" multiple="multiple"/><div class="form-text">Up to 10 MB per file.</div></div>
+                    <button class="btn btn-primary" type="submit">Submit Request</button>
+                    <a class="btn btn-secondary" href="/my/tasks">Cancel</a>
+                </form>
+            </div></div>
+        </t>
+    </template>
+
+    <template id="portal_task_detail" name="Task Request Detail">
+        <t t-call="portal.portal_layout">
+            <div class="d-flex justify-content-between align-items-center mb-3"><h3 class="mb-0" t-field="task.name"/><a class="btn btn-secondary" href="/my/tasks">Back to requests</a></div>
+            <dl class="row"><dt class="col-sm-3">Status</dt><dd class="col-sm-9"><span t-esc="dict(task._fields['state']._description_selection(request.env))[task.state]"/></dd><dt class="col-sm-3">Service</dt><dd class="col-sm-9"><span t-field="task.service_id"/></dd><dt class="col-sm-3">Request type</dt><dd class="col-sm-9"><span t-esc="dict(task._fields['request_type']._description_selection(request.env))[task.request_type]"/></dd><dt class="col-sm-3">Priority</dt><dd class="col-sm-9"><span t-esc="dict(task._fields['priority']._description_selection(request.env))[task.priority]"/></dd><dt class="col-sm-3">Requested deadline</dt><dd class="col-sm-9"><span t-field="task.deadline"/></dd><dt class="col-sm-3">SLA target</dt><dd class="col-sm-9"><span t-field="task.sla_deadline"/></dd><dt class="col-sm-3">Description</dt><dd class="col-sm-9"><span t-field="task.description"/></dd></dl>
+            <div class="mb-4" t-if="task.attachment_ids"><h5>Attachments</h5><ul class="mb-0"><li t-foreach="task.attachment_ids" t-as="attachment"><a t-att-href="'/web/content/%s?download=true' % attachment.id" t-esc="attachment.name"/></li></ul></div>
+            <section class="border-top pt-4"><h4>Conversation</h4><div t-if="not comments" class="text-muted mb-3">No updates yet.</div><article t-foreach="comments" t-as="comment" class="border rounded p-3 mb-3"><div class="small text-muted mb-1"><span t-field="comment.partner_id"/> · <span t-field="comment.create_date"/></div><div t-esc="comment.body"/></article><form t-att-action="'/my/tasks/%s/comment' % task.id" method="post"><input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/><div class="mb-3"><label class="form-label" for="body">Add an update</label><textarea id="body" class="form-control" name="body" rows="4" maxlength="5000" required="required"/></div><button type="submit" class="btn btn-primary">Post update</button></form></section>
+        </t>
+    </template>
+</odoo>
