@@ -2,14 +2,20 @@
 
 <odoo>
 
+    <!-- Root Menu -->
     <menuitem
         id="taskflow_root_menu"
-        name="TaskFlow"/>
+        name="TaskFlow"
+        web_icon="taskflow_website,static/image/taskflow_icon.png"
+        sequence="10"/>
 
+
+    <!-- Services Menu -->
     <menuitem
         id="taskflow_service_menu"
         name="Services"
         parent="taskflow_root_menu"
-        action="taskflow_service_action"/>
+        action="taskflow_service_action"
+        sequence="10"/>
 
 </odoo>

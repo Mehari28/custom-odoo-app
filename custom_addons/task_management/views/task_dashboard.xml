@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+
+    <!-- ===================================== -->
+    <!-- GRAPH VIEW: TASKS BY STATUS -->
+    <!-- ===================================== -->
+
+
+    <record id="task_graph_state_view" model="ir.ui.view">
+
+
+        <field name="name">task.management.graph.state</field>
+
+
+        <field name="model">task.management</field>
+
+
+        <field name="arch" type="xml">
+
+
+            <graph
+                string="Tasks By Status"
+                type="bar"
+            >
+
+
+                <field name="state"/>
+
+
+                <field
+                    name="task_count"
+                    type="measure"
+                />
+
+
+            </graph>
+
+
+        </field>
+
+
+    </record>
+
+
+
+
+
+    <!-- ===================================== -->
+    <!-- GRAPH VIEW: TASKS BY PRIORITY -->
+    <!-- ===================================== -->
+
+
+    <record id="task_graph_priority_view" model="ir.ui.view">
+
+
+        <field name="name">task.management.graph.priority</field>
+
+
+        <field name="model">task.management</field>
+
+
+        <field name="arch" type="xml">
+
+
+            <graph
+                string="Tasks By Priority"
+                type="bar"
+            >
+
+
+                <field name="priority"/>
+
+
+                <field
+                    name="task_count"
+                    type="measure"
+                />
+
+
+            </graph>
+
+
+        </field>
+
+
+    </record>
+
+
+
+
+
+    <!-- ===================================== -->
+    <!-- PIVOT VIEW: TASK ANALYSIS -->
+    <!-- ===================================== -->
+
+
+    <record id="task_pivot_view" model="ir.ui.view">
+
+
+        <field name="name">task.management.pivot</field>
+
+
+        <field name="model">task.management</field>
+
+
+        <field name="arch" type="xml">
+
+
+            <pivot string="Task Analysis">
+
+
+                <field
+                    name="state"
+                    type="row"
+                />
+
+
+                <field
+                    name="priority"
+                    type="col"
+                />
+
+
+                <field
+                    name="task_count"
+                    type="measure"
+                />
+
+
+            </pivot>
+
+
+        </field>
+
+
+    </record>
+
+
+
+
+
+    <!-- ===================================== -->
+    <!-- WINDOW ACTION: TASK STATUS GRAPH -->
+    <!-- ===================================== -->
+
+
+    <record id="action_task_status_dashboard" model="ir.actions.act_window">
+
+
+        <field name="name">Tasks By Status</field>
+
+
+        <field name="res_model">task.management</field>
+
+
+        <field name="view_mode">graph</field>
+
+
+        <field name="view_id" ref="task_graph_state_view"/>
+
+
+    </record>
+
+
+
+
+
+    <!-- ===================================== -->
+    <!-- WINDOW ACTION: TASK PRIORITY GRAPH -->
+    <!-- ===================================== -->
+
+
+    <record id="action_task_priority_dashboard" model="ir.actions.act_window">
+
+
+        <field name="name">Tasks By Priority</field>
+
+
+        <field name="res_model">task.management</field>
+
+
+        <field name="view_mode">graph</field>
+
+
+        <field name="view_id" ref="task_graph_priority_view"/>
+
+
+    </record>
+
+
+
+
+
+    <!-- ===================================== -->
+    <!-- WINDOW ACTION: TASK PIVOT -->
+    <!-- ===================================== -->
+
+
+    <record id="action_task_analysis_dashboard" model="ir.actions.act_window">
+
+
+        <field name="name">Task Analysis</field>
+
+
+        <field name="res_model">task.management</field>
+
+
+        <field name="view_mode">pivot</field>
+
+
+        <field name="view_id" ref="task_pivot_view"/>
+
+
+    </record>
+
+
+
+
+
+    <!-- ===================================== -->
+    <!-- DASHBOARD MENU -->
+    <!-- ===================================== -->
+
+
+    <menuitem
+        id="task_dashboard_menu"
+        name="Dashboard"
+        parent="task_management.task_menu"
+        sequence="20"
+    />
+
+
+
+
+    <menuitem
+        id="task_status_dashboard_menu"
+        name="Tasks By Status"
+        parent="task_dashboard_menu"
+        action="action_task_status_dashboard"
+        sequence="1"
+    />
+
+
+
+
+    <menuitem
+        id="task_priority_dashboard_menu"
+        name="Tasks By Priority"
+        parent="task_dashboard_menu"
+        action="action_task_priority_dashboard"
+        sequence="2"
+    />
+
+
+
+
+    <menuitem
+        id="task_analysis_dashboard_menu"
+        name="Task Analysis"
+        parent="task_dashboard_menu"
+        action="action_task_analysis_dashboard"
+        sequence="3"
+    />
+
+
+</odoo>

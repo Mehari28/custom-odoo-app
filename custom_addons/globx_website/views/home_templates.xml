@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+        Hard-coded page: rendered only through the controller in
+        controllers/main.py, not registered as a Website Builder page.
+        No oe_structure/oe_empty zones - nothing here is editable from
+        the front-end builder, everything lives in this XML.
+    -->
+    <template id="globx_home_page" name="GlobX Home">
+        <t t-call="website.layout">
+            <div id="wrap" class="globx_page">
+
+                <!-- ============ HEADER ============ -->
+                <header class="globx_header">
+                    <div class="container d-flex align-items-center justify-content-between flex-wrap py-3 gap-3">
+                        <a href="/home-globx" class="globx-logo">Globx</a>
+
+                        <nav class="globx-nav d-none d-lg-flex align-items-center gap-4">
+                            <a href="/home-globx">Home</a>
+                            <a href="/solutions">solutions</a>
+                            <a href="/casestudies">casestudies</a>
+                            <a href="/news">news</a>
+                            <a href="/about">about</a>
+                            <a href="/contactus">contact</a>
+                        </nav>
+
+                        <a href="/contactus" class="btn globx-btn-primary globx-header-cta d-none d-lg-inline-block">
+                            Book a discovery call
+                        </a>
+
+                        <!-- Mobile-only hamburger toggle -->
+                        <button class="globx-nav-toggle d-lg-none" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                            <span/>
+                            <span/>
+                            <span/>
+                        </button>
+                    </div>
+
+                    <!-- Mobile dropdown panel -->
+                    <div class="globx-mobile-nav d-lg-none">
+                        <a href="/home-globx">Home</a>
+                        <a href="/solutions">solutions</a>
+                        <a href="/casestudies">casestudies</a>
+                        <a href="/news">news</a>
+                        <a href="/about">about</a>
+                        <a href="/contactus">contact</a>
+                        <a href="/contactus" class="btn globx-btn-primary mt-2">Book a discovery call</a>
+                    </div>
+                </header>
+
+                <!-- ============ HERO ============ -->
+                <section class="globx_hero py-5">
+                    <div class="container">
+                        <div class="row align-items-stretch gy-4">
+                            <div class="col-lg-5">
+                                <div class="globx_hero_copy h-100">
+                                    <h1 class="text-white">Scale your business,</h1>
+                                    <p class="mb-4">
+                                        We replace manual bottlenecks with intelligent Odoo
+                                        workflows, helping you grow without the administrative
+                                        overhead.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <a href="/contactus" class="btn globx-btn-primary">
+                                            Book a discovery call
+                                        </a>
+                                        <a href="/solutions" class="btn globx-btn-white">
+                                            Explore our solutions
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="globx_hero_media h-100"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ THE DIFFERENCE IS MANUAL CHAOS ============ -->
+                <section class="globx_manual_chaos py-5">
+                    <div class="container">
+                        <div class="row align-items-center gy-4">
+
+                            <div class="col-lg-6">
+                                <h2 class="text-white">
+                                    The difference is<br/>Manual Chaos
+                                </h2>
+                                <p class="globx-quote fst-italic">
+                                    "Where is that invoice? I'm sure I saved it in the
+                                    spreadsheet..."
+                                </p>
+
+                                <div class="row g-3 my-3">
+                                    <div class="col-6">
+                                        <div class="globx-stat-box">
+                                            <b>4+ Hours</b>
+                                            <span>Wasted Daily</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="globx-stat-box">
+                                            <b>High Risk</b>
+                                            <span>Human Error</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="globx-video-frame js_globx_chaos_video">
+                                    <video
+                                        class="w-100 h-100"
+                                        autoplay="autoplay"
+                                        muted="muted"
+                                        loop="loop"
+                                        playsinline="playsinline"
+                                        preload="metadata"
+                                        poster="/globx_website/static/src/img/manual_chaos_poster.jpg">
+                                        <source
+                                            src="/globx_website/static/src/videos/manual_chaos.webm"
+                                            type="video/webm"/>
+                                        <source
+                                            src="/globx_website/static/src/videos/manual_chaos.mp4"
+                                            type="video/mp4"/>
+                                        Your browser does not support embedded video.
+                                    </video>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ OUR PROCESS ============ -->
+                <section class="globx_process py-5">
+                    <div class="container">
+                        <h2 class="text-white mb-4">Our process</h2>
+
+                        <div class="row gy-4 globx-reveal-group globx-process-row position-relative">
+                            <div class="globx-process-line-track d-none d-md-block">
+                                <div class="globx-process-line-fill globx-reveal"/>
+                            </div>
+
+                            <div class="col-md-3 col-6">
+                                <div class="globx-process-item globx-reveal">
+                                    <div class="globx-process-icon-wrap">
+                                        <svg viewBox="0 0 24 24" class="globx-process-icon">
+                                            <circle cx="10" cy="10" r="6"/>
+                                            <line x1="20" y1="20" x2="14.5" y2="14.5"/>
+                                        </svg>
+                                    </div>
+                                    <b>Discover</b>
+                                    <p>We audit your current workflows and identify bottlenecks.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="globx-process-item globx-reveal">
+                                    <div class="globx-process-icon-wrap">
+                                        <svg viewBox="0 0 24 24" class="globx-process-icon">
+                                            <path d="M3 21l3.5-1 11-11a2 2 0 000-2.8L15.8 4.5a2 2 0 00-2.8 0l-11 11z"/>
+                                        </svg>
+                                    </div>
+                                    <b>Design</b>
+                                    <p>Architecting a custom Odoo solution for your unique DNA.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="globx-process-item globx-reveal">
+                                    <div class="globx-process-icon-wrap">
+                                        <svg viewBox="0 0 24 24" class="globx-process-icon">
+                                            <circle cx="12" cy="12" r="9"/>
+                                            <circle cx="12" cy="12" r="3"/>
+                                        </svg>
+                                    </div>
+                                    <b>Deploy</b>
+                                    <p>Seamless migration with zero downtime and full support.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="globx-process-item globx-reveal">
+                                    <div class="globx-process-icon-wrap">
+                                        <svg viewBox="0 0 24 24" class="globx-process-icon">
+                                            <path d="M3 17l6-6 4 4 8-8"/>
+                                            <path d="M15 7h6v6"/>
+                                        </svg>
+                                    </div>
+                                    <b>Drive</b>
+                                    <p>Continuous optimization and advanced growth analytics.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ WHAT WE BRING TO THE TABLE ============ -->
+                <section class="globx_feature_rows py-5">
+                    <div class="container">
+
+                        <div class="globx-bar-title">
+                            What we bring to the table
+                        </div>
+
+                        <!-- Strategic planning -->
+                        <div class="row align-items-center gy-4 mb-5">
+                            <div class="col-lg-6">
+                                <div class="globx-feature-copy">
+                                    <h3>Strategic planning</h3>
+                                    <p>
+                                        Our experts don't just implement solutions, we help you
+                                        rethink your business strategy for the digital age.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <img class="globx-feature-media"
+                                     src="/globx_website/static/src/img/strategic_planning.jpg"
+                                     alt="Strategic planning"/>
+                            </div>
+                        </div>
+
+                        <!-- System Integration (image on the left this time) -->
+                        <div class="row align-items-center gy-4">
+                            <div class="col-lg-6 order-lg-1">
+                                <img class="globx-feature-media"
+                                     src="/globx_website/static/src/img/system_integration.jpg"
+                                     alt="System Integration"/>
+                            </div>
+                            <div class="col-lg-6 order-lg-2">
+                                <div class="globx-feature-copy">
+                                    <h3>System Integration</h3>
+                                    <p>
+                                        Connecting your existing tools into one powerful Odoo
+                                        ecosystem.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- ============ TESTIMONIALS ============ -->
+                <section class="globx_testimonials py-5">
+                    <div class="container">
+
+                        <h2 class="text-white mb-1">Trusted by industry leaders</h2>
+                        <p class="globx-testimonials-sub mb-4">
+                            Real stories from our global partners
+                        </p>
+
+                        <div class="row gy-4">
+                            <div class="col-md-4">
+                                <div class="globx-testi-card">
+                                    <div class="globx-testi-avatar"/>
+                                    <p>
+                                        "GlobX transformed our supply chain. ROI exceeded every
+                                        projection in Q1."
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="globx-testi-card">
+                                    <div class="globx-testi-avatar"/>
+                                    <p>
+                                        "The Globx expertise is unmatched. They reimagined how
+                                        we work."
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="globx-testi-card">
+                                    <div class="globx-testi-avatar"/>
+                                    <p>
+                                        "Seamless migration with zero downtime. Our long-term
+                                        digital partner."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- ============ FOOTER ============ -->
+                <footer class="globx_footer py-5">
+                    <div class="container">
+                        <div class="row gy-4">
+                            <div class="col-lg-6">
+                                <b class="d-block mb-2">GlobX</b>
+                                <p class="mb-0">
+                                    Official Odoo Silver Partner. Empowering East Africa,
+                                    India, and UAE with intelligent ERP solutions since 2018.
+                                </p>
+                            </div>
+                            <div class="col-lg-3">
+                                <b class="d-block mb-2">Quick Links</b>
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="/solutions">Solutions</a></li>
+                                    <li><a href="/casestudies">Case Studies</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3">
+                                <b class="d-block mb-2">Contact</b>
+                                <a href="mailto:info@globx.rw">info@globx.rw</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+        </t>
+    </template>
+
+</odoo>

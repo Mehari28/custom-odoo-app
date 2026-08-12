@@ -9,6 +9,7 @@
              ODOO ERP SOLUTIONS
         ========================== -->
 
+
         <record id="taskflow_service_erp" model="taskflow.service">
 
             <field name="sequence">10</field>
@@ -18,6 +19,7 @@
             <field name="short_description">
                 Complete ERP implementation and customization.
             </field>
+
 
             <field name="overview"><![CDATA[
                 <h3>Odoo ERP Implementation</h3>
@@ -59,6 +61,40 @@
             ]]></field>
 
 
+            <field name="implementation_process"><![CDATA[
+                <ol>
+                    <li>Business requirements analysis</li>
+                    <li>Odoo module configuration and customization</li>
+                    <li>Data migration and system integration</li>
+                    <li>User training and testing</li>
+                    <li>System deployment and ongoing support</li>
+                </ol>
+            ]]></field>
+
+
+            <field name="faq"><![CDATA[
+                <h4>How long does Odoo implementation take?</h4>
+
+                <p>
+                    The implementation timeline depends on business size,
+                    complexity, customization requirements, and data migration.
+                </p>
+
+                <h4>Can Odoo be customized?</h4>
+
+                <p>
+                    Yes. We customize Odoo modules, workflows,
+                    reports, and integrations according to business needs.
+                </p>
+
+                <h4>Do you provide training?</h4>
+
+                <p>
+                    Yes. We provide user training and post-deployment support.
+                </p>
+            ]]></field>
+
+
             <field name="icon">fa-cubes</field>
 
             <field name="button_text">Request Demo</field>
@@ -67,13 +103,17 @@
 
             <field name="active">True</field>
 
+
         </record>
+
+
 
 
 
         <!-- =========================
              WEBSITE DEVELOPMENT
         ========================== -->
+
 
         <record id="taskflow_service_website" model="taskflow.service">
 
@@ -117,6 +157,35 @@
             ]]></field>
 
 
+            <field name="implementation_process"><![CDATA[
+                <ol>
+                    <li>Website requirement analysis</li>
+                    <li>UI/UX design planning</li>
+                    <li>Frontend and backend development</li>
+                    <li>Testing and optimization</li>
+                    <li>Deployment and maintenance</li>
+                </ol>
+            ]]></field>
+
+
+            <field name="faq"><![CDATA[
+                <h4>Do you create responsive websites?</h4>
+
+                <p>
+                    Yes. Websites are optimized for desktop,
+                    tablet, and mobile devices.
+                </p>
+
+
+                <h4>Can websites be customized?</h4>
+
+                <p>
+                    Yes. We customize websites based on
+                    business requirements and branding.
+                </p>
+            ]]></field>
+
+
             <field name="icon">fa-globe</field>
 
             <field name="button_text">Request Demo</field>
@@ -125,14 +194,16 @@
 
             <field name="active">True</field>
 
+
         </record>
 
 
 
-
+        
         <!-- =========================
              API INTEGRATION
         ========================== -->
+
 
         <record id="taskflow_service_api" model="taskflow.service">
 
@@ -146,50 +217,176 @@
 
 
             <field name="overview"><![CDATA[
+
                 <h3>System Integration Solutions</h3>
 
                 <p>
                     We connect different software platforms using APIs
                     to enable smooth data exchange and automation.
                 </p>
+
+                <p>
+                    Our integration solutions help businesses connect
+                    existing applications and improve information flow.
+                </p>
+
             ]]></field>
+
 
 
             <field name="service_offer"><![CDATA[
+
                 <ul>
-                    <li>REST API integration</li>
-                    <li>Third-party application connection</li>
-                    <li>Data synchronization</li>
-                    <li>Custom integration solutions</li>
+
+                    <li>
+                        REST API integration
+                    </li>
+
+                    <li>
+                        Third-party application connection
+                    </li>
+
+                    <li>
+                        Data synchronization
+                    </li>
+
+                    <li>
+                        Custom integration solutions
+                    </li>
+
                 </ul>
+
             ]]></field>
+
 
 
             <field name="benefits"><![CDATA[
+
                 <ul>
-                    <li>Connected business systems</li>
-                    <li>Reduced manual data entry</li>
-                    <li>Improved workflow efficiency</li>
+
+                    <li>
+                        Connected business systems
+                    </li>
+
+                    <li>
+                        Reduced manual data entry
+                    </li>
+
+                    <li>
+                        Improved workflow efficiency
+                    </li>
+
+                    <li>
+                        Better data consistency
+                    </li>
+
                 </ul>
+
             ]]></field>
+
+
+
+
+            <field name="implementation_process"><![CDATA[
+
+                <ol>
+
+                    <li>
+                        Analyze existing business systems
+                    </li>
+
+                    <li>
+                        Define API requirements
+                    </li>
+
+                    <li>
+                        Develop and configure integration
+                    </li>
+
+                    <li>
+                        Perform testing and validation
+                    </li>
+
+                    <li>
+                        Deploy and monitor integration
+                    </li>
+
+                </ol>
+
+            ]]></field>
+
+
+
+
+            <field name="faq"><![CDATA[
+
+                <h4>
+                    What systems can you integrate?
+                </h4>
+
+
+                <p>
+                    We integrate ERP systems, payment platforms,
+                    websites, mobile applications, and third-party software.
+                </p>
+
+
+
+                <h4>
+                    Do you provide API maintenance?
+                </h4>
+
+
+                <p>
+                    Yes. We provide monitoring, troubleshooting,
+                    and improvement services.
+                </p>
+
+
+
+                <h4>
+                    Do APIs improve business automation?
+                </h4>
+
+
+                <p>
+                    Yes. APIs allow different systems to communicate
+                    automatically and reduce manual operations.
+                </p>
+
+
+            ]]></field>
+
+
 
 
             <field name="icon">fa-plug</field>
 
-            <field name="button_text">Request Demo</field>
 
-            <field name="button_link">/contact</field>
+            <field name="button_text">
+                Request Demo
+            </field>
 
-            <field name="active">True</field>
+
+            <field name="button_link">
+                /contact
+            </field>
+
+
+            <field name="active">
+                True
+            </field>
+
 
         </record>
 
 
 
-
+        
         <!-- =========================
              BUSINESS AUTOMATION
         ========================== -->
+
 
         <record id="taskflow_service_automation" model="taskflow.service">
 
@@ -202,103 +399,419 @@
             </field>
 
 
+
+
             <field name="overview"><![CDATA[
+
                 <h3>Business Process Automation</h3>
+
 
                 <p>
                     We help businesses automate repetitive tasks,
                     improve workflows, and increase operational efficiency.
                 </p>
+
+
+                <p>
+                    Our automation solutions reduce manual work,
+                    improve accuracy, and allow teams to focus on
+                    higher-value business activities.
+                </p>
+
+
             ]]></field>
+
+
 
 
             <field name="service_offer"><![CDATA[
+
                 <ul>
-                    <li>Workflow automation</li>
-                    <li>Email automation</li>
-                    <li>Business process optimization</li>
-                    <li>Custom automation solutions</li>
+
+                    <li>
+                        Workflow automation
+                    </li>
+
+                    <li>
+                        Email automation
+                    </li>
+
+                    <li>
+                        Business process optimization
+                    </li>
+
+                    <li>
+                        Approval workflow automation
+                    </li>
+
+                    <li>
+                        Custom automation solutions
+                    </li>
+
                 </ul>
+
             ]]></field>
+
+
+
 
 
             <field name="benefits"><![CDATA[
+
                 <ul>
-                    <li>Reduced operational costs</li>
-                    <li>Faster business processes</li>
-                    <li>Improved productivity</li>
+
+                    <li>
+                        Reduced operational costs
+                    </li>
+
+                    <li>
+                        Faster business processes
+                    </li>
+
+                    <li>
+                        Improved productivity
+                    </li>
+
+                    <li>
+                        Fewer manual errors
+                    </li>
+
                 </ul>
+
+
             ]]></field>
+
+
+
+
+
+            <field name="implementation_process"><![CDATA[
+
+                <ol>
+
+                    <li>
+                        Identify repetitive business processes
+                    </li>
+
+                    <li>
+                        Analyze workflow improvements
+                    </li>
+
+                    <li>
+                        Configure automation solutions
+                    </li>
+
+                    <li>
+                        Test automated workflows
+                    </li>
+
+                    <li>
+                        Deploy and optimize processes
+                    </li>
+
+                </ol>
+
+
+            ]]></field>
+
+
+
+
+
+            <field name="faq"><![CDATA[
+
+                <h4>
+                    What processes can be automated?
+                </h4>
+
+
+                <p>
+                    We automate workflows, notifications,
+                    approvals, reporting, and repetitive operations.
+                </p>
+
+
+
+                <h4>
+                    Will automation replace existing systems?
+                </h4>
+
+
+                <p>
+                    No. Automation improves existing systems
+                    by making processes faster and more efficient.
+                </p>
+
+
+
+                <h4>
+                    Can automation work with Odoo?
+                </h4>
+
+
+                <p>
+                    Yes. We configure Odoo workflows,
+                    automated actions, and integrations to
+                    improve business operations.
+                </p>
+
+
+            ]]></field>
+
+
+
 
 
             <field name="icon">fa-cogs</field>
 
-            <field name="button_text">Request Demo</field>
 
-            <field name="button_link">/contact</field>
+            <field name="button_text">
+                Request Demo
+            </field>
 
-            <field name="active">True</field>
+
+            <field name="button_link">
+                /contact
+            </field>
+
+
+            <field name="active">
+                True
+            </field>
+
 
         </record>
 
 
 
-
+        
         <!-- =========================
              TECHNICAL SUPPORT
         ========================== -->
 
+
         <record id="taskflow_service_support" model="taskflow.service">
+
 
             <field name="sequence">50</field>
 
-            <field name="name">Technical Support</field>
+
+            <field name="name">
+                Technical Support
+            </field>
+
 
             <field name="short_description">
                 Continuous system support.
             </field>
 
 
+
+
             <field name="overview"><![CDATA[
-                <h3>Technical Support Services</h3>
+
+                <h3>
+                    Technical Support Services
+                </h3>
+
 
                 <p>
                     We provide continuous technical assistance,
                     maintenance, troubleshooting, and system improvements.
                 </p>
+
+
+                <p>
+                    Our support team helps businesses maintain reliable
+                    systems, resolve issues quickly, and minimize
+                    operational disruptions.
+                </p>
+
+
             ]]></field>
+
+
+
 
 
             <field name="service_offer"><![CDATA[
+
                 <ul>
-                    <li>System troubleshooting</li>
-                    <li>Maintenance and upgrades</li>
-                    <li>User assistance</li>
-                    <li>Technical consultation</li>
+
+                    <li>
+                        System troubleshooting
+                    </li>
+
+
+                    <li>
+                        Maintenance and upgrades
+                    </li>
+
+
+                    <li>
+                        User assistance
+                    </li>
+
+
+                    <li>
+                        Technical consultation
+                    </li>
+
+
+                    <li>
+                        System monitoring
+                    </li>
+
+
                 </ul>
+
+
             ]]></field>
+
+
+
 
 
             <field name="benefits"><![CDATA[
+
                 <ul>
-                    <li>Reliable system performance</li>
-                    <li>Reduced downtime</li>
-                    <li>Continuous improvement</li>
+
+                    <li>
+                        Reliable system performance
+                    </li>
+
+
+                    <li>
+                        Reduced downtime
+                    </li>
+
+
+                    <li>
+                        Faster issue resolution
+                    </li>
+
+
+                    <li>
+                        Continuous system improvement
+                    </li>
+
+
                 </ul>
+
+
             ]]></field>
 
 
-            <field name="icon">fa-life-ring</field>
 
-            <field name="button_text">Request Demo</field>
 
-            <field name="button_link">/contact</field>
 
-            <field name="active">True</field>
+            <field name="implementation_process"><![CDATA[
+
+                <ol>
+
+                    <li>
+                        Understand technical challenges
+                    </li>
+
+
+                    <li>
+                        Analyze system issues
+                    </li>
+
+
+                    <li>
+                        Provide troubleshooting solutions
+                    </li>
+
+
+                    <li>
+                        Apply fixes and improvements
+                    </li>
+
+
+                    <li>
+                        Provide continuous support
+                    </li>
+
+
+                </ol>
+
+
+            ]]></field>
+
+
+
+
+
+            <field name="faq"><![CDATA[
+
+                <h4>
+                    What type of support do you provide?
+                </h4>
+
+
+                <p>
+                    We provide troubleshooting, maintenance,
+                    upgrades, and user assistance.
+                </p>
+
+
+
+
+                <h4>
+                    Can we request ongoing support?
+                </h4>
+
+
+                <p>
+                    Yes. We provide continuous technical support
+                    packages based on business needs.
+                </p>
+
+
+
+
+                <h4>
+                    Do you support existing systems?
+                </h4>
+
+
+                <p>
+                    Yes. We support and improve existing business
+                    applications and ERP systems.
+                </p>
+
+
+            ]]></field>
+
+
+
+
+
+            <field name="icon">
+                fa-life-ring
+            </field>
+
+
+            <field name="button_text">
+                Request Demo
+            </field>
+
+
+            <field name="button_link">
+                /contact
+            </field>
+
+
+            <field name="active">
+                True
+            </field>
+
 
         </record>
 
 
     </data>
+
 
 </odoo>
