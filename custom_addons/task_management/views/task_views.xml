@@ -1,41 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <odoo>
 
 
+    <!-- ============================= -->
     <!-- LIST VIEW -->
-    <record id="task_tree_view" model="ir.ui.view">
+    <!-- ============================= -->
+
+
+    <record id="task_list_view" model="ir.ui.view">
+
         <field name="name">task.management.list</field>
+
         <field name="model">task.management</field>
 
         <field name="arch" type="xml">
-            <list>
+
+            <list
+                decoration-danger="is_overdue"
+                decoration-success="state == 'done'"
+                decoration-warning="priority == 'high'"
+            >
 
                 <field name="name"/>
+
+                <field name="requester_partner_id"/>
+
+                <field name="service_id"/>
+
+                <field name="request_type"/>
+
                 <field name="assigned_to"/>
+
                 <field name="deadline"/>
+
+                <field name="days_remaining"/>
 
                 <field name="priority"/>
 
                 <field name="state"/>
 
+                <field name="is_overdue"/>
+
+
             </list>
+
+
         </field>
 
     </record>
 
 
 
+    <!-- ============================= -->
     <!-- FORM VIEW -->
+    <!-- ============================= -->
+
 
     <record id="task_form_view" model="ir.ui.view">
 
+
         <field name="name">task.management.form</field>
+
 
         <field name="model">task.management</field>
 
 
         <field name="arch" type="xml">
+
 
             <form>
 
@@ -44,11 +76,37 @@
 
 
                     <button
+                        name="action_review"
+                        type="object"
+                        string="Review Request"
+                        class="btn-secondary"
+                        invisible="state != 'submitted'"
+                    />
+
+
+                    <button
+                        name="action_schedule"
+                        type="object"
+                        string="Schedule"
+                        class="btn-secondary"
+                        invisible="state != 'review'"
+                    />
+
+
+                    <button
                         name="action_start"
                         type="object"
                         string="Start Task"
                         class="btn-primary"
-                        invisible="state != 'draft'"
+                        invisible="state not in ['submitted','review','scheduled','draft']"
+                    />
+
+
+                    <button
+                        name="action_awaiting_customer"
+                        type="object"
+                        string="Await Customer"
+                        invisible="state != 'progress'"
                     />
 
 
@@ -57,19 +115,17 @@
                         type="object"
                         string="Mark Done"
                         class="btn-success"
-                        invisible="state != 'progress'"
+                        invisible="state not in ['progress','awaiting_customer']"
                     />
 
 
                     <field
                         name="state"
                         widget="statusbar"
-                        statusbar_visible="draft,progress,done"
                     />
 
 
                 </header>
-
 
 
                 <sheet>
@@ -80,15 +136,21 @@
 
                         <field name="name"/>
 
-
                         <field name="description"/>
-
 
                         <field name="assigned_to"/>
 
+                        <field name="requester_partner_id"/>
+
+                        <field name="submitted_at"/>
+
+                        <field name="service_id"/>
+
+                        <field name="request_type"/>
+
+                        <field name="sla_deadline"/>
 
                         <field name="deadline"/>
-
 
                         <field name="priority"/>
 
@@ -96,24 +158,85 @@
                     </group>
 
 
+                    <notebook>
+
+
+                        <page string="Customer Updates">
+
+
+                            <field name="customer_comment_ids">
+
+
+                                <list>
+
+
+                                    <field name="create_date"/>
+
+                                    <field name="partner_id"/>
+
+                                    <field name="body"/>
+
+
+                                </list>
+
+
+                            </field>
+
+
+                        </page>
+
+
+
+                        <page string="Attachments">
+
+
+                            <field name="attachment_ids">
+
+
+                                <list>
+
+
+                                    <field name="name"/>
+
+                                    <field name="mimetype"/>
+
+                                    <field name="create_date"/>
+
+
+                                </list>
+
+
+                            </field>
+
+
+                        </page>
+
+
+                    </notebook>
+
+
                 </sheet>
 
 
             </form>
 
+
         </field>
+
 
     </record>
 
 
 
+    <!-- ============================= -->
+    <!-- KANBAN VIEW -->
+    <!-- ============================= -->
 
-    <!-- SEARCH VIEW -->
 
-    <record id="task_search_view" model="ir.ui.view">
+    <record id="task_kanban_view" model="ir.ui.view">
 
 
-        <field name="name">task.management.search</field>
+        <field name="name">task.management.kanban</field>
 
 
         <field name="model">task.management</field>
@@ -122,38 +245,111 @@
         <field name="arch" type="xml">
 
 
-            <search>
+            <kanban
+                default_group_by="state"
+                default_order="priority desc, deadline asc"
+            >
 
 
                 <field name="name"/>
 
-                <field name="assigned_to"/>
+                <field name="priority"/>
 
                 <field name="state"/>
 
+                <field name="deadline"/>
 
-                <filter
-                    string="Draft"
-                    name="draft"
-                    domain="[('state','=','draft')]"
-                />
+                <field name="assigned_to"/>
 
+                <field name="is_overdue"/>
 
-                <filter
-                    string="In Progress"
-                    name="progress"
-                    domain="[('state','=','progress')]"
-                />
+                <field name="days_remaining"/>
 
 
-                <filter
-                    string="Done"
-                    name="done"
-                    domain="[('state','=','done')]"
-                />
+                <templates>
 
 
-            </search>
+                    <t t-name="card">
+
+
+                        <main class="oe_kanban_global_click">
+
+
+                            <div class="d-flex">
+
+
+                                <field name="name"/>
+
+
+                                <field
+                                    name="priority"
+                                    widget="priority"
+                                    class="ms-auto"
+                                />
+
+
+                            </div>
+
+
+
+                            <t t-if="record.is_overdue.raw_value">
+
+
+                                <span class="badge bg-danger">
+
+                                    OVERDUE
+
+                                </span>
+
+
+                            </t>
+
+
+
+                            <div>
+
+
+                                <field name="description"/>
+
+
+                            </div>
+
+
+
+                            <div>
+
+
+                                Deadline:
+
+                                <field name="deadline"/>
+
+
+                            </div>
+
+
+
+                            <footer>
+
+
+                                <field
+                                    name="assigned_to"
+                                    widget="many2one_avatar_user"
+                                />
+
+
+                            </footer>
+
+
+                        </main>
+
+
+                    </t>
+
+
+                </templates>
+
+
+            </kanban>
 
 
         </field>
@@ -163,29 +359,38 @@
 
 
 
-
+    <!-- ============================= -->
     <!-- ACTION -->
+    <!-- ============================= -->
+
 
     <record id="task_action" model="ir.actions.act_window">
 
+
         <field name="name">Tasks</field>
+
 
         <field name="res_model">task.management</field>
 
-        <field name="view_mode">list,form</field>
+
+        <field name="view_mode">kanban,list,form</field>
+
 
     </record>
 
 
 
-
-    <!-- MENU -->
+    <!-- ============================= -->
+    <!-- MENUS -->
+    <!-- ============================= -->
 
 
     <menuitem
         id="task_management_root"
         name="Task Management"
+        groups="base.group_user"
     />
+
 
 
     <menuitem
