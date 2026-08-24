@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+        Adds the Google Fonts link once, globally, by inheriting
+        website.layout's <head> - avoids duplicating it into all six
+        page templates, and avoids the earlier SCSS @import approach
+        that broke the page build.
+    -->
+    <template id="globx_assets_head" inherit_id="website.layout" name="GlobX Fonts">
+        <xpath expr="//head" position="inside">
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+        </xpath>
+    </template>
+
+</odoo>

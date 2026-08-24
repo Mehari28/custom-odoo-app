@@ -1,11 +1,15 @@
 .globx_page {
     background: var(--globx-bg-dark);
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 // ---------- Custom header ----------
-// Hide Odoo's default site header entirely - we're rendering our own
-// hard-coded one instead, not touching it via Website Builder.
 #wrapwrap > header {
+    display: none !important;
+}
+
+// ---------- Hide Odoo's default footer (we render our own) ----------
+#wrapwrap > footer {
     display: none !important;
 }
 
@@ -34,11 +38,16 @@
         &:hover { color: var(--globx-green); }
     }
 
+    .globx-nav a.globx-nav-active,
+    .globx-mobile-nav a.globx-nav-active {
+        color: var(--globx-green);
+        font-weight: 700;
+    }
+
     .globx-header-cta {
         white-space: nowrap;
     }
 
-    // ---------- Mobile hamburger toggle ----------
     .globx-nav-toggle {
         background: none;
         border: none;
@@ -68,7 +77,6 @@
         }
     }
 
-    // ---------- Mobile dropdown panel ----------
     .globx-mobile-nav {
         max-height: 0;
         overflow: hidden;
@@ -136,6 +144,25 @@
         background-size: 120px 120px;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpath d='M10 10H110M10 10V110M60 10V60H110M10 60H60M60 60V110' stroke='%233fae29' stroke-width='1' fill='none'/%3E%3Ccircle cx='10' cy='10' r='2.5' fill='%233fae29'/%3E%3Ccircle cx='110' cy='10' r='2.5' fill='%233fae29'/%3E%3Ccircle cx='10' cy='110' r='2.5' fill='%233fae29'/%3E%3Ccircle cx='60' cy='60' r='2.5' fill='%233fae29'/%3E%3Ccircle cx='110' cy='110' r='2.5' fill='%233fae29'/%3E%3C/svg%3E");
         animation: globx-digital-pulse 6s ease-in-out infinite;
+    }
+
+    .globx-cursor-glow {
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle,
+            rgba(63, 174, 41, 0.35) 0%,
+            rgba(63, 174, 41, 0.12) 40%,
+            transparent 70%
+        );
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 0;
+        mix-blend-mode: screen;
     }
 
     .globx-hero-blob {
@@ -512,91 +539,368 @@
         span { display: block; font-size: 12px; color: #556; }
     }
 
-    .globx-chaos-photo {
-        display: block;
+    .globx-before-after {
+        position: relative;
         width: 100%;
         aspect-ratio: 16 / 9;
-        object-fit: cover;
         border-radius: var(--globx-radius-box);
         box-shadow: var(--globx-shadow-box);
         border: 1.5px solid #7fa38e;
+        overflow: hidden;
+        cursor: ew-resize;
+        user-select: none;
+    }
+
+    .globx-ba-photo {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .globx-ba-before {
+        position: absolute;
+        inset: 0;
+    }
+
+    .globx-ba-after-wrap {
+    position: absolute;
+    inset: 0;
+    left: auto;
+    right: 0;
+    width: 50%;
+    overflow: hidden;
+
+    .globx-ba-photo {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: var(--globx-ba-container-width, 100%);
+        max-width: none;
+        height: 100%;
+        object-fit: cover;
     }
 }
 
-// ---------- Our process (vertical timeline) ----------
-.globx_process {
-    background: var(--globx-bg-dark);
-    color: var(--globx-text-light);
-
-    .globx-timeline {
-        position: relative;
+    .globx-ba-chip {
+        position: absolute;
+        background: #fff;
+        color: var(--globx-text-dark);
+        font-size: 11px;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 20px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+        white-space: nowrap;
     }
 
-    .globx-timeline-line {
-        display: none;
+    .globx-ba-handle {
         position: absolute;
         top: 0;
         bottom: 0;
         left: 50%;
-        width: 2px;
-        background: rgba(255, 255, 255, 0.15);
+        width: 3px;
+        background: #fff;
         transform: translateX(-50%);
-        overflow: hidden;
-    }
+        cursor: ew-resize;
 
-    .globx-timeline-line-fill {
-        width: 100%;
-        height: 0%;
-        background: var(--globx-green);
-        transition: height 1.4s ease;
-
-        &.globx-visible {
-            height: 100%;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 38px;
+            height: 38px;
+            background: var(--globx-green);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         }
     }
 
-    .globx-timeline-item {
-        position: relative;
+    .globx-ba-handle-arrows {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        pointer-events: none;
+    }
+
+    .globx-ba-label {
+        position: absolute;
+        top: 12px;
+        font-size: 11px;
+        font-weight: 700;
+        color: #fff;
+        background: rgba(13, 51, 39, 0.75);
+        padding: 4px 10px;
+        border-radius: 14px;
+        pointer-events: none;
+    }
+
+    .globx-ba-label-before {
+        left: 12px;
+    }
+
+    .globx-ba-label-after {
+        right: 12px;
+    }
+}
+
+// ---------- Manual work cost calculator ----------
+.globx_calculator {
+    background: var(--globx-bg-dark);
+    color: var(--globx-text-light);
+}
+
+.globx-calc-card {
+    background: var(--globx-card-bg);
+    color: var(--globx-text-dark);
+    border-radius: var(--globx-radius-box);
+    box-shadow: var(--globx-shadow-box);
+    padding: 36px;
+
+    h3 {
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+}
+
+.globx-calc-sub {
+    font-size: 14px;
+    color: #556;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.globx-calc-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+
+    &:not(:first-of-type) {
+        margin-top: 20px;
+    }
+}
+
+.globx-calc-hours-value,
+.globx-calc-rate-value {
+    color: var(--globx-green);
+    font-weight: 700;
+}
+
+.globx-calc-slider {
+    width: 100%;
+    accent-color: var(--globx-green);
+    cursor: pointer;
+}
+
+.globx-calc-results {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.globx-calc-result {
+    background: var(--globx-bg-dark);
+    color: var(--globx-text-light);
+    border-radius: var(--globx-radius-btn);
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    b {
+        font-size: 22px;
+        font-weight: 700;
+    }
+    span {
+        font-size: 12px;
+        color: var(--globx-text-muted);
+        text-align: right;
+        max-width: 55%;
+    }
+}
+
+.globx-calc-result-accent {
+    background: var(--globx-green);
+
+    b, span {
+        color: #fff;
+    }
+}
+
+.globx-calc-cta {
+    width: 100%;
+    text-align: center;
+}
+
+// ---------- Our process (push/pull carousel + leaning character) ----------
+.globx_process {
+    background: var(--globx-bg-dark);
+    color: var(--globx-text-light);
+
+    .globx-carousel {
         display: flex;
-        align-items: flex-start;
-        gap: 16px;
-        margin-bottom: 40px;
-        max-width: 480px;
+        align-items: center;
+        gap: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
 
-        &:last-child {
-            margin-bottom: 0;
+    .globx-carousel-main {
+        position: relative;
+        flex: 1;
+        min-width: 0;
+        max-width: 560px;
+        margin: 0 auto;
+    }
+
+    .globx-process-character {
+        position: absolute;
+        right: 520px;
+        bottom: 90px;
+        height: 300px;
+        width: auto;
+        z-index: 3;
+        pointer-events: none;
+        filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.35));
+    }
+
+    .globx-carousel-side {
+        display: none;
+        flex: none;
+        width: 150px;
+        cursor: pointer;
+    }
+
+    @media (min-width: 992px) {
+        .globx-carousel-side {
+            display: block;
         }
+    }
+
+    .globx-carousel-preview {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: var(--globx-radius-box);
+        padding: 20px 16px;
+        opacity: 0.55;
+        transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+
+        &:hover {
+            opacity: 1;
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    .globx-carousel-preview-num {
+        display: block;
+        color: var(--globx-green);
+        font-weight: 700;
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .globx-carousel-preview-title {
+        display: block;
+        color: var(--globx-text-light);
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+    .globx-carousel-track {
+        position: relative;
+        min-height: 260px;
+        overflow: hidden;
+        perspective: 1200px;
+    }
+
+    .globx-carousel-slide {
+        position: absolute;
+        inset: 0;
+        transform: translateX(100%) rotateY(-25deg);
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-style: preserve-3d;
+        pointer-events: none;
+        visibility: hidden;
+    }
+
+    .globx-carousel-slide.globx-carousel-active {
+        transform: translateX(0) rotateY(0deg);
+        pointer-events: auto;
+        visibility: visible;
+    }
+
+    .globx-carousel-slide.globx-carousel-push-out {
+        transform: translateX(-100%) rotateY(25deg);
+        visibility: visible;
+    }
+    .globx-carousel-slide.globx-carousel-push-in {
+        transform: translateX(100%) rotateY(-25deg);
+        visibility: visible;
+    }
+    .globx-carousel-slide.globx-carousel-push-in.globx-carousel-active {
+        transform: translateX(0) rotateY(0deg);
+    }
+
+    .globx-carousel-slide.globx-carousel-pull-out {
+        transform: translateX(100%) rotateY(-25deg);
+        visibility: visible;
+    }
+    .globx-carousel-slide.globx-carousel-pull-in {
+        transform: translateX(-100%) rotateY(25deg);
+        visibility: visible;
+    }
+    .globx-carousel-slide.globx-carousel-pull-in.globx-carousel-active {
+        transform: translateX(0) rotateY(0deg);
+    }
+
+    .globx-carousel-card {
+        background: var(--globx-card-bg);
+        color: var(--globx-text-dark);
+        border-radius: var(--globx-radius-box);
+        box-shadow: var(--globx-shadow-box);
+        padding: 32px 28px;
+        text-align: left;
+        height: 100%;
     }
 
     .globx-timeline-marker {
-        flex: none;
-        width: 44px;
-        height: 44px;
+        display: inline-flex;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
-        background: var(--globx-card-bg);
+        background: var(--globx-bg-dark);
         color: var(--globx-green);
         font-weight: 700;
-        font-size: 15px;
-        display: flex;
+        font-size: 14px;
         align-items: center;
         justify-content: center;
-        box-shadow: var(--globx-shadow-box);
+        margin-bottom: 14px;
     }
 
     .globx-timeline-icon {
-        width: 30px;
-        height: 30px;
+        width: 34px;
+        height: 34px;
         border-radius: 50%;
         background: var(--globx-bg-dark);
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 10px;
+        margin: 0 0 14px 10px;
         box-shadow: 0 0 12px 2px rgba(63, 174, 41, 0.55);
 
         svg {
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             fill: none;
             stroke: var(--globx-green);
             stroke-width: 1.8;
@@ -605,89 +909,91 @@
         }
     }
 
-    .globx-timeline-content {
-        text-align: left;
-        background: var(--globx-card-bg);
-        color: var(--globx-text-dark);
-        border-radius: var(--globx-radius-box);
-        box-shadow: var(--globx-shadow-box);
-        padding: 20px 22px;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-        b {
-            display: block;
-            font-size: 17px;
-            margin-bottom: 4px;
-        }
-        p {
-            font-size: 13.5px;
-            color: #556;
-            line-height: 1.6;
-            margin: 0;
-        }
+    .globx-carousel-card b {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 8px;
     }
 
-    .globx-timeline-content:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 14px 34px rgba(63, 174, 41, 0.45);
+    .globx-carousel-card > p {
+        font-size: 14px;
+        color: #556;
+        line-height: 1.6;
+        margin: 0 0 12px;
     }
 
-    .globx-timeline-detail {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease, margin-top 0.35s ease;
-        margin-top: 0;
-
-        p {
-            font-size: 13px;
-            color: #556;
-            line-height: 1.6;
-        }
+    .globx-carousel-detail {
+        font-size: 13px;
+        color: #778;
+        line-height: 1.6;
+        border-top: 1px solid #eee;
+        padding-top: 12px;
+        margin: 0;
     }
 
-    .globx-timeline-item.globx-open .globx-timeline-detail {
-        max-height: 200px;
-        margin-top: 10px;
-    }
-
-    .globx-timeline-toggle {
-        background: none;
+    .globx-carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--globx-green);
         border: none;
-        color: var(--globx-green);
-        font-size: 12px;
-        font-weight: 600;
-        padding: 8px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
+        transition: background 0.2s ease, transform 0.2s ease;
+        z-index: 2;
+
+        svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: #fff;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
 
         &:hover {
-            text-decoration: underline;
+            background: var(--globx-green-deep);
         }
     }
 
-    @media (min-width: 992px) {
-        .globx-timeline-line {
-            display: block;
-        }
+    .globx-carousel-prev {
+        left: -20px;
+    }
+    .globx-carousel-next {
+        right: -20px;
+    }
 
-        .globx-timeline-item {
-            width: 50%;
-        }
+    .globx-carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 24px;
+    }
 
-        .globx-timeline-left {
-            margin-left: 0;
-            padding-right: 40px;
-            flex-direction: row-reverse;
-        }
+    .globx-carousel-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.2s ease;
+    }
 
-        .globx-timeline-right {
-            margin-left: 50%;
-            padding-left: 40px;
-        }
+    .globx-carousel-dot-active {
+        background: var(--globx-green);
+        transform: scale(1.3);
     }
 }
 
-.globx-reveal:not(.globx-process-line-fill):not(.globx-timeline-line-fill) {
+.globx-reveal {
     opacity: 0;
+    transition: opacity 0.6s ease;
 
     &.globx-visible {
         opacity: 1;
@@ -847,6 +1153,15 @@
 
 // ---------- Footer ----------
 .globx_footer {
+
+    .globx-footer-copyright {
+        margin-top: 32px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 12px;
+        color: var(--globx-text-muted);
+        text-align: center;
+    }
     background: var(--globx-bg-dark-2);
     color: var(--globx-text-muted);
     border-top: 1px solid #234f3c;
@@ -864,5 +1179,63 @@
 
     ul li {
         margin-bottom: 4px;
+    }
+
+    .globx-social-links {
+        display: flex;
+        gap: 10px;
+        margin-top: 12px;
+
+        a {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease, transform 0.2s ease;
+            text-decoration: none;
+
+            svg {
+                width: 18px;
+                height: 18px;
+
+                path, rect, circle {
+                    fill: #ffffff;
+                }
+            }
+
+            &:hover {
+                background: var(--globx-green);
+                transform: translateY(-3px);
+
+                svg path, svg rect, svg circle {
+                    fill: #fff;
+                }
+            }
+        }
+    }
+}
+
+// Instagram icon stays outline-style, not solid fill like the others
+.globx-social-links a svg.globx-icon-instagram {
+    rect,
+    circle:first-of-type {
+        fill: none !important;
+    }
+    circle:last-of-type {
+        fill: #ffffff !important;
+    }
+}
+
+.globx-social-links a:hover svg.globx-icon-instagram {
+    rect,
+    circle:first-of-type {
+        fill: none !important;
+    }
+    circle:last-of-type {
+        fill: #fff !important;
     }
 }

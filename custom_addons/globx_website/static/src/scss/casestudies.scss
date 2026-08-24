@@ -1,0 +1,98 @@
+.globx_cs_hero {
+    background: var(--globx-bg-dark);
+    color: var(--globx-text-light);
+
+    h1 {
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+}
+
+.globx-cs-sub {
+    color: var(--globx-text-muted);
+    font-size: 14px;
+    max-width: 560px;
+    margin: 0;
+}
+
+.globx_cs_grid {
+    background: var(--globx-bg-dark);
+}
+
+.globx-cs-card {
+    display: block;
+    border-radius: 6px 40px 6px 40px;
+    box-shadow: var(--globx-shadow-box);
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 34px rgba(63, 174, 41, 0.4);
+    }
+
+    // Small "view case study" hint, revealed on hover over the image
+    &::after {
+        content: 'View case study →';
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: rgba(13, 51, 39, 0.85);
+        color: #fff;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 5px 10px;
+        border-radius: 20px;
+        opacity: 0;
+        transform: translateY(-4px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        pointer-events: none;
+        text-decoration: none !important;
+    }
+
+    &:hover::after {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.globx-cs-media {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: radial-gradient(circle at 30% 30%, #1c4b39 0%, #123a2c 60%, #0d3327 100%);
+    border: 1.5px solid #7fa38e;
+    border-bottom: none;
+}
+
+.globx-cs-caption {
+    background: var(--globx-green);
+    color: #fff;
+    padding: 14px 16px;
+
+    b, span {
+        text-decoration: none !important;
+    }
+
+    b {
+        display: block;
+        font-size: 13px;
+        margin-bottom: 4px;
+    }
+    span {
+        display: block;
+        font-size: 12px;
+        line-height: 1.5;
+        color: #eaf6e9;
+    }
+}
+
+// Explicitly override on hover too, since the underline is likely
+// coming from a global a:hover rule (Odoo/Bootstrap default)
+.globx-cs-card:hover .globx-cs-caption b,
+.globx-cs-card:hover .globx-cs-caption span {
+    text-decoration: none !important;
+}

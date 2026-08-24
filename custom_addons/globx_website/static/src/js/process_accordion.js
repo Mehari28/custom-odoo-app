@@ -3,8 +3,13 @@
 import publicWidget from "@web/legacy/js/public/public_widget";
 
 /**
- * Timeline step accordion: click "Read more" (or anywhere on the step)
- * to expand the detail text below the summary. Click again to collapse.
+ * Generic expand/collapse accordion. Click "Read more"/chevron (or
+ * anywhere on the toggle button) to expand the detail block below the
+ * summary. Click again to collapse.
+ *
+ * Buttons with an <svg> inside (icon-only chevrons, like on Solutions)
+ * are left alone visually - only plain text buttons (like "Read more"
+ * on Our Process) get their label swapped between "Read more"/"Read less".
  */
 publicWidget.registry.GlobxProcessAccordion = publicWidget.Widget.extend({
     selector: ".js_globx_accordion",
@@ -15,9 +20,13 @@ publicWidget.registry.GlobxProcessAccordion = publicWidget.Widget.extend({
 
     _onToggleClick(ev) {
         ev.stopPropagation();
-        const isOpen = this.el.classList.toggle("globx-open");
         const btn = this.el.querySelector(".globx-timeline-toggle");
-        btn.textContent = isOpen ? "Read less" : "Read more";
+        const isOpen = this.el.classList.toggle("globx-open");
+
+        const hasIcon = btn.querySelector("svg");
+        if (!hasIcon) {
+            btn.textContent = isOpen ? "Read less" : "Read more";
+        }
     },
 });
 
