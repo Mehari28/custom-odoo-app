@@ -27,7 +27,15 @@ publicWidget.registry.GlobxContactForm = publicWidget.Widget.extend({
     _onSubmit(ev) {
         ev.preventDefault();
         fireConfetti();
-        alert("Thanks — we'll be in touch shortly to schedule your discovery call.");
+
+        const card = this.el.closest(".globx-contact-form-card");
+        const panel = card ? card.querySelector(".globx-thankyou-panel") : null;
+
+        this.el.style.display = "none";
+        if (panel) {
+            panel.classList.add("globx-thankyou-visible");
+        }
+
         return false;
     },
 });

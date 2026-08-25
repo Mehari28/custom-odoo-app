@@ -90,6 +90,21 @@
                                             Book a discovery call
                                         </button>
                                     </form>
+
+                                    <div class="globx-thankyou-panel">
+                                        <div class="globx-thankyou-icon">
+                                            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                                        </div>
+                                        <h3>Thank you!</h3>
+                                        <p>
+                                            Your discovery call request has been received. A GlobX
+                                            consultant will reach out within one business day to
+                                            find a time that works for you.
+                                        </p>
+                                        <a href="/home-globx" class="btn globx-btn-primary">
+                                            Back to Home
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
 

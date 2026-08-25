@@ -101,3 +101,55 @@
         }
     }
 }
+// ---------- Thank-you panel (shown after successful submit) ----------
+.globx-thankyou-panel {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.globx-thankyou-visible {
+    display: block;
+    animation: globx-thankyou-fade-in 0.5s ease;
+}
+
+.globx-thankyou-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--globx-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 20px rgba(63, 174, 41, 0.4);
+
+    svg {
+        width: 32px;
+        height: 32px;
+        fill: none;
+        stroke: #fff;
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+}
+
+.globx-thankyou-panel h3 {
+    font-weight: 700;
+    color: var(--globx-text-dark);
+    margin-bottom: 12px;
+}
+
+.globx-thankyou-panel p {
+    font-size: 14px;
+    color: #556;
+    line-height: 1.6;
+    max-width: 380px;
+    margin: 0 auto 24px;
+}
+
+@keyframes globx-thankyou-fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
