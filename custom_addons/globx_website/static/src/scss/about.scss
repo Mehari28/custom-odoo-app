@@ -116,6 +116,127 @@
     }
 }
 
+// ---------- Journey timeline (scroll-driven progress dot) ----------
+.globx_timeline_section {
+    background: var(--globx-bg-dark);
+    color: var(--globx-text-light);
+}
+
+.globx-journey-timeline {
+    position: relative;
+}
+
+.globx-journey-track {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.globx-journey-dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--globx-green);
+    box-shadow: 0 0 0 4px rgba(63, 174, 41, 0.25), 0 0 16px 4px rgba(63, 174, 41, 0.5);
+    transition: transform 0.05s linear;
+    z-index: 2;
+}
+
+.globx-journey-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+    max-width: 460px;
+    opacity: 0.3;
+    filter: grayscale(1) brightness(0.7);
+    transform: scale(0.96);
+    transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s ease;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &.globx-journey-active {
+        opacity: 1;
+        filter: grayscale(0) brightness(1);
+        transform: scale(1);
+    }
+}
+
+.globx-journey-marker {
+    flex: none;
+    min-width: 64px;
+    height: 40px;
+    border-radius: 20px;
+    background: var(--globx-card-bg);
+    color: var(--globx-green);
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px;
+    box-shadow: var(--globx-shadow-box);
+}
+
+.globx-journey-content {
+    background: var(--globx-card-bg);
+    color: var(--globx-text-dark);
+    border-radius: var(--globx-radius-box);
+    box-shadow: var(--globx-shadow-box);
+    padding: 16px 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 30px rgba(63, 174, 41, 0.4);
+    }
+
+    b {
+        display: block;
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+    p {
+        font-size: 13px;
+        color: #556;
+        line-height: 1.5;
+        margin: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .globx-journey-track {
+        display: block;
+    }
+
+    .globx-journey-item {
+        width: 50%;
+        margin-bottom: 16px;
+    }
+
+    .globx-journey-left {
+        margin-left: 0;
+        padding-right: 40px;
+        flex-direction: row-reverse;
+    }
+
+    .globx-journey-right {
+        margin-left: 50%;
+        padding-left: 40px;
+        margin-top: -56px;
+    }
+}
+
 .globx_about_team {
     background: var(--globx-bg-dark);
 }
@@ -195,6 +316,20 @@
             font-size: 13px;
             color: #556;
             line-height: 1.4;
+        }
+    }
+
+    .globx-region-flags {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 10px;
+
+        img {
+            width: 24px;
+            height: auto;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
         }
     }
 

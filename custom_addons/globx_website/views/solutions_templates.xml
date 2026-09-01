@@ -12,11 +12,11 @@
 
                         <nav class="globx-nav d-none d-lg-flex align-items-center gap-4">
                             <a href="/home-globx">Home</a>
-                            <a href="/solutions" class="globx-nav-active">solutions</a>
-                            <a href="/casestudies">casestudies</a>
-                            <a href="/news">news</a>
-                            <a href="/about">about</a>
-                            <a href="/contactus">contact</a>
+                            <a href="/solutions" class="globx-nav-active">Solutions</a>
+                            <a href="/casestudies">Case Studies</a>
+                            <a href="/news">News</a>
+                            <a href="/about">About</a>
+                            <a href="/contactus">Contact</a>
                         </nav>
 
                         <a href="/contactus" class="btn globx-btn-primary globx-header-cta d-none d-lg-inline-block">
@@ -32,11 +32,11 @@
 
                     <div class="globx-mobile-nav d-lg-none">
                         <a href="/home-globx">Home</a>
-                        <a href="/solutions" class="globx-nav-active">solutions</a>
-                        <a href="/casestudies">casestudies</a>
-                        <a href="/news">news</a>
-                        <a href="/about">about</a>
-                        <a href="/contactus">contact</a>
+                        <a href="/solutions" class="globx-nav-active">Solutions</a>
+                        <a href="/casestudies">Case Studies</a>
+                        <a href="/news">News</a>
+                        <a href="/about">About</a>
+                        <a href="/contactus">Contact</a>
                         <a href="/contactus" class="btn globx-btn-primary mt-2">Book a discovery call</a>
                     </div>
                 </header>
