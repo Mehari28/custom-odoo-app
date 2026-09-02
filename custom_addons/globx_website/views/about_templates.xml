@@ -44,14 +44,24 @@
                 <!-- ============ ABOUT HERO ============ -->
                 <section class="globx_about_hero py-5">
                     <div class="container">
-                        <h1 class="text-white">About GlobX</h1>
-                        <p class="globx-about-sub">
-                            GlobX is an Odoo-partnered ERP solutions provider with
-                            operations across East Africa, India, and the UAE. We help
-                            businesses optimize their operations, digitize their
-                            processes, and scale with confidence — replacing spreadsheet
-                            sprawl with one connected, measurable system.
-                        </p>
+                        <div class="row align-items-center gy-4">
+                            <div class="col-lg-6">
+                                <h1 class="text-white">About GlobX</h1>
+                                <p class="globx-about-sub">
+                                    GlobX is an Odoo-partnered ERP solutions provider with
+                                    operations across East Africa, India, and the UAE. We help
+                                    businesses optimize their operations, digitize their
+                                    processes, and scale with confidence — replacing spreadsheet
+                                    sprawl with one connected, measurable system.
+                                </p>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="globx-about-hero-media">
+                                    <img src="/globx_website/static/src/img/about_team_group.jpg"
+                                         alt="The GlobX team"/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 

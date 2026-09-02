@@ -512,6 +512,104 @@
     &:hover { background: #eee; color: var(--globx-text-dark); }
 }
 
+// ---------- Curtain reveal ----------
+.globx_curtain_section {
+    background: var(--globx-bg-dark);
+}
+
+.globx-curtain-wrap {
+    position: relative;
+    min-height: 320px;
+    border-radius: var(--globx-radius-box);
+    overflow: hidden;
+    box-shadow: var(--globx-shadow-box);
+    background: var(--globx-bg-dark-2);
+}
+
+.globx-curtain-reveal {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    z-index: 1;
+
+    h2 {
+        font-weight: 700;
+        max-width: 620px;
+        margin: 8px 0 14px;
+    }
+
+    p {
+        color: var(--globx-text-muted);
+        font-size: 14px;
+        max-width: 480px;
+        margin: 0;
+    }
+}
+
+.globx-curtain-kicker {
+    color: var(--globx-green);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.globx-curtain-panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    display: flex;
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transition: clip-path 1.3s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.globx-curtain-left {
+    left: 0;
+}
+
+.globx-curtain-right {
+    right: 0;
+    flex-direction: row-reverse;
+}
+
+.globx-curtain-fold {
+    flex: 1;
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #f0f4f0 45%,
+        var(--globx-green) 50%,
+        #f0f4f0 55%,
+        #ffffff 100%
+    );
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.globx-curtain-right .globx-curtain-fold {
+    border-right: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.globx-curtain-open {
+    .globx-curtain-left {
+        // collapses into a narrow triangle hugging the left edge,
+        // wide at the bottom, tapering to a point near the top —
+        // like fabric gathered and tied back diagonally
+        clip-path: polygon(0% 0%, 12% 0%, 38% 100%, 0% 100%);
+    }
+    .globx-curtain-right {
+        clip-path: polygon(88% 0%, 100% 0%, 100% 100%, 62% 100%);
+    }
+}
+
 // ---------- Manual Chaos ----------
 .globx_manual_chaos {
     background: var(--globx-bg-dark-2);
@@ -564,23 +662,23 @@
     }
 
     .globx-ba-after-wrap {
-    position: absolute;
-    inset: 0;
-    left: auto;
-    right: 0;
-    width: 50%;
-    overflow: hidden;
-
-    .globx-ba-photo {
         position: absolute;
-        top: 0;
+        inset: 0;
+        left: auto;
         right: 0;
-        width: var(--globx-ba-container-width, 100%);
-        max-width: none;
-        height: 100%;
-        object-fit: cover;
+        width: 50%;
+        overflow: hidden;
+
+        .globx-ba-photo {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: var(--globx-ba-container-width, 100%);
+            max-width: none;
+            height: 100%;
+            object-fit: cover;
+        }
     }
-}
 
     .globx-ba-chip {
         position: absolute;
@@ -1142,12 +1240,13 @@
     }
 
     .globx-testi-avatar {
-        width: 40px;
-        height: 40px;
-        min-width: 40px;
-        border-radius: 50%;
-        background: #e4e9e5;
-        border: 1.5px solid #b7c4bb;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    background: #e4e9e5;
+    border: 1.5px solid #b7c4bb;
+    object-fit: cover;
     }
 }
 

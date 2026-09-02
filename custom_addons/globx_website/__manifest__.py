@@ -16,8 +16,8 @@
         manual work cost calculator, confetti on contact form submit,
         tab title change on away, process carousel with leaning
         character, shimmering Silver Partner badge, footer social
-        links, Solutions page finder, and scroll-driven journey
-        timeline on About.
+        links, Solutions page finder, scroll-driven journey timeline
+        on About, and a curtain reveal section on Home.
     """,
     'author': 'GlobX',
     'depends': ['website'],
@@ -62,6 +62,7 @@
             'globx_website/static/src/js/process_carousel.js',
             'globx_website/static/src/js/solution_finder.js',
             'globx_website/static/src/js/journey_timeline.js',
+            'globx_website/static/src/js/curtain_reveal.js',
         ],
     },
     'installable': True,

@@ -175,6 +175,35 @@
                     </div>
                 </section>
 
+                <!-- ============ CURTAIN REVEAL ============ -->
+                <section class="globx_curtain_section py-5">
+                    <div class="container">
+                        <div class="globx-curtain-wrap js_globx_curtain">
+                            <div class="globx-curtain-reveal">
+                                <span class="globx-curtain-kicker">The real story</span>
+                                <h2 class="text-white">
+                                    Behind every successful business is a system that just works.
+                                </h2>
+                                <p>
+                                    No more chasing spreadsheets, no more guessing where things
+                                    stand. Just one connected system your whole team can trust.
+                                </p>
+                            </div>
+
+                            <div class="globx-curtain-panel globx-curtain-left">
+                                <div class="globx-curtain-fold"/>
+                                <div class="globx-curtain-fold"/>
+                                <div class="globx-curtain-fold"/>
+                            </div>
+                            <div class="globx-curtain-panel globx-curtain-right">
+                                <div class="globx-curtain-fold"/>
+                                <div class="globx-curtain-fold"/>
+                                <div class="globx-curtain-fold"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- ============ THE DIFFERENCE IS MANUAL CHAOS ============ -->
                 <section class="globx_manual_chaos py-5">
                     <div class="container">
@@ -463,14 +492,20 @@
                                 <div class="globx-testi-bubble">
                                     <div class="globx-testi-quote-mark">"</div>
                                     <p>
-                                        GlobX transformed our supply chain. ROI exceeded every
-                                        projection in Q1.
+                                        Collaborating with Globx has been an immensely beneficial
+                                        experience for both AC Mobility and Safiya Ibn Garba DTRF.
+                                        Their team consistently operates with an exceptional level
+                                        of professionalism, taking the time to deliver truly
+                                        personalized support tailored perfectly to our specific
+                                        organizational needs.
                                     </p>
                                     <div class="globx-testi-footer">
-                                        <div class="globx-testi-avatar"/>
+                                        <img class="globx-testi-avatar"
+                                             src="/globx_website/static/src/img/testimonial_safiya.png"
+                                             alt="Safiya Ibn Garba"/>
                                         <div>
-                                            <b>Supply Chain Lead</b>
-                                            <span>Manufacturing client</span>
+                                            <b>Safiya Ibn Garba DTRF</b>
+                                            <span>CEO and Lead Consultant, Kenya</span>
                                         </div>
                                     </div>
                                 </div>
@@ -479,14 +514,19 @@
                                 <div class="globx-testi-bubble">
                                     <div class="globx-testi-quote-mark">"</div>
                                     <p>
-                                        The Globx expertise is unmatched. They reimagined how
-                                        we work.
+                                        As a healthcare practitioner, patient accessibility is
+                                        important to me. GlobX helped us achieve that with a
+                                        well-designed website and an efficient appointment booking
+                                        system. Their support throughout the project was
+                                        professional, timely, and dependable.
                                     </p>
                                     <div class="globx-testi-footer">
-                                        <div class="globx-testi-avatar"/>
+                                        <img class="globx-testi-avatar"
+                                             src="/globx_website/static/src/img/testimonial_nambi.jpg"
+                                             alt="Dr. Pallatheri Nambi Namboodiri"/>
                                         <div>
-                                            <b>Operations Director</b>
-                                            <span>Retail client</span>
+                                            <b>Dr. Pallatheri Nambi Namboodiri</b>
+                                            <span>Chief Physician, Ayushoveda / Dr. Nambi Clinic, India</span>
                                         </div>
                                     </div>
                                 </div>
@@ -495,14 +535,19 @@
                                 <div class="globx-testi-bubble">
                                     <div class="globx-testi-quote-mark">"</div>
                                     <p>
-                                        Seamless migration with zero downtime. Our long-term
-                                        digital partner.
+                                        Working with GlobX has been a great experience for us at
+                                        Homelink Mabati. Their Odoo ERP implementation has helped us
+                                        bring better structure and visibility into our production
+                                        processes, making it easier to manage our operations as we
+                                        continue to grow.
                                     </p>
                                     <div class="globx-testi-footer">
-                                        <div class="globx-testi-avatar"/>
+                                        <img class="globx-testi-avatar"
+                                             src="/globx_website/static/src/img/testimonial_catherine.jpg"
+                                             alt="Catherine Kathure"/>
                                         <div>
-                                            <b>IT Manager</b>
-                                            <span>Logistics client</span>
+                                            <b>Catherine Kathure</b>
+                                            <span>CEO, Homelink Mabati, Rwanda</span>
                                         </div>
                                     </div>
                                 </div>
