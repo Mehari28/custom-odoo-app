@@ -63,6 +63,7 @@
             'globx_website/static/src/js/solution_finder.js',
             'globx_website/static/src/js/journey_timeline.js',
             'globx_website/static/src/js/curtain_reveal.js',
+            'globx_website/static/src/js/partners_reveal.js',
         ],
     },
     'installable': True,

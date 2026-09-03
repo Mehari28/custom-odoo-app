@@ -190,16 +190,9 @@
                                 </p>
                             </div>
 
-                            <div class="globx-curtain-panel globx-curtain-left">
-                                <div class="globx-curtain-fold"/>
-                                <div class="globx-curtain-fold"/>
-                                <div class="globx-curtain-fold"/>
-                            </div>
-                            <div class="globx-curtain-panel globx-curtain-right">
-                                <div class="globx-curtain-fold"/>
-                                <div class="globx-curtain-fold"/>
-                                <div class="globx-curtain-fold"/>
-                            </div>
+                            <div class="globx-curtain-rod"/>
+                            <div class="globx-curtain-panel globx-curtain-left"/>
+                            <div class="globx-curtain-panel globx-curtain-right"/>
                         </div>
                     </div>
                 </section>
@@ -475,6 +468,22 @@
                             </div>
                         </div>
 
+                    </div>
+                </section>
+
+                <!-- ============ PARTNERS ============ -->
+                <section class="globx_partners py-5">
+                    <div class="container">
+                        <h2 class="text-white mb-1 text-center">Our Partners</h2>
+                        <p class="globx-partners-sub mb-4 text-center">
+                            Trusted by businesses across East Africa, India, and the UAE
+                        </p>
+                        <div class="globx-partners-grid">
+                            <div class="globx-partner-card" t-foreach="range(1, 20)" t-as="i">
+                                <img t-attf-src="/globx_website/static/src/img/partner_logo_{{ '%02d' % i }}.png"
+                                     alt="GlobX partner logo"/>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
