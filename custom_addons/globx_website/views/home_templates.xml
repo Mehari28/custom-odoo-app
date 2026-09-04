@@ -474,8 +474,8 @@
                 <!-- ============ PARTNERS ============ -->
                 <section class="globx_partners py-5">
                     <div class="container">
-                        <h2 class="text-white mb-1 text-center">Our Partners</h2>
-                        <p class="globx-partners-sub mb-4 text-center">
+                        <h2 class="text-white mb-1">Our Partners</h2>
+                        <p class="globx-partners-sub mb-4">
                             Trusted by businesses across East Africa, India, and the UAE
                         </p>
                         <div class="globx-partners-grid">
@@ -552,8 +552,8 @@
                                     </p>
                                     <div class="globx-testi-footer">
                                         <img class="globx-testi-avatar"
-                                             src="/globx_website/static/src/img/testimonial_catherine.jpg"
-                                             alt="Catherine Kathure"/>
+                                             src="/globx_website/static/src/img/testimonial_homelink_logo.jpg"
+                                             alt="Homelink Mabati"/>
                                         <div>
                                             <b>Catherine Kathure</b>
                                             <span>CEO, Homelink Mabati, Rwanda</span>

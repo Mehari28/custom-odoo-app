@@ -1172,8 +1172,6 @@
     color: var(--globx-text-muted);
     font-size: 14px;
     max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .globx-partners-grid {
@@ -1367,8 +1365,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
-    max-width: 980px;
-    margin: 0 auto;
 }
 
 @media (min-width: 576px) {
