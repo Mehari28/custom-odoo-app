@@ -448,3 +448,66 @@
     0%, 100% { opacity: 0; transform: scale(0.5); }
     50%      { opacity: 1; transform: scale(1.2); }
 }
+
+// ---------- Differentiator statement ----------
+.globx_about_differentiator {
+    background: var(--globx-bg-dark);
+}
+
+.globx-differentiator-card {
+    background: var(--globx-card-bg);
+    color: var(--globx-text-dark);
+    border-radius: var(--globx-radius-box);
+    box-shadow: var(--globx-shadow-box);
+    padding: 32px 28px;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.globx-differentiator-kicker {
+    display: inline-block;
+    color: var(--globx-green);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.globx-differentiator-line {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0 0 16px;
+    color: var(--globx-text-dark);
+
+    strong {
+        color: var(--globx-green-deep);
+        font-weight: 800;
+    }
+}
+
+.globx-differentiator-flags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    img {
+        width: 32px;
+        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    }
+}
+
+// ---------- Hover lift for Mission and Differentiator cards (matches .globx-value-card) ----------
+.globx-mission-box,
+.globx-differentiator-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 30px rgba(63, 174, 41, 0.4);
+    }
+}

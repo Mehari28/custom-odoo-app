@@ -153,3 +153,52 @@
     from { opacity: 0; transform: translateY(10px); }
     to   { opacity: 1; transform: translateY(0); }
 }
+
+.globx-thankyou-steps {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    max-width: 380px;
+    margin: 0 auto 28px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        right: 14px;
+        height: 2px;
+        background: #d4ddd7;
+        z-index: 0;
+    }
+}
+
+.globx-thankyou-step {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    span:last-child {
+        font-size: 11px;
+        color: #556;
+        line-height: 1.4;
+        max-width: 92px;
+        margin-top: 8px;
+    }
+}
+
+.globx-thankyou-step-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--globx-green);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

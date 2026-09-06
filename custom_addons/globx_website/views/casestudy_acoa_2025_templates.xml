@@ -46,8 +46,9 @@
                 <!-- ============ ARTICLE ============ -->
                 <section class="globx_cs_detail py-5">
                     <div class="container">
-                        <a href="/casestudies" class="globx-cs-back">
-                            <span class="globx-back-arrow">&#8592;</span> Back to Case Studies
+                        <a href="/casestudies" class="globx-cs-back" style="text-decoration: none;">
+                            <span class="globx-back-arrow">&#8592;</span>
+                            <span class="globx-back-label" style="text-decoration: none;">Back to Case Studies</span>
                         </a>
 
                         <div class="globx-cs-detail-meta">

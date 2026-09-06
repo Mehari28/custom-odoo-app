@@ -67,6 +67,25 @@
                     </div>
                 </section>
 
+                <!-- ============ DIFFERENTIATOR ============ -->
+                <section class="globx_about_differentiator py-4">
+                    <div class="container">
+                        <div class="globx-differentiator-card">
+                            <span class="globx-differentiator-kicker">The difference</span>
+                            <p class="globx-differentiator-line">
+                                Most Odoo partners know one market.
+                                <strong>We work across all four — daily.</strong>
+                            </p>
+                            <div class="globx-differentiator-flags">
+                                <img src="https://flagcdn.com/w40/rw.png" alt="Rwanda" title="Rwanda"/>
+                                <img src="https://flagcdn.com/w40/ke.png" alt="Kenya" title="Kenya"/>
+                                <img src="https://flagcdn.com/w40/in.png" alt="India" title="India"/>
+                                <img src="https://flagcdn.com/w40/ae.png" alt="UAE" title="UAE"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- ============ MISSION ============ -->
                 <section class="globx_about_mission py-5">
                     <div class="container">

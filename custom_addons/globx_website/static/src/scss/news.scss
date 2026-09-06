@@ -161,3 +161,45 @@
     background: #c0392b;
     animation: globx-ticker-pulse 1.4s ease-in-out infinite;
 }
+
+// ---------- Region filter ----------
+.globx-news-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.globx-news-filter-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--globx-text-light);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        border-color: var(--globx-green);
+    }
+
+    &.globx-news-filter-active {
+        background: var(--globx-green);
+        border-color: var(--globx-green);
+        color: #fff;
+    }
+}
+
+.globx-news-empty {
+    display: none;
+    color: var(--globx-text-muted);
+    font-size: 14px;
+    padding: 30px 0;
+    text-align: center;
+
+    &.globx-news-empty-visible {
+        display: block;
+    }
+}

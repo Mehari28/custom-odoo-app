@@ -3,33 +3,75 @@
     color: var(--globx-text-light);
 }
 
-.globx-cs-back {
+.globx-cs-back,
+.globx-cs-back:hover,
+.globx-cs-back:focus {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--globx-text-light);
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 20px;
+    background: var(--globx-green);
+    color: #fff;
+    border-radius: 999px;
     margin-bottom: 24px;
-    transition: background 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    transition: padding 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s ease, box-shadow 0.2s ease;
 
     .globx-back-arrow {
-        display: inline-block;
-        transition: transform 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        flex: none;
+        font-size: 16px;
+        line-height: 1;
+        transition: transform 0.25s ease;
     }
 
-    &:hover {
-        background: var(--globx-green);
-        border-color: var(--globx-green);
-        color: #fff;
+    .globx-back-label {
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 13px;
+        font-weight: 700;
+        transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, margin-left 0.35s ease;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .globx-cs-back {
+        padding: 10px;
+
+        &:hover {
+            padding: 10px 20px 10px 16px;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+
+            .globx-back-arrow {
+                transform: translateX(-3px);
+            }
+
+            .globx-back-label {
+                max-width: 220px;
+                opacity: 1;
+                margin-left: 8px;
+            }
+        }
+    }
+}
+
+@media not all and (hover: hover) {
+    .globx-cs-back {
+        padding: 10px 20px 10px 16px;
 
         .globx-back-arrow {
-            transform: translateX(-4px);
+            margin-right: 8px;
+        }
+
+        .globx-back-label {
+            max-width: 220px;
+            opacity: 1;
         }
     }
 }

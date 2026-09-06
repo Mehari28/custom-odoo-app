@@ -39,14 +39,15 @@
         position: absolute;
         top: 12px;
         right: 12px;
-        background: rgba(13, 51, 39, 0.85);
-        color: #fff;
-        font-size: 11px;
-        font-weight: 600;
-        padding: 5px 10px;
+        background: #ffffff;
+        color: var(--globx-green-deep);
+        font-size: 12px;
+        font-weight: 700;
+        padding: 7px 14px;
         border-radius: 20px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
         opacity: 0;
-        transform: translateY(-4px);
+        transform: translateY(-4px) scale(0.9);
         transition: opacity 0.2s ease, transform 0.2s ease;
         pointer-events: none;
         text-decoration: none !important;
@@ -94,5 +95,15 @@
 // coming from a global a:hover rule (Odoo/Bootstrap default)
 .globx-cs-card:hover .globx-cs-caption b,
 .globx-cs-card:hover .globx-cs-caption span {
+    text-decoration: none !important;
+}
+// ---------- Fix: kill underline on hover for case study cards ----------
+.globx-cs-card,
+.globx-cs-card:hover,
+.globx-cs-card:focus,
+.globx-cs-card:active,
+.globx-cs-caption,
+.globx-cs-caption b,
+.globx-cs-caption span {
     text-decoration: none !important;
 }

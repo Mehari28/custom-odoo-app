@@ -103,6 +103,22 @@
                                             consultant will reach out within one business day to
                                             find a time that works for you.
                                         </p>
+
+                                        <div class="globx-thankyou-steps">
+                                            <div class="globx-thankyou-step">
+                                                <span class="globx-thankyou-step-num">1</span>
+                                                <span>We review your request</span>
+                                            </div>
+                                            <div class="globx-thankyou-step">
+                                                <span class="globx-thankyou-step-num">2</span>
+                                                <span>A specialist reaches out within 24 hours</span>
+                                            </div>
+                                            <div class="globx-thankyou-step">
+                                                <span class="globx-thankyou-step-num">3</span>
+                                                <span>We schedule your discovery call</span>
+                                            </div>
+                                        </div>
+
                                         <a href="/home-globx" class="btn globx-btn-primary">
                                             Back to Home
                                         </a>
@@ -114,14 +130,13 @@
                                 <div class="globx-contact-info-card">
                                     <h3>Let's map the highest-value path</h3>
                                     <p>
-                                        A 30-minute, scoped conversation — not a pitch — with a
-                                        solutions consultant about where your operations are
-                                        breaking down.
+                                        A scoped conversation with a solutions consultant
+                                        about where your operations are breaking down.
                                     </p>
                                     <ol class="globx-contact-steps">
-                                        <li>We review your current process and tooling.</li>
-                                        <li>We identify the highest-friction workflow to fix first.</li>
-                                        <li>You leave with a scoped next step — no obligation.</li>
+                                        <li>We analyze your current business processes.</li>
+                                        <li>We send you a Functional Requirements Document (FRD) outlining exactly what we'll build.</li>
+                                        <li>We begin implementation — nothing starts until you've approved the plan.</li>
                                     </ol>
                                     <div class="globx-contact-direct">
                                         <span>Or reach us directly</span>

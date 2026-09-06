@@ -196,7 +196,8 @@
                             <div class="globx-curtain-reveal">
                                 <span class="globx-curtain-kicker">The real story</span>
                                 <h2 class="text-white">
-                                    Behind every successful business is a system that just works.
+                                    The businesses winning today all have one thing in
+                                    common: a unified system.
                                 </h2>
                                 <p>
                                     No more chasing spreadsheets, no more guessing where things
@@ -204,7 +205,11 @@
                                 </p>
                             </div>
 
-                            <div class="globx-curtain-rod"/>
+                            <div class="globx-curtain-rod">
+                                <div class="globx-curtain-rod-rings">
+                                    <span/><span/><span/><span/><span/><span/><span/><span/>
+                                </div>
+                            </div>
                             <div class="globx-curtain-panel globx-curtain-left"/>
                             <div class="globx-curtain-panel globx-curtain-right"/>
                         </div>

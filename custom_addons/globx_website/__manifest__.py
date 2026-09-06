@@ -65,6 +65,7 @@
             'globx_website/static/src/js/journey_timeline.js',
             'globx_website/static/src/js/curtain_reveal.js',
             'globx_website/static/src/js/partners_reveal.js',
+            'globx_website/static/src/js/news_region_filter.js',
             'globx_website/static/src/js/partner_popup.js',
         ],
     },
