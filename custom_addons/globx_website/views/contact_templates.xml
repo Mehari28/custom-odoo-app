@@ -8,7 +8,9 @@
                 <!-- ============ HEADER ============ -->
                 <header class="globx_header">
                     <div class="container d-flex align-items-center justify-content-between flex-wrap py-3 gap-3">
-                        <a href="/home-globx" class="globx-logo">Globx</a>
+                        <a href="/home-globx" class="globx-logo">
+                            <img src="/globx_website/static/src/img/globx_logo.png" alt="GlobX"/>
+                        </a>
 
                         <nav class="globx-nav d-none d-lg-flex align-items-center gap-4">
                             <a href="/home-globx">Home</a>

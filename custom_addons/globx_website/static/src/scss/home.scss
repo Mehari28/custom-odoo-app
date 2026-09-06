@@ -18,16 +18,14 @@
     border-bottom: 1px solid #e2e8e4;
 
     .globx-logo {
-        background: var(--globx-green);
-        color: #fff;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        padding: 6px 16px;
-        border-radius: var(--globx-radius-btn);
+        display: inline-block;
         text-decoration: none;
-        font-size: 14px;
 
-        &:hover { color: #fff; }
+        img {
+            display: block;
+            height: 32px;
+            width: auto;
+        }
     }
 
     .globx-nav a {
@@ -544,7 +542,7 @@
     }
 
     p {
-        color: var(--globx-text-muted);
+        color: #ffffff;
         font-size: 14px;
         max-width: 480px;
         margin: 0;
@@ -1442,3 +1440,66 @@
 .globx-partners-visible .globx-partner-card:nth-child(17) { transition-delay: 0.48s; }
 .globx-partners-visible .globx-partner-card:nth-child(18) { transition-delay: 0.51s; }
 .globx-partners-visible .globx-partner-card:nth-child(19) { transition-delay: 0.54s; }
+
+// ---------- Odoo Silver Partner announcement popup ----------
+.globx-partner-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.d-none {
+        display: none;
+    }
+
+    .globx-partner-popup-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .globx-partner-popup-card {
+        position: relative;
+        max-width: 90vw;
+        max-height: 85vh;
+
+        img {
+            display: block;
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: var(--globx-radius-box);
+            box-shadow: var(--globx-shadow-box);
+        }
+    }
+
+    .globx-partner-popup-close {
+        position: absolute;
+        top: -14px;
+        right: -14px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #fff;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.15s ease;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--globx-text-dark);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}

@@ -5,10 +5,24 @@
         <t t-call="website.layout">
             <div id="wrap" class="globx_page">
 
+                <!-- ============ ODOO SILVER PARTNER POPUP ============ -->
+                <div id="globx_partner_popup" class="globx-partner-popup" style="display:none;">
+                    <div class="globx-partner-popup-backdrop"/>
+                    <div class="globx-partner-popup-card">
+                        <button type="button" class="globx-partner-popup-close" aria-label="Close">
+                            <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                        </button>
+                        <img src="/globx_website/static/src/img/globx_odoo_partner_final.png"
+                             alt="Globx is now Official — Odoo Silver Partner"/>
+                    </div>
+                </div>
+
                 <!-- ============ HEADER ============ -->
                 <header class="globx_header">
                     <div class="container d-flex align-items-center justify-content-between flex-wrap py-3 gap-3">
-                        <a href="/home-globx" class="globx-logo">Globx</a>
+                        <a href="/home-globx" class="globx-logo">
+                            <img src="/globx_website/static/src/img/globx_logo.png" alt="GlobX"/>
+                        </a>
 
                         <nav class="globx-nav d-none d-lg-flex align-items-center gap-4">
                             <a href="/home-globx">Home</a>

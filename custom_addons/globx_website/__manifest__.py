@@ -17,7 +17,8 @@
         tab title change on away, process carousel with leaning
         character, shimmering Silver Partner badge, footer social
         links, Solutions page finder, scroll-driven journey timeline
-        on About, and a curtain reveal section on Home.
+        on About, a curtain reveal section on Home, and an Odoo
+        Silver Partner announcement popup on Home.
     """,
     'author': 'GlobX',
     'depends': ['website'],
@@ -64,6 +65,7 @@
             'globx_website/static/src/js/journey_timeline.js',
             'globx_website/static/src/js/curtain_reveal.js',
             'globx_website/static/src/js/partners_reveal.js',
+            'globx_website/static/src/js/partner_popup.js',
         ],
     },
     'installable': True,
