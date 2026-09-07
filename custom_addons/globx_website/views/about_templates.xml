@@ -55,7 +55,7 @@
                                     GlobX is an Odoo-partnered ERP solutions provider with
                                     operations across East Africa, India, and the UAE. We help
                                     businesses optimize their operations, digitize their
-                                    processes, and scale with confidence — replacing spreadsheet
+                                    processes, and scale with confidence, replacing spreadsheet
                                     sprawl with one connected, measurable system.
                                 </p>
                             </div>
@@ -76,7 +76,7 @@
                             <span class="globx-differentiator-kicker">The difference</span>
                             <p class="globx-differentiator-line">
                                 Most Odoo partners know one market.
-                                <strong>We work across all four — daily.</strong>
+                                <strong>We work across all four. Daily.</strong>
                             </p>
                             <div class="globx-differentiator-flags">
                                 <img src="https://flagcdn.com/w40/rw.png" alt="Rwanda" title="Rwanda"/>
@@ -104,7 +104,7 @@
                                         "Our mission is to empower African businesses with
                                         smart, scalable tools that fuel growth and innovation."
                                     </p>
-                                    <span class="globx-mission-credit">— Vinay Dev, CEO, GlobX</span>
+                                    <span class="globx-mission-credit">Vinay Dev, CEO, GlobX</span>
                                 </div>
                             </div>
                         </div>
@@ -161,48 +161,81 @@
                             <div class="globx-journey-item globx-journey-left">
                                 <div class="globx-journey-marker">2018</div>
                                 <div class="globx-journey-content">
-                                    <b>Founded</b>
-                                    <p>GlobX is founded in Rwanda, becoming an official Odoo partner.</p>
+                                    <b>The Global Foundation</b>
+                                    <p>
+                                        GlobX is founded as a multidisciplinary corporate
+                                        consulting framework, delivering high-level IT
+                                        architecture, operational strategy, and system
+                                        integrations for enterprise clients across
+                                        international business corridors.
+                                    </p>
                                 </div>
                             </div>
 
                             <div class="globx-journey-item globx-journey-right">
-                                <div class="globx-journey-marker">2019</div>
+                                <div class="globx-journey-marker">2021</div>
                                 <div class="globx-journey-content">
-                                    <b>First 50 customers</b>
-                                    <p>Early traction across Rwandan SMEs replacing spreadsheets with Odoo.</p>
+                                    <b>Cross-Border &amp; Regional Formulation</b>
+                                    <p>
+                                        The company expands its multi-region presence
+                                        across India, the UAE, and East Africa, designing
+                                        custom workflow architectures and process
+                                        management solutions tailored to dynamic markets.
+                                    </p>
                                 </div>
                             </div>
 
                             <div class="globx-journey-item globx-journey-left">
-                                <div class="globx-journey-marker">2021</div>
+                                <div class="globx-journey-marker">2023</div>
                                 <div class="globx-journey-content">
-                                    <b>Regional expansion</b>
-                                    <p>Operations extend into Kenya, opening GlobX's first cross-border presence.</p>
+                                    <b>Launching in Kigali</b>
+                                    <p>
+                                        GlobX establishes its permanent African
+                                        headquarters in Kigali, Rwanda, under local
+                                        leadership, adapting global enterprise solutions
+                                        to the compliance and scaling needs of East
+                                        African businesses.
+                                    </p>
                                 </div>
                             </div>
 
                             <div class="globx-journey-item globx-journey-right">
-                                <div class="globx-journey-marker">2023</div>
+                                <div class="globx-journey-marker">2024</div>
                                 <div class="globx-journey-content">
-                                    <b>India &amp; UAE</b>
-                                    <p>GlobX establishes operations in India and the UAE, becoming a genuinely multi-region partner.</p>
+                                    <b>The Odoo ERP Pivot</b>
+                                    <p>
+                                        GlobX becomes an official Odoo Partner in Rwanda,
+                                        migrating its first cohorts of SMEs from manual
+                                        spreadsheets and fragmented legacy tracking into
+                                        unified cloud ecosystems.
+                                    </p>
                                 </div>
                             </div>
 
                             <div class="globx-journey-item globx-journey-left">
                                 <div class="globx-journey-marker">2025</div>
                                 <div class="globx-journey-content">
-                                    <b>Silver Odoo Partner</b>
-                                    <p>GlobX achieves official Silver Partner status and exhibits at ACOA 2025.</p>
+                                    <b>Tech Scaling &amp; Pan-African Milestones</b>
+                                    <p>
+                                        GlobX exhibits at the Africa Congress of
+                                        Accountants (ACOA 2025) and partners with Odoo
+                                        Rwanda to host the country's largest-ever
+                                        enterprise technology event, bringing together
+                                        nearly 1,000 business and policy leaders.
+                                    </p>
                                 </div>
                             </div>
 
                             <div class="globx-journey-item globx-journey-right">
                                 <div class="globx-journey-marker">2026</div>
-                                <div class="globx-journey-content">
-                                    <b>200+ customers</b>
-                                    <p>GlobX crosses 200 successful implementations across three regions.</p>
+                                <div class="globx-journey-content globx-journey-silver">
+                                    <b>Silver Partner Status &amp; 200+ Clients</b>
+                                    <p>
+                                        GlobX achieves official Odoo Silver Partner
+                                        status and joins the Rwanda ICT Chamber, now
+                                        serving over 200 active enterprise clients
+                                        across logistics, retail, and manufacturing.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -314,7 +347,7 @@
                             <div class="col-6 col-md-4 globx-reveal">
                                 <div class="globx-stat-box">
                                     <b>3</b>
-                                    <span>Regions — East Africa, India &amp; UAE</span>
+                                    <span>Regions: East Africa, India &amp; UAE</span>
                                     <div class="globx-region-flags">
                                         <img src="https://flagcdn.com/w40/rw.png" alt="Rwanda" title="Rwanda"/>
                                         <img src="https://flagcdn.com/w40/ke.png" alt="Kenya" title="Kenya"/>

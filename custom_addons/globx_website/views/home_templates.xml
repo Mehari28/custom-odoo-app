@@ -15,7 +15,7 @@
                             <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
                         </button>
                         <img src="/globx_website/static/src/img/globx_odoo_partner_final.png"
-                             alt="Globx is now Official — Odoo Silver Partner"/>
+                             alt="Globx is now Official: Odoo Silver Partner"/>
                     </div>
                 </div>
 
@@ -225,11 +225,11 @@
 
                             <div class="col-lg-6">
                                 <h2 class="text-white">
-                                    The difference is<br/>Manual Chaos
+                                    The Issue Lies in<br/>Manual Processes
                                 </h2>
                                 <p class="globx-quote fst-italic">
-                                    "Where is that invoice? I'm sure I saved it in the
-                                    spreadsheet..."
+                                    Are you facing consistent issues like hours lost
+                                    daily, manual data entry, and costly human error?
                                 </p>
 
                                 <div class="row g-3 my-3">
@@ -254,6 +254,10 @@
                                          src="/globx_website/static/src/img/manual_chaos_photo.jpg"
                                          alt="Manual, chaotic workflow"/>
 
+                                    <div class="globx-ba-chip" style="top:18%; left:6%;">✗ Manual entry</div>
+                                    <div class="globx-ba-chip" style="top:45%; left:4%;">✗ No visibility</div>
+                                    <div class="globx-ba-chip" style="bottom:14%; left:10%;">✗ Paper everywhere</div>
+
                                     <div class="globx-ba-after-wrap">
                                         <img class="globx-ba-photo"
                                              src="/globx_website/static/src/img/manual_chaos_after.jpg"
@@ -269,6 +273,8 @@
 
                                     <span class="globx-ba-label globx-ba-label-before">Before</span>
                                     <span class="globx-ba-label globx-ba-label-after">After</span>
+
+                                    <div class="globx-ba-hint">&#8596; Drag to compare</div>
                                 </div>
                             </div>
 
@@ -290,7 +296,7 @@
                                     </p>
 
                                     <label for="globx_calc_hours" class="globx-calc-label">
-                                        Hours per day spent on manual work
+                                        Total hours per day your team spends on manual work (all employees combined)
                                         <span class="globx-calc-hours-value">2</span>
                                     </label>
                                     <input type="range" id="globx_calc_hours"
@@ -314,16 +320,26 @@
                                         </div>
                                         <div class="globx-calc-result">
                                             <b class="globx-calc-cost-year">$0</b>
-                                            <span>Estimated cost per year</span>
+                                            <span>Value of wasted capacity per year</span>
                                         </div>
                                         <div class="globx-calc-result globx-calc-result-accent">
                                             <b class="globx-calc-weeks">0</b>
-                                            <span>Work-weeks of your team's time, back</span>
+                                            <span>Work-weeks of capacity, freed up</span>
                                         </div>
                                     </div>
+                                    <p class="globx-calc-explainer">
+                                        This reflects time currently lost to manual work,
+                                        not direct cash back. Recovering it means fewer
+                                        hires needed as you grow, fewer costly errors, and
+                                        more hours spent on work that actually makes you
+                                        money.
+                                    </p>
                                     <a href="/contactus" class="btn globx-btn-primary globx-calc-cta">
                                         See what this looks like for your business
                                     </a>
+                                    <p class="globx-calc-footnote">
+                                        Based on a standard 250-working-day year.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -372,7 +388,7 @@
                                             <p>Architecting a custom Odoo solution for your unique DNA.</p>
                                             <p class="globx-carousel-detail">
                                                 Our architects translate findings into a scoped Odoo
-                                                blueprint — modules, customizations, and data model —
+                                                blueprint covering modules, customizations, and data model,
                                                 tailored to your operations.
                                             </p>
                                         </div>

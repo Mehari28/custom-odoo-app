@@ -13,22 +13,19 @@
                 <div class="globx-chat-panel-header">
                     <div>
                         <b>Chat with GlobX</b>
-                        <span>Usually replies within a few hours</span>
+                        <span>Our team typically responds within a few hours</span>
                     </div>
                 </div>
 
                 <div class="globx-chat-panel-body">
                     <div class="globx-chat-bubble-msg">
-                        Hi! 👋 How can we help? Send a message and we'll continue
-                        the conversation on WhatsApp.
+                        Hello. Let us know what you're looking for, and a GlobX
+                        consultant will follow up with you directly on WhatsApp.
                     </div>
 
                     <div class="globx-chat-quick-replies">
-                        <button type="button" class="globx-chat-quick-btn" data-msg="I'd like to book a discovery call.">
-                            Book a discovery call
-                        </button>
-                        <button type="button" class="globx-chat-quick-btn" data-msg="I have a question about pricing.">
-                            Pricing question
+                        <button type="button" class="globx-chat-quick-btn" data-msg="I have a general inquiry.">
+                            General inquiry
                         </button>
                         <button type="button" class="globx-chat-quick-btn" data-msg="I need technical support.">
                             Technical support

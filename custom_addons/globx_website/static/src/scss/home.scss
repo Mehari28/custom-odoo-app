@@ -772,6 +772,7 @@
         background: #fff;
         transform: translateX(-50%);
         cursor: ew-resize;
+        z-index: 3;
 
         &::before {
             content: '';
@@ -784,6 +785,24 @@
             border-radius: 50%;
             transform: translate(-50%, -50%);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            animation: globx-handle-glow 2s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--globx-green);
+            opacity: 0.55;
+            transform: translate(-50%, -50%) scale(1);
+            animation: globx-handle-ping 2s ease-out infinite;
+            pointer-events: none;
+            z-index: 0;
         }
     }
 
@@ -796,6 +815,7 @@
         font-size: 16px;
         font-weight: 700;
         pointer-events: none;
+        z-index: 4;
     }
 
     .globx-ba-label {
@@ -1572,4 +1592,67 @@
             transform: scale(1.1);
         }
     }
+}
+// ---------- Smooth fade for before/after corner labels ----------
+.globx-ba-label {
+    transition: opacity 0.15s ease;
+}
+
+@keyframes globx-handle-glow {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 6px 2px rgba(63, 174, 41, 0.5);
+    }
+    50% {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 16px 6px rgba(63, 174, 41, 0.85);
+    }
+}
+
+@keyframes globx-handle-ping {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.55;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.8);
+        opacity: 0;
+    }
+}
+
+// ---------- "Drag to compare" hint on the before/after slider ----------
+.globx-ba-hint {
+    position: absolute;
+    top: calc(50% + 34px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(13, 51, 39, 0.85);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    padding: 6px 14px;
+    border-radius: 14px;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 3;
+    transition: opacity 0.3s ease;
+}
+
+.globx-ba-hint-hidden {
+    opacity: 0;
+}
+
+// ---------- Cost calculator benchmark footnote ----------
+.globx-calc-footnote {
+    font-size: 11px;
+    color: #778;
+    text-align: center;
+    margin: 10px 0 0;
+}
+
+// ---------- Cost calculator explainer (opportunity-cost clarification) ----------
+.globx-calc-explainer {
+    font-size: 12.5px;
+    color: #778;
+    line-height: 1.6;
+    margin: 4px 0 16px;
 }

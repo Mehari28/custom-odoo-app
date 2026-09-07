@@ -91,7 +91,7 @@
                             <button type="button" class="globx-news-filter-btn" data-region="uae">UAE</button>
                         </div>
 
-                        <p class="globx-news-empty">No articles yet for this region — check back soon.</p>
+                        <p class="globx-news-empty">No articles yet for this region. Check back soon.</p>
 
                         <div class="globx-news-items globx-reveal-group">
 

@@ -15,6 +15,9 @@ publicWidget.registry.GlobxBeforeAfterSlider = publicWidget.Widget.extend({
 
         this.afterWrap = this.el.querySelector(".globx-ba-after-wrap");
         this.handle = this.el.querySelector(".globx-ba-handle");
+        this.beforeLabel = this.el.querySelector(".globx-ba-label-before");
+        this.afterLabel = this.el.querySelector(".globx-ba-label-after");
+        this.hint = this.el.querySelector(".globx-ba-hint");
         this.dragging = false;
 
         this._setPosition(50);
@@ -22,6 +25,9 @@ publicWidget.registry.GlobxBeforeAfterSlider = publicWidget.Widget.extend({
         this._onPointerDown = (ev) => {
             this.dragging = true;
             ev.preventDefault();
+            if (this.hint) {
+                this.hint.classList.add("globx-ba-hint-hidden");
+            }
         };
         this._onPointerMove = (ev) => {
             if (!this.dragging) {
@@ -53,6 +59,20 @@ publicWidget.registry.GlobxBeforeAfterSlider = publicWidget.Widget.extend({
         // distance from the handle to the right side.
         this.afterWrap.style.width = (100 - pct) + "%";
         this.handle.style.left = pct + "%";
+
+        // Fade out each corner label once its side has shrunk to
+        // almost nothing, so "Before"/"After" don't stay pinned in
+        // place describing content that's no longer actually visible.
+        const FADE_THRESHOLD = 10;
+        const beforeOpacity = pct < FADE_THRESHOLD ? Math.max(0, pct / FADE_THRESHOLD) : 1;
+        const afterOpacity = pct > (100 - FADE_THRESHOLD) ? Math.max(0, (100 - pct) / FADE_THRESHOLD) : 1;
+
+        if (this.beforeLabel) {
+            this.beforeLabel.style.opacity = beforeOpacity;
+        }
+        if (this.afterLabel) {
+            this.afterLabel.style.opacity = afterOpacity;
+        }
     },
 
     destroy() {

@@ -37,6 +37,16 @@ publicWidget.registry.GlobxCostCalculator = publicWidget.Widget.extend({
         this.el.querySelector(".globx-calc-cost-year").textContent =
             "$" + costPerYear.toLocaleString();
         this.el.querySelector(".globx-calc-weeks").textContent = weeks;
+
+        const ctaLink = this.el.querySelector(".globx-calc-cta");
+        if (ctaLink) {
+            const params = new URLSearchParams({
+                hours: hoursPerYear,
+                cost: costPerYear,
+                weeks: weeks,
+            });
+            ctaLink.setAttribute("href", "/contactus?" + params.toString());
+        }
     },
 });
 

@@ -72,7 +72,7 @@
                                     <b>Odoo ERP Implementation</b>
                                     <p>
                                         End-to-end deployment across finance, operations,
-                                        inventory, and CRM — scoped to your current state
+                                        inventory, and CRM, scoped to your current state
                                         of complexity.
                                     </p>
                                     <div class="globx-timeline-detail">
@@ -109,7 +109,7 @@
                                         <p>
                                             From custom fields and views to fully bespoke
                                             modules, our developers extend Odoo's core
-                                            without breaking future upgrades — built to
+                                            without breaking future upgrades, built to
                                             Odoo's own coding standards.
                                         </p>
                                     </div>
@@ -132,15 +132,15 @@
                                     </div>
                                     <b>Integration</b>
                                     <p>
-                                        Bring Odoo into your existing stack —
+                                        Bring Odoo into your existing stack:
                                         e-commerce, WMS, EDI, and AI tooling.
                                     </p>
                                     <div class="globx-timeline-detail">
                                         <p>
                                             We connect Odoo to the systems you already
-                                            depend on — Shopify, WooCommerce, warehouse
+                                            depend on: Shopify, WooCommerce, warehouse
                                             management, EDI partners, and AI/automation
-                                            tools — so nothing runs in a silo.
+                                            tools, so nothing runs in a silo.
                                         </p>
                                     </div>
                                     <button type="button" class="globx-chevron-toggle globx-timeline-toggle" aria-label="Toggle details">
@@ -198,7 +198,7 @@
                                         <p>
                                             Beyond go-live, our team monitors performance,
                                             resolves issues as they come up, and tunes
-                                            configuration as your processes evolve —
+                                            configuration as your processes evolve,
                                             available on flexible support tiers.
                                         </p>
                                     </div>
@@ -226,8 +226,8 @@
                                     </p>
                                     <div class="globx-timeline-detail">
                                         <p>
-                                            Hands-on sessions tailored to each role — finance,
-                                            warehouse, sales — plus reference materials your
+                                            Hands-on sessions tailored to each role: finance,
+                                            warehouse, sales, plus reference materials your
                                             team can revisit long after go-live.
                                         </p>
                                     </div>

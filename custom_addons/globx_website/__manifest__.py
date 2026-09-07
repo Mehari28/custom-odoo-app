@@ -62,6 +62,7 @@
             'globx_website/static/src/js/stat_counter.js',
             'globx_website/static/src/js/before_after_slider.js',
             'globx_website/static/src/js/cost_calculator.js',
+            'globx_website/static/src/js/calc_handoff.js',
             'globx_website/static/src/js/tab_title.js',
             'globx_website/static/src/js/process_carousel.js',
             'globx_website/static/src/js/solution_finder.js',
