@@ -17,13 +17,15 @@
         tab title change on away, process carousel with leaning
         character, shimmering Silver Partner badge, footer social
         links, Solutions page finder, scroll-driven journey timeline
-        on About, a curtain reveal section on Home, and an Odoo
-        Silver Partner announcement popup on Home.
+        on About, a curtain reveal section on Home, an Odoo Silver
+        Partner announcement popup on Home, and a site-wide floating
+        chat widget that hands off to WhatsApp.
     """,
     'author': 'GlobX',
     'depends': ['website'],
     'data': [
         'views/assets_head_templates.xml',
+        'views/chat_widget_templates.xml',
         'views/home_templates.xml',
         'views/solutions_templates.xml',
         'views/casestudies_templates.xml',
@@ -37,6 +39,7 @@
     'assets': {
         'web.assets_frontend': [
             'globx_website/static/src/scss/variables.scss',
+            'globx_website/static/src/scss/chat_widget.scss',
             'globx_website/static/src/scss/site_enhancements.scss',
             'globx_website/static/src/scss/home.scss',
             'globx_website/static/src/scss/solutions.scss',
@@ -67,6 +70,7 @@
             'globx_website/static/src/js/partners_reveal.js',
             'globx_website/static/src/js/news_region_filter.js',
             'globx_website/static/src/js/partner_popup.js',
+            'globx_website/static/src/js/chat_widget.js',
         ],
     },
     'installable': True,

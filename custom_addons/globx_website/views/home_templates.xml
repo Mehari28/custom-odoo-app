@@ -5,6 +5,8 @@
         <t t-call="website.layout">
             <div id="wrap" class="globx_page">
 
+                <t t-call="globx_website.globx_chat_widget"/>
+
                 <!-- ============ ODOO SILVER PARTNER POPUP ============ -->
                 <div id="globx_partner_popup" class="globx-partner-popup" style="display:none;">
                     <div class="globx-partner-popup-backdrop"/>

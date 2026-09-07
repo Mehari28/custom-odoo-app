@@ -5,6 +5,8 @@
         <t t-call="website.layout">
             <div id="wrap" class="globx_page">
 
+                <t t-call="globx_website.globx_chat_widget"/>
+
                 <!-- ============ HEADER ============ -->
                 <header class="globx_header">
                     <div class="container d-flex align-items-center justify-content-between flex-wrap py-3 gap-3">
