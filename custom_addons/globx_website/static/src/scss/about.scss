@@ -502,9 +502,8 @@
     border-radius: var(--globx-radius-box);
     box-shadow: var(--globx-shadow-box);
     padding: 32px 28px;
-    max-width: 720px;
-    margin: 0 auto;
-    text-align: center;
+    max-width: 760px;
+    text-align: left;
 }
 
 .globx-differentiator-kicker {
@@ -532,7 +531,7 @@
 
 .globx-differentiator-flags {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 10px;
 
     img {
