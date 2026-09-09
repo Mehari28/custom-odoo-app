@@ -87,7 +87,7 @@
                                         <div class="globx-hero-blob globx-hero-blob-2"/>
                                     </div>
 
-                                    <img class="globx-hero-character d-none d-md-block"
+                                    <img class="globx-hero-character"
                                          src="/globx_website/static/src/img/hero_character.png"
                                          alt="GlobX consultant"/>
 

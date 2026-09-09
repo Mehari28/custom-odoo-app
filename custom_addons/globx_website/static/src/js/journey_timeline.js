@@ -12,9 +12,25 @@ publicWidget.registry.GlobxJourneyTimeline = publicWidget.Widget.extend({
         this.track = this.el.querySelector(".globx-journey-track");
         this.items = Array.from(this.el.querySelectorAll(".globx-journey-item"));
 
+        this.viewportHeight = window.innerHeight;
+        this._onResize = () => { this.viewportHeight = window.innerHeight; };
+        window.addEventListener("resize", this._onResize);
+
         this._onScroll = this._onScroll.bind(this);
         window.addEventListener("scroll", this._onScroll, { passive: true });
         this._onScroll();
+
+        this.observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("globx-journey-active");
+                    }
+                });
+            },
+            { rootMargin: "0px 0px -40% 0px", threshold: 0 }
+        );
+        this.items.forEach((item) => this.observer.observe(item));
 
         return res;
     },
@@ -32,27 +48,20 @@ publicWidget.registry.GlobxJourneyTimeline = publicWidget.Widget.extend({
 
     _update() {
         const trackRect = this.track.getBoundingClientRect();
-        const viewportCenter = window.innerHeight * 0.6;
+        const viewportCenter = this.viewportHeight * 0.6;
 
         let progressPx = viewportCenter - trackRect.top;
         progressPx = Math.max(0, Math.min(trackRect.height, progressPx));
 
         this.dot.style.transform = `translate(-50%, ${progressPx}px)`;
-
-        const progressRatio = trackRect.height > 0 ? progressPx / trackRect.height : 0;
-
-        this.items.forEach((item, index) => {
-            const itemRatio = index / (this.items.length - 1);
-            if (progressRatio >= itemRatio - 0.03) {
-                item.classList.add("globx-journey-active");
-            } else {
-                item.classList.remove("globx-journey-active");
-            }
-        });
     },
 
     destroy() {
         window.removeEventListener("scroll", this._onScroll);
+        window.removeEventListener("resize", this._onResize);
+        if (this.observer) {
+            this.observer.disconnect();
+        }
         this._super(...arguments);
     },
 });
