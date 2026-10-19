@@ -202,3 +202,50 @@
     align-items: center;
     justify-content: center;
 }
+
+// ---- Contact form: CRM submission states ----
+.globx-optional {
+    font-weight: 400;
+    color: #6b7a72;
+    font-size: 0.85em;
+}
+
+// Honeypot field: off-screen for people, still "visible" to bots
+.globx-hp {
+    position: absolute !important;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.globx-form-field .globx-field-error {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: #b42318;
+}
+
+.globx-form-field input.globx-invalid,
+.globx-form-field textarea.globx-invalid {
+    border-color: #b42318;
+}
+
+.globx-form-error {
+    display: none;
+    margin: 4px 0 14px;
+    padding: 10px 14px;
+    border-radius: var(--globx-radius-btn);
+    background: #fdecea;
+    color: #8a1c12;
+    font-size: 0.92rem;
+
+    &.globx-visible {
+        display: block;
+    }
+}
+
+.globx-form-submit[disabled] {
+    opacity: 0.7;
+    cursor: progress;
+}

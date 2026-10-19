@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit_teams" model="ir.ui.view">
+        <field name="name">res.config.settings.form.inherit.calendar.teams</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="calendar.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//setting[@id='sync_google_calendar_setting']" position="after">
+                <setting string="Microsoft Teams" id="teams_meeting_link_setting"
+                         help="Teams meeting link added by the &quot;Teams meeting&quot; button on events">
+                    <field name="teams_meeting_url" widget="url" class="w-100"
+                           placeholder="https://teams.microsoft.com/l/meetup-join/..."/>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

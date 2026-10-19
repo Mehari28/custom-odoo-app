@@ -1,6 +1,6 @@
 {
     'name': 'GlobX Website',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.2.0',
     'category': 'Website',
     'summary': 'GlobX custom landing page (built from the approved prototype)',
     'description': """
@@ -22,7 +22,7 @@
         chat widget that hands off to WhatsApp.
     """,
     'author': 'GlobX',
-    'depends': ['website'],
+    'depends': ['website', 'website_crm'],
     'data': [
         'views/assets_head_templates.xml',
         'views/chat_widget_templates.xml',
@@ -35,6 +35,8 @@
         'views/news_templates.xml',
         'views/about_templates.xml',
         'views/contact_templates.xml',
+        'views/seo_data.xml',
+        'views/seo_structured_data_templates.xml',
     ],
     'assets': {
         'web.assets_frontend': [
@@ -65,7 +67,6 @@
             'globx_website/static/src/js/calc_handoff.js',
             'globx_website/static/src/js/tab_title.js',
             'globx_website/static/src/js/process_carousel.js',
-            'globx_website/static/src/js/solution_finder.js',
             'globx_website/static/src/js/journey_timeline.js',
             'globx_website/static/src/js/curtain_reveal.js',
             'globx_website/static/src/js/partners_reveal.js',

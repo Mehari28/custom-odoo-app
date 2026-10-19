@@ -55,15 +55,24 @@
                                     <form id="globx_contact_form">
                                         <div class="globx-form-field">
                                             <label for="fullName">Full name</label>
-                                            <input type="text" id="fullName" name="fullName" required="required"/>
+                                            <input type="text" id="fullName" name="fullName" required="required" autocomplete="name"/>
                                         </div>
                                         <div class="globx-form-field">
                                             <label for="workEmail">Work email</label>
-                                            <input type="email" id="workEmail" name="workEmail" required="required"/>
+                                            <input type="email" id="workEmail" name="workEmail" required="required" autocomplete="email"/>
                                         </div>
                                         <div class="globx-form-field">
                                             <label for="company">Company</label>
-                                            <input type="text" id="company" name="company" required="required"/>
+                                            <input type="text" id="company" name="company" required="required" autocomplete="organization"/>
+                                        </div>
+                                        <div class="globx-form-field">
+                                            <label for="phone">Phone / WhatsApp <span class="globx-optional">(optional)</span></label>
+                                            <input type="tel" id="phone" name="phone" placeholder="+250 7XX XXX XXX" autocomplete="tel"/>
+                                        </div>
+                                        <!-- Honeypot: hidden from people, filled in by spam bots -->
+                                        <div class="globx-hp" aria-hidden="true">
+                                            <label for="website_hp">Leave this empty</label>
+                                            <input type="text" id="website_hp" name="website_hp" tabindex="-1" autocomplete="off"/>
                                         </div>
                                         <div class="globx-form-field">
                                             <label for="industry">Industry</label>
@@ -90,6 +99,7 @@
                                             <label for="problem">What are you hoping to solve?</label>
                                             <textarea id="problem" name="problem" rows="4"/>
                                         </div>
+                                        <div class="globx-form-error" role="alert" aria-live="polite"/>
                                         <button type="submit" class="btn globx-btn-primary globx-form-submit">
                                             Book a discovery call
                                         </button>
