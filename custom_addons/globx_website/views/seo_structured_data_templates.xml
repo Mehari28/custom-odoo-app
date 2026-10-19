@@ -11,7 +11,7 @@
   "@type": "Organization",
   "name": "GlobX",
   "url": "<t t-out="globx_base"/>/home-globx",
-  "logo": "<t t-out="globx_base"/>/globx_website/static/src/img/globx_logo.png",
+  "logo": "<t t-out="globx_base"/>/globx_website/static/src/img/globx_logo.webp",
   "description": "Odoo Silver Partner providing ERP implementation, integration and support across East Africa, India and the UAE.",
   "email": "info@globx.rw",
   "telephone": "+250790100100",

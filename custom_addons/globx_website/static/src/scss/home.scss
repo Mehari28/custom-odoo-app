@@ -1672,49 +1672,99 @@
 // has, so on mobile, tapping the chip instead fades in a simple grid of
 // module icons below it - same tap interaction (module_cycle.js already
 // toggles the .globx-expanded class), just laid out differently.
-@media (max-width: 767px) {
-    .globx-hero-chip-orbit-wrap {
-        display: block;
-        position: absolute;
-        top: 260px;
-        left: 4%;
-        right: auto;
-        bottom: auto;
-        width: 1px;
-        height: 1px;
-    }
+// Scoped under .globx_hero so these rules outrank the desktop ones
+// (.globx_hero .globx-hero-chip-orbit-wrap { display: none }), which
+// previously kept the chip hidden on phones.
+.globx_hero {
+    @media (max-width: 767px) {
+        .globx-hero-chip-orbit-wrap {
+            display: block;
+            position: absolute;
+            top: 260px;
+            left: 4%;
+            right: auto;
+            bottom: auto;
+            width: auto;
+            height: auto;
+        }
 
-    .globx-hero-chip-orbit {
-        position: static;
-        animation: none;
-    }
+        .globx-hero-chip-orbit {
+            position: static;
+            animation: none;
+            width: max-content;
+        }
 
-    .globx-module-backdrop {
-        display: none;
-    }
+        // While the module grid is open, it takes the place of the stat chips
+        .globx-hero-chip-row {
+            transition: opacity 0.2s ease;
+        }
 
-    .globx-module-polygon {
-        position: absolute;
-        top: 48px;
-        left: 0;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-        width: 220px;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.25s ease;
-    }
+        .globx_hero_media.globx-modules-open .globx-hero-chip-row {
+            opacity: 0;
+            pointer-events: none;
+        }
 
-    .globx-hero-chip-orbit-wrap.globx-expanded .globx-module-polygon {
-        opacity: 1;
-        pointer-events: auto;
-    }
+        // Keep the chip visible on phones so a second tap closes the grid
+        .globx-hero-chip-orbit-wrap.globx-expanded .globx-hero-chip-orbit {
+            opacity: 1;
+            pointer-events: auto;
+        }
 
-    .globx-module-node {
-        position: static;
-        transform: none !important;
-        opacity: 1 !important;
-        pointer-events: auto !important;
+        .globx-module-backdrop {
+            display: none;
+        }
+
+        .globx-module-polygon {
+            position: absolute;
+            top: auto;
+            bottom: calc(100% + 12px);   // open upwards, inside the hero box
+            left: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            width: 220px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .globx-hero-chip-orbit-wrap.globx-expanded .globx-module-polygon {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .globx-module-node {
+            position: static;
+            transform: none !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+    }
+}
+
+
+// ---------- Process character on tablets & phones ----------
+// On desktop he leans on the left edge of the process card. Below 992px the
+// card is full width, so he stands on top of it at the left and rests his
+// elbow on the "Our process" heading instead.
+.globx_process {
+    @media (max-width: 991.98px) {
+        > .container > h2 {
+            position: relative;
+            max-width: 560px;          // same width as the card, so he lines up with both
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 92px;
+            margin-bottom: 104px !important;
+            line-height: 1.2;
+        }
+
+        .globx-process-character {
+            display: block;
+            left: 2px;
+            right: auto;
+            bottom: calc(100% - 2px);
+            height: 170px;
+        }
     }
 }

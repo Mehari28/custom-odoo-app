@@ -14,8 +14,8 @@
                         <button type="button" class="globx-partner-popup-close" aria-label="Close">
                             <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
                         </button>
-                        <img src="/globx_website/static/src/img/globx_odoo_partner_final.png"
-                             alt="Globx is now Official: Odoo Silver Partner"/>
+                        <img src="/globx_website/static/src/img/globx_odoo_partner_final.webp"
+                             alt="Globx is now Official: Odoo Silver Partner" decoding="async"/>
                     </div>
                 </div>
 
@@ -23,7 +23,7 @@
                 <header class="globx_header">
                     <div class="container d-flex align-items-center justify-content-between flex-wrap py-3 gap-3">
                         <a href="/home-globx" class="globx-logo">
-                            <img src="/globx_website/static/src/img/globx_logo.png" alt="GlobX"/>
+                            <img src="/globx_website/static/src/img/globx_logo.webp" alt="GlobX" decoding="async"/>
                         </a>
 
                         <nav class="globx-nav d-none d-lg-flex align-items-center gap-4">
@@ -88,8 +88,8 @@
                                     </div>
 
                                     <img class="globx-hero-character"
-                                         src="/globx_website/static/src/img/hero_character.png"
-                                         alt="GlobX consultant"/>
+                                         src="/globx_website/static/src/img/hero_character.webp"
+                                         alt="GlobX consultant" decoding="async" fetchpriority="high"/>
 
                                     <div class="globx-hero-chip-row">
                                         <div class="globx-hero-chip globx-hero-chip-top">
@@ -251,8 +251,8 @@
                             <div class="col-lg-6">
                                 <div class="globx-before-after js_globx_before_after">
                                     <img class="globx-ba-photo globx-ba-before"
-                                         src="/globx_website/static/src/img/manual_chaos_photo.jpg"
-                                         alt="Manual, chaotic workflow"/>
+                                         src="/globx_website/static/src/img/manual_chaos_photo.webp"
+                                         alt="Manual, chaotic workflow" loading="lazy" decoding="async"/>
 
                                     <div class="globx-ba-chip" style="top:18%; left:6%;">✗ Manual entry</div>
                                     <div class="globx-ba-chip" style="top:45%; left:4%;">✗ No visibility</div>
@@ -260,8 +260,8 @@
 
                                     <div class="globx-ba-after-wrap">
                                         <img class="globx-ba-photo"
-                                             src="/globx_website/static/src/img/manual_chaos_after.jpg"
-                                             alt="Happy business owner using Odoo apps"/>
+                                             src="/globx_website/static/src/img/manual_chaos_after.webp"
+                                             alt="Happy business owner using Odoo apps" loading="lazy" decoding="async"/>
                                         <div class="globx-ba-chip" style="top:18%; left:8%;">✓ Invoices synced</div>
                                         <div class="globx-ba-chip" style="top:45%; right:8%;">✓ Real-time visibility</div>
                                         <div class="globx-ba-chip" style="bottom:14%; left:14%;">✓ Zero manual entry</div>
@@ -442,9 +442,9 @@
                                     <span class="globx-carousel-dot"/>
                                 </div>
 
-                                <img class="globx-process-character d-none d-lg-block"
-                                     src="/globx_website/static/src/img/process_leaning_character.png"
-                                     alt="Consultant leaning on the process card"/>
+                                <img class="globx-process-character"
+                                     src="/globx_website/static/src/img/process_leaning_character.webp"
+                                     alt="Consultant leaning on the process card" loading="lazy" decoding="async"/>
                             </div>
 
                             <div class="globx-carousel-side globx-carousel-side-next">
@@ -479,8 +479,8 @@
                             <div class="col-lg-6 globx-reveal">
                                 <div class="globx-feature-media-wrap">
                                     <img class="globx-feature-media"
-                                         src="/globx_website/static/src/img/strategic_planning.jpg"
-                                         alt="Strategic planning"/>
+                                         src="/globx_website/static/src/img/strategic_planning.webp"
+                                         alt="Strategic planning" loading="lazy" decoding="async"/>
                                 </div>
                             </div>
                         </div>
@@ -490,8 +490,8 @@
                             <div class="col-lg-6 order-lg-1 globx-reveal">
                                 <div class="globx-feature-media-wrap">
                                     <img class="globx-feature-media"
-                                         src="/globx_website/static/src/img/system_integration.jpg"
-                                         alt="System Integration"/>
+                                         src="/globx_website/static/src/img/system_integration.webp"
+                                         alt="System Integration" loading="lazy" decoding="async"/>
                                 </div>
                             </div>
                             <div class="col-lg-6 order-lg-2 globx-reveal">
@@ -518,7 +518,7 @@
                         <div class="globx-partners-grid">
                             <div class="globx-partner-card" t-foreach="range(1, 20)" t-as="i">
                                 <img t-attf-src="/globx_website/static/src/img/partner_logo_{{ '%02d' % i }}.png"
-                                     alt="GlobX partner logo"/>
+                                     alt="GlobX partner logo" loading="lazy" decoding="async"/>
                             </div>
                         </div>
                     </div>
@@ -547,8 +547,8 @@
                                     </p>
                                     <div class="globx-testi-footer">
                                         <img class="globx-testi-avatar"
-                                             src="/globx_website/static/src/img/testimonial_safiya.png"
-                                             alt="Safiya Ibn Garba"/>
+                                             src="/globx_website/static/src/img/testimonial_safiya.webp"
+                                             alt="Safiya Ibn Garba" loading="lazy" decoding="async"/>
                                         <div>
                                             <b>Safiya Ibn Garba DTRF</b>
                                             <span>CEO and Lead Consultant, Kenya</span>
@@ -568,8 +568,8 @@
                                     </p>
                                     <div class="globx-testi-footer">
                                         <img class="globx-testi-avatar"
-                                             src="/globx_website/static/src/img/testimonial_nambi.jpg"
-                                             alt="Dr. Pallatheri Nambi Namboodiri"/>
+                                             src="/globx_website/static/src/img/testimonial_nambi.webp"
+                                             alt="Dr. Pallatheri Nambi Namboodiri" loading="lazy" decoding="async"/>
                                         <div>
                                             <b>Dr. Pallatheri Nambi Namboodiri</b>
                                             <span>Chief Physician, Ayushoveda / Dr. Nambi Clinic, India</span>
@@ -589,8 +589,8 @@
                                     </p>
                                     <div class="globx-testi-footer">
                                         <img class="globx-testi-avatar"
-                                             src="/globx_website/static/src/img/testimonial_homelink_logo.jpg"
-                                             alt="Homelink Mabati"/>
+                                             src="/globx_website/static/src/img/testimonial_homelink_logo.webp"
+                                             alt="Homelink Mabati" loading="lazy" decoding="async"/>
                                         <div>
                                             <b>Catherine Kathure</b>
                                             <span>CEO, Homelink Mabati, Rwanda</span>

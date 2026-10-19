@@ -11,7 +11,7 @@
                 <header class="globx_header">
                     <div class="container d-flex align-items-center justify-content-between flex-wrap py-3 gap-3">
                         <a href="/home-globx" class="globx-logo">
-                            <img src="/globx_website/static/src/img/globx_logo.png" alt="GlobX"/>
+                            <img src="/globx_website/static/src/img/globx_logo.webp" alt="GlobX" decoding="async"/>
                         </a>
 
                         <nav class="globx-nav d-none d-lg-flex align-items-center gap-4">
@@ -61,8 +61,8 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="globx-about-hero-media">
-                                    <img src="/globx_website/static/src/img/about_team_group.jpg"
-                                         alt="The GlobX team"/>
+                                    <img src="/globx_website/static/src/img/about_team_group.webp"
+                                         alt="The GlobX team" decoding="async"/>
                                 </div>
                             </div>
                         </div>
@@ -76,8 +76,8 @@
                             <div class="row align-items-center gy-3">
                                 <div class="col-auto">
                                     <img class="globx-mission-avatar"
-                                         src="/globx_website/static/src/img/about_ceo_vinay_dev.jpg"
-                                         alt="Vinay Dev, CEO of GlobX"/>
+                                         src="/globx_website/static/src/img/about_ceo_vinay_dev.webp"
+                                         alt="Vinay Dev, CEO of GlobX" decoding="async"/>
                                 </div>
                                 <div class="col">
                                     <span class="globx-mission-label">Our mission</span>
@@ -102,10 +102,10 @@
                                 <strong>We are experienced across all four markets.</strong>
                             </p>
                             <div class="globx-differentiator-flags">
-                                <img src="https://flagcdn.com/w40/rw.png" alt="Rwanda" title="Rwanda"/>
-                                <img src="https://flagcdn.com/w40/ke.png" alt="Kenya" title="Kenya"/>
-                                <img src="https://flagcdn.com/w40/in.png" alt="India" title="India"/>
-                                <img src="https://flagcdn.com/w40/ae.png" alt="UAE" title="UAE"/>
+                                <img src="https://flagcdn.com/w40/rw.png" alt="Rwanda" title="Rwanda" loading="lazy" decoding="async"/>
+                                <img src="https://flagcdn.com/w40/ke.png" alt="Kenya" title="Kenya" loading="lazy" decoding="async"/>
+                                <img src="https://flagcdn.com/w40/in.png" alt="India" title="India" loading="lazy" decoding="async"/>
+                                <img src="https://flagcdn.com/w40/ae.png" alt="UAE" title="UAE" loading="lazy" decoding="async"/>
                             </div>
                         </div>
                     </div>
@@ -252,8 +252,8 @@
                             <div class="col-md-6 col-lg-4 globx-reveal">
                                 <div class="globx-team-card">
                                     <img class="globx-team-avatar"
-                                         src="/globx_website/static/src/img/about_ceo_vinay_dev.jpg"
-                                         alt="Vinay Dev, CEO"/>
+                                         src="/globx_website/static/src/img/about_ceo_vinay_dev.webp"
+                                         alt="Vinay Dev, CEO" decoding="async"/>
                                     <b>Vinay Dev</b>
                                     <span class="globx-team-role">Principal Consultant</span>
                                     <p>
@@ -265,8 +265,8 @@
                             <div class="col-md-6 col-lg-4 globx-reveal">
                                 <div class="globx-team-card">
                                     <img class="globx-team-avatar"
-                                         src="/globx_website/static/src/img/about_pratheesh.png"
-                                         alt="Pratheesh Ezhuthupura"/>
+                                         src="/globx_website/static/src/img/about_pratheesh.webp"
+                                         alt="Pratheesh Ezhuthupura" loading="lazy" decoding="async"/>
                                     <b>Pratheesh Ezhuthupura</b>
                                     <span class="globx-team-role">Project Lead</span>
                                     <p>
@@ -278,8 +278,8 @@
                             <div class="col-md-6 col-lg-4 globx-reveal">
                                 <div class="globx-team-card">
                                     <img class="globx-team-avatar"
-                                         src="/globx_website/static/src/img/about_ines.png"
-                                         alt="Ines Dushime"/>
+                                         src="/globx_website/static/src/img/about_ines.webp"
+                                         alt="Ines Dushime" loading="lazy" decoding="async"/>
                                     <b>Ines Dushime</b>
                                     <span class="globx-team-role">Country Lead</span>
                                     <p>
@@ -292,8 +292,8 @@
                             <div class="col-md-6 col-lg-4 globx-reveal">
                                 <div class="globx-team-card">
                                     <img class="globx-team-avatar"
-                                         src="/globx_website/static/src/img/about_aditi.png"
-                                         alt="Aditi Dev"/>
+                                         src="/globx_website/static/src/img/about_aditi.webp"
+                                         alt="Aditi Dev" loading="lazy" decoding="async"/>
                                     <b>Aditi Dev</b>
                                     <span class="globx-team-role">Client Experience Executive</span>
                                     <p>
@@ -306,8 +306,8 @@
                             <div class="col-md-6 col-lg-4 globx-reveal">
                                 <div class="globx-team-card">
                                     <img class="globx-team-avatar"
-                                         src="/globx_website/static/src/img/about_judith.png"
-                                         alt="Judith"/>
+                                         src="/globx_website/static/src/img/about_judith.webp"
+                                         alt="Judith" loading="lazy" decoding="async"/>
                                     <b>Judith</b>
                                     <span class="globx-team-role">Technical Lead</span>
                                     <p>
@@ -319,8 +319,8 @@
                             <div class="col-md-6 col-lg-4 globx-reveal">
                                 <div class="globx-team-card">
                                     <img class="globx-team-avatar"
-                                         src="/globx_website/static/src/img/about_shiba.png"
-                                         alt="Shiba Shiju"/>
+                                         src="/globx_website/static/src/img/about_shiba.webp"
+                                         alt="Shiba Shiju" loading="lazy" decoding="async"/>
                                     <b>Shiba Shiju</b>
                                     <span class="globx-team-role">Country Lead</span>
                                     <p>
@@ -349,10 +349,10 @@
                                     <b>3</b>
                                     <span>Regions: East Africa, India &amp; UAE</span>
                                     <div class="globx-region-flags">
-                                        <img src="https://flagcdn.com/w40/rw.png" alt="Rwanda" title="Rwanda"/>
-                                        <img src="https://flagcdn.com/w40/ke.png" alt="Kenya" title="Kenya"/>
-                                        <img src="https://flagcdn.com/w40/in.png" alt="India" title="India"/>
-                                        <img src="https://flagcdn.com/w40/ae.png" alt="UAE" title="UAE"/>
+                                        <img src="https://flagcdn.com/w40/rw.png" alt="Rwanda" title="Rwanda" loading="lazy" decoding="async"/>
+                                        <img src="https://flagcdn.com/w40/ke.png" alt="Kenya" title="Kenya" loading="lazy" decoding="async"/>
+                                        <img src="https://flagcdn.com/w40/in.png" alt="India" title="India" loading="lazy" decoding="async"/>
+                                        <img src="https://flagcdn.com/w40/ae.png" alt="UAE" title="UAE" loading="lazy" decoding="async"/>
                                     </div>
                                 </div>
                             </div>

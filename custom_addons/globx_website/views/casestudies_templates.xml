@@ -11,7 +11,7 @@
                 <header class="globx_header">
                     <div class="container d-flex align-items-center justify-content-between flex-wrap py-3 gap-3">
                         <a href="/home-globx" class="globx-logo">
-                            <img src="/globx_website/static/src/img/globx_logo.png" alt="GlobX"/>
+                            <img src="/globx_website/static/src/img/globx_logo.webp" alt="GlobX" decoding="async"/>
                         </a>
 
                         <nav class="globx-nav d-none d-lg-flex align-items-center gap-4">
@@ -66,7 +66,7 @@
                                 <a href="/casestudies/rwanda-business-show-2026" class="globx-cs-card">
                                     <img class="globx-cs-media"
                                          src="/globx_website/static/src/img/cs_rwanda_2026_listing.jpg"
-                                         alt="Odoo Business Show 2026 attendees"/>
+                                         alt="Odoo Business Show 2026 attendees" decoding="async"/>
                                     <div class="globx-cs-caption">
                                         <b>Kigali, Rwanda · Feb 2026</b>
                                         <span>
@@ -82,7 +82,7 @@
                                 <a href="/casestudies/acoa-2025" class="globx-cs-card">
                                     <img class="globx-cs-media"
                                          src="/globx_website/static/src/img/cs_acoa_2025_listing.jpg"
-                                         alt="ACOA 2025 Africa Congress of Accountants poster"/>
+                                         alt="ACOA 2025 Africa Congress of Accountants poster" decoding="async"/>
                                     <div class="globx-cs-caption">
                                         <b>Kigali, Rwanda · May 2025</b>
                                         <span>
@@ -98,7 +98,7 @@
                                 <a href="/casestudies/rw-ke-digital-transformation-2025" class="globx-cs-card">
                                     <img class="globx-cs-media"
                                          src="/globx_website/static/src/img/cs_rw_ke_2025_listing.jpg"
-                                         alt="Audience at Odoo Business Show 2025"/>
+                                         alt="Audience at Odoo Business Show 2025" decoding="async"/>
                                     <div class="globx-cs-caption">
                                         <b>Kigali, Rwanda · Jul 2025</b>
                                         <span>
