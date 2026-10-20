@@ -1,6 +1,6 @@
 {
     'name': 'GlobX Website',
-    'version': '19.0.1.3.2',
+    'version': '19.0.1.4.0',
     'category': 'Website',
     'summary': 'GlobX custom landing page (built from the approved prototype)',
     'description': """

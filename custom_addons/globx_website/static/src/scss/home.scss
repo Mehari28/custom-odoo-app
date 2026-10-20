@@ -17,6 +17,15 @@
     background: var(--globx-card-bg);
     border-bottom: 1px solid #e2e8e4;
 
+    // Odoo adds clearfix ::before/::after to .container. In this flex row they
+    // act as two invisible extra items, so "space-between" shared the space
+    // four ways and pushed the logo and menu button away from the edges.
+    > .container::before,
+    > .container::after {
+        content: none !important;
+        display: none !important;
+    }
+
     .globx-logo {
         display: inline-block;
         text-decoration: none;
@@ -96,8 +105,18 @@
         }
 
         &.globx-open {
-            max-height: 400px;
-            padding-bottom: 16px;
+            max-height: 460px;
+            padding-bottom: 20px;
+        }
+
+        // The "Book a discovery call" button inside the menu: keep it a real
+        // button (white text, no divider line) with breathing room above it
+        a.btn {
+            color: #fff;
+            border-bottom: none;
+            margin-top: 14px !important;
+            padding: 12px 16px;
+            font-size: 15px;
         }
     }
 }
