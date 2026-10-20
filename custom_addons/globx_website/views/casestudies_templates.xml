@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="globx_casestudies_page" name="GlobX Case Studies">
+        <t t-call="website.layout">
+            <div id="wrap" class="globx_page">
+
+                <t t-call="globx_website.globx_chat_widget"/>
+
+                <!-- ============ HEADER ============ -->
+                <t t-set="globx_active" t-value="'/casestudies'"/>
+                <t t-call="globx_website.globx_header"/>
+
+                <!-- ============ CASE STUDIES HERO ============ -->
+                <section class="globx_cs_hero py-5">
+                    <div class="container">
+                        <h1 class="text-white">Where you'll find us</h1>
+                        <p class="globx-cs-sub">
+                            GlobX shows up where Africa's businesses are building,
+                            from enterprise tech shows to accounting congresses
+                            across the region.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- ============ CASE STUDIES GRID ============ -->
+                <section class="globx_cs_grid pb-5">
+                    <div class="container">
+                        <div class="row gy-4 globx-reveal-group">
+
+                            <div class="col-md-4 globx-reveal">
+                                <a href="/casestudies/rwanda-business-show-2026" class="globx-cs-card">
+                                    <img class="globx-cs-media"
+                                         src="/globx_website/static/src/img/cs_rwanda_2026_listing.jpg"
+                                         alt="Odoo Business Show 2026 attendees" decoding="async"/>
+                                    <div class="globx-cs-caption">
+                                        <b>Kigali, Rwanda · Feb 2026</b>
+                                        <span>
+                                            Odoo Business Show: Rwanda's largest
+                                            enterprise tech event. 1,000+ attendees at
+                                            Radisson Blu, Kigali.
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-4 globx-reveal">
+                                <a href="/casestudies/acoa-2025" class="globx-cs-card">
+                                    <img class="globx-cs-media"
+                                         src="/globx_website/static/src/img/cs_acoa_2025_listing.jpg"
+                                         alt="ACOA 2025 Africa Congress of Accountants poster" decoding="async"/>
+                                    <div class="globx-cs-caption">
+                                        <b>Kigali, Rwanda · May 2025</b>
+                                        <span>
+                                            Africa Congress of Accountants: showcasing
+                                            Odoo ERP. ACOA 2025, continental finance
+                                            &amp; business leaders.
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-4 globx-reveal">
+                                <a href="/casestudies/rw-ke-digital-transformation-2025" class="globx-cs-card">
+                                    <img class="globx-cs-media"
+                                         src="/globx_website/static/src/img/cs_rw_ke_2025_listing.jpg"
+                                         alt="Audience at Odoo Business Show 2025" decoding="async"/>
+                                    <div class="globx-cs-caption">
+                                        <b>Kigali, Rwanda · Jul 2025</b>
+                                        <span>
+                                            Odoo Business Show: powering digital
+                                            transformation. RW &amp; KE entrepreneurs
+                                            and business leaders in attendance.
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+               <!-- ============ FOOTER ============ -->
+<t t-call="globx_website.globx_footer"/>
+            </div>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="globx_solutions_page" name="GlobX Solutions">
+        <t t-call="website.layout">
+            <div id="wrap" class="globx_page">
+
+                <t t-call="globx_website.globx_chat_widget"/>
+
+                <!-- ============ HEADER ============ -->
+                <t t-set="globx_active" t-value="'/solutions'"/>
+                <t t-call="globx_website.globx_header"/>
+
+                <!-- ============ SOLUTIONS HERO ============ -->
+                <section class="globx_solutions_hero py-5">
+                    <div class="container">
+                        <h1 class="text-white">Solutions Built around you</h1>
+                        <p class="globx-solutions-sub">
+                            Six ways GlobX helps you replace manual work with a
+                            connected, measurable Odoo system.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- ============ SOLUTIONS GRID ============ -->
+                <section class="globx_solutions_grid pb-5">
+                    <div class="container">
+                        <div class="row gy-4 globx-reveal-group">
+
+                            <div class="col-md-6 col-lg-4 globx-reveal">
+                                <div class="globx-solution-card js_globx_accordion">
+                                    <svg class="globx-electric-border" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <rect x="1" y="1" width="98" height="98" rx="6" ry="6"/>
+                                    </svg>
+                                    <div class="globx-solution-icon">
+                                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+                                    </div>
+                                    <b>Odoo ERP Implementation</b>
+                                    <p>
+                                        End-to-end deployment across finance, operations,
+                                        inventory, and CRM, scoped to your current state
+                                        of complexity.
+                                    </p>
+                                    <div class="globx-timeline-detail">
+                                        <p>
+                                            Includes a full current-state audit, module
+                                            configuration across Sales, Inventory, Accounting,
+                                            and CRM, data migration from your existing tools,
+                                            and a phased go-live with staff training built in.
+                                        </p>
+                                    </div>
+                                    <button type="button" class="globx-chevron-toggle globx-timeline-toggle" aria-label="Toggle details">
+                                        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                                    </button>
+                                    <a href="/contactus" class="btn globx-btn-primary globx-solution-btn mt-2">
+                                        Book a discovery call
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4 globx-reveal">
+                                <div class="globx-solution-card js_globx_accordion">
+                                    <svg class="globx-electric-border" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <rect x="1" y="1" width="98" height="98" rx="6" ry="6"/>
+                                    </svg>
+                                    <div class="globx-solution-icon">
+                                        <svg viewBox="0 0 24 24"><path d="M3 21l3.5-1 11-11a2 2 0 000-2.8L15.8 4.5a2 2 0 00-2.8 0l-11 11z"/></svg>
+                                    </div>
+                                    <b>Custom development</b>
+                                    <p>
+                                        Bespoke modules and extensions where the
+                                        out-of-the-box Odoo doesn't fit your workflow.
+                                    </p>
+                                    <div class="globx-timeline-detail">
+                                        <p>
+                                            From custom fields and views to fully bespoke
+                                            modules, our developers extend Odoo's core
+                                            without breaking future upgrades, built to
+                                            Odoo's own coding standards.
+                                        </p>
+                                    </div>
+                                    <button type="button" class="globx-chevron-toggle globx-timeline-toggle" aria-label="Toggle details">
+                                        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                                    </button>
+                                    <a href="/contactus" class="btn globx-btn-primary globx-solution-btn mt-2">
+                                        Book a discovery call
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4 globx-reveal">
+                                <div class="globx-solution-card js_globx_accordion">
+                                    <svg class="globx-electric-border" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <rect x="1" y="1" width="98" height="98" rx="6" ry="6"/>
+                                    </svg>
+                                    <div class="globx-solution-icon">
+                                        <svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 013 3v6M15 18H9a3 3 0 01-3-3V9"/></svg>
+                                    </div>
+                                    <b>Integration</b>
+                                    <p>
+                                        Bring Odoo into your existing stack:
+                                        e-commerce, WMS, EDI, and AI tooling.
+                                    </p>
+                                    <div class="globx-timeline-detail">
+                                        <p>
+                                            We connect Odoo to the systems you already
+                                            depend on: Shopify, WooCommerce, warehouse
+                                            management, EDI partners, and AI/automation
+                                            tools, so nothing runs in a silo.
+                                        </p>
+                                    </div>
+                                    <button type="button" class="globx-chevron-toggle globx-timeline-toggle" aria-label="Toggle details">
+                                        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                                    </button>
+                                    <a href="/contactus" class="btn globx-btn-primary globx-solution-btn mt-2">
+                                        Book a discovery call
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4 globx-reveal">
+                                <div class="globx-solution-card js_globx_accordion">
+                                    <svg class="globx-electric-border" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <rect x="1" y="1" width="98" height="98" rx="6" ry="6"/>
+                                    </svg>
+                                    <div class="globx-solution-icon">
+                                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.33 1.87 2 2 0 11-2.83 2.83 1.7 1.7 0 00-1.87-.33 1.7 1.7 0 00-1 1.55V21a2 2 0 11-4 0v-.09a1.7 1.7 0 00-1-1.55 1.7 1.7 0 00-1.87.33 2 2 0 11-2.83-2.83A1.7 1.7 0 004.6 15a1.7 1.7 0 00-1.55-1H3a2 2 0 110-4h.09A1.7 1.7 0 004.6 9a1.7 1.7 0 00-.33-1.87A2 2 0 117.1 4.3a1.7 1.7 0 001.87.33A1.7 1.7 0 0010 3v-.09a2 2 0 114 0V3a1.7 1.7 0 001 1.55 1.7 1.7 0 001.87-.33 2 2 0 112.83 2.83A1.7 1.7 0 0019.4 9a1.7 1.7 0 001.55 1H21a2 2 0 110 4h-.09a1.7 1.7 0 00-1.51 1z"/></svg>
+                                    </div>
+                                    <b>Business Automation</b>
+                                    <p>
+                                        Remove repetitive manual steps for approvals,
+                                        reconciliation, and reporting.
+                                    </p>
+                                    <div class="globx-timeline-detail">
+                                        <p>
+                                            Automated approval chains, scheduled reconciliation
+                                            jobs, and self-updating reports replace the manual
+                                            checklists your team currently runs by hand.
+                                        </p>
+                                    </div>
+                                    <button type="button" class="globx-chevron-toggle globx-timeline-toggle" aria-label="Toggle details">
+                                        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                                    </button>
+                                    <a href="/contactus" class="btn globx-btn-primary globx-solution-btn mt-2">
+                                        Book a discovery call
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4 globx-reveal">
+                                <div class="globx-solution-card js_globx_accordion">
+                                    <svg class="globx-electric-border" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <rect x="1" y="1" width="98" height="98" rx="6" ry="6"/>
+                                    </svg>
+                                    <div class="globx-solution-icon">
+                                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+                                    </div>
+                                    <b>Support and optimization</b>
+                                    <p>
+                                        Ongoing monitoring, tuning, and issue resolution
+                                        after go-live.
+                                    </p>
+                                    <div class="globx-timeline-detail">
+                                        <p>
+                                            Beyond go-live, our team monitors performance,
+                                            resolves issues as they come up, and tunes
+                                            configuration as your processes evolve,
+                                            available on flexible support tiers.
+                                        </p>
+                                    </div>
+                                    <button type="button" class="globx-chevron-toggle globx-timeline-toggle" aria-label="Toggle details">
+                                        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                                    </button>
+                                    <a href="/contactus" class="btn globx-btn-primary globx-solution-btn mt-2">
+                                        Book a discovery call
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4 globx-reveal">
+                                <div class="globx-solution-card js_globx_accordion">
+                                    <svg class="globx-electric-border" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <rect x="1" y="1" width="98" height="98" rx="6" ry="6"/>
+                                    </svg>
+                                    <div class="globx-solution-icon">
+                                        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+                                    </div>
+                                    <b>Training</b>
+                                    <p>
+                                        Role-based enablement so adoption doesn't stall
+                                        after rollout.
+                                    </p>
+                                    <div class="globx-timeline-detail">
+                                        <p>
+                                            Hands-on sessions tailored to each role: finance,
+                                            warehouse, sales, plus reference materials your
+                                            team can revisit long after go-live.
+                                        </p>
+                                    </div>
+                                    <button type="button" class="globx-chevron-toggle globx-timeline-toggle" aria-label="Toggle details">
+                                        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                                    </button>
+                                    <a href="/contactus" class="btn globx-btn-primary globx-solution-btn mt-2">
+                                        Book a discovery call
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+               <!-- ============ FOOTER ============ -->
+<t t-call="globx_website.globx_footer"/>
+            </div>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- SEO + link previews. Odoo renders <title>, meta description, Open Graph and
+         Twitter tags from these fields on each page's view (website.seo.metadata).
+         Editors can still change them later from the website editor (Site > Optimize SEO). -->
+    <record id="globx_home_page" model="ir.ui.view">
+        <field name="website_meta_title">GlobX | Odoo ERP Partner for Growing Businesses in East Africa</field>
+        <field name="website_meta_description">GlobX replaces spreadsheets and manual processes with one connected Odoo ERP system. Odoo Silver Partner serving businesses across East Africa, India and the UAE. Book a free discovery call.</field>
+        <field name="website_meta_keywords">Odoo partner Rwanda, ERP Rwanda, Odoo ERP East Africa, ERP implementation Kigali, business automation</field>
+        <field name="website_meta_og_img">/globx_website/static/src/img/og/og_home.jpg</field>
+    </record>
+    <record id="globx_solutions_page" model="ir.ui.view">
+        <field name="website_meta_title">Odoo ERP Solutions: Implementation, Automation &amp; Support | GlobX</field>
+        <field name="website_meta_description">Odoo ERP implementation, business automation, custom development, integration, training, and support and optimization: six ways GlobX replaces manual work with one connected system.</field>
+        <field name="website_meta_keywords">Odoo implementation, business automation, Odoo custom development, ERP integration, Odoo training, Odoo support</field>
+        <field name="website_meta_og_img">/globx_website/static/src/img/og/og_solutions.jpg</field>
+    </record>
+    <record id="globx_casestudies_page" model="ir.ui.view">
+        <field name="website_meta_title">Case Studies &amp; Events | GlobX</field>
+        <field name="website_meta_description">Where you'll find GlobX: from Rwanda's largest enterprise tech show to accounting congresses across Africa. See how we bring Odoo ERP to the region's businesses.</field>
+        <field name="website_meta_keywords">GlobX case studies, Odoo Business Show Rwanda, ACOA 2025, ERP events Africa</field>
+        <field name="website_meta_og_img">/globx_website/static/src/img/og/og_casestudies.jpg</field>
+    </record>
+    <record id="globx_cs_rwanda_2026_page" model="ir.ui.view">
+        <field name="website_meta_title">Odoo Business Show 2026: Rwanda's Largest Enterprise Tech Event | GlobX</field>
+        <field name="website_meta_description">Nearly 1,000 business leaders gathered in Kigali as GlobX and Odoo hosted Rwanda's largest enterprise technology event.</field>
+        <field name="website_meta_keywords">Odoo Business Show 2026, Rwanda tech event, GlobX Odoo Kigali</field>
+        <field name="website_meta_og_img">/globx_website/static/src/img/og/og_cs_rwanda_2026.jpg</field>
+    </record>
+    <record id="globx_cs_acoa_2025_page" model="ir.ui.view">
+        <field name="website_meta_title">GlobX Brings Odoo ERP to Africa's Financial Future at ACOA 2025 | GlobX</field>
+        <field name="website_meta_description">How GlobX showcased Odoo ERP to finance and accounting professionals at the Africa Congress of Accountants (ACOA) 2025.</field>
+        <field name="website_meta_keywords">ACOA 2025, Odoo accounting Africa, GlobX ERP accountants</field>
+        <field name="website_meta_og_img">/globx_website/static/src/img/og/og_cs_acoa_2025.jpg</field>
+    </record>
+    <record id="globx_cs_rw_ke_2025_page" model="ir.ui.view">
+        <field name="website_meta_title">Powering Digital Transformation in Rwanda &amp; Kenya | GlobX</field>
+        <field name="website_meta_description">How GlobX helps businesses in Rwanda and Kenya move from manual processes to a unified Odoo ERP system.</field>
+        <field name="website_meta_keywords">digital transformation Rwanda, ERP Kenya, Odoo partner Kenya</field>
+        <field name="website_meta_og_img">/globx_website/static/src/img/og/og_cs_rw_ke_2025.jpg</field>
+    </record>
+    <record id="globx_news_page" model="ir.ui.view">
+        <field name="website_meta_title">GlobX in the Press | News</field>
+        <field name="website_meta_description">What media outlets and industry publications are saying about GlobX and our Odoo ERP work across East Africa.</field>
+        <field name="website_meta_keywords">GlobX news, Odoo Rwanda news, ERP Africa press</field>
+        <field name="website_meta_og_img">/globx_website/static/src/img/og/og_news.jpg</field>
+    </record>
+    <record id="globx_about_page" model="ir.ui.view">
+        <field name="website_meta_title">About GlobX | Odoo Silver Partner in East Africa, India &amp; UAE</field>
+        <field name="website_meta_description">GlobX is an Odoo-partnered ERP solutions provider operating across East Africa, India and the UAE. Meet the team helping businesses digitize and scale with confidence.</field>
+        <field name="website_meta_keywords">about GlobX, Odoo Silver Partner, ERP consultants Rwanda</field>
+        <field name="website_meta_og_img">/globx_website/static/src/img/og/og_about.jpg</field>
+    </record>
+    <record id="globx_contact_page" model="ir.ui.view">
+        <field name="website_meta_title">Contact GlobX | Book a Free Discovery Call</field>
+        <field name="website_meta_description">Tell us where manual work is slowing your business down. Book a free discovery call with GlobX's Odoo ERP experts, or reach us on WhatsApp.</field>
+        <field name="website_meta_keywords">contact GlobX, Odoo consultation, ERP discovery call Rwanda</field>
+        <field name="website_meta_og_img">/globx_website/static/src/img/og/og_contact.jpg</field>
+    </record>
+</odoo>

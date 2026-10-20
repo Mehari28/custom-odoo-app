@@ -1,11 +1,15 @@
 .globx_page {
     background: var(--globx-bg-dark);
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 // ---------- Custom header ----------
-// Hide Odoo's default site header entirely - we're rendering our own
-// hard-coded one instead, not touching it via Website Builder.
 #wrapwrap > header {
+    display: none !important;
+}
+
+// ---------- Hide Odoo's default footer (we render our own) ----------
+#wrapwrap > footer {
     display: none !important;
 }
 
@@ -13,17 +17,24 @@
     background: var(--globx-card-bg);
     border-bottom: 1px solid #e2e8e4;
 
-    .globx-logo {
-        background: var(--globx-green);
-        color: #fff;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        padding: 6px 16px;
-        border-radius: var(--globx-radius-btn);
-        text-decoration: none;
-        font-size: 14px;
+    // Odoo adds clearfix ::before/::after to .container. In this flex row they
+    // act as two invisible extra items, so "space-between" shared the space
+    // four ways and pushed the logo and menu button away from the edges.
+    > .container::before,
+    > .container::after {
+        content: none !important;
+        display: none !important;
+    }
 
-        &:hover { color: #fff; }
+    .globx-logo {
+        display: inline-block;
+        text-decoration: none;
+
+        img {
+            display: block;
+            height: 32px;
+            width: auto;
+        }
     }
 
     .globx-nav a {
@@ -34,11 +45,16 @@
         &:hover { color: var(--globx-green); }
     }
 
+    .globx-nav a.globx-nav-active,
+    .globx-mobile-nav a.globx-nav-active {
+        color: var(--globx-green);
+        font-weight: 700;
+    }
+
     .globx-header-cta {
         white-space: nowrap;
     }
 
-    // ---------- Mobile hamburger toggle ----------
     .globx-nav-toggle {
         background: none;
         border: none;
@@ -68,7 +84,6 @@
         }
     }
 
-    // ---------- Mobile dropdown panel ----------
     .globx-mobile-nav {
         max-height: 0;
         overflow: hidden;
@@ -90,8 +105,18 @@
         }
 
         &.globx-open {
-            max-height: 400px;
-            padding-bottom: 16px;
+            max-height: 460px;
+            padding-bottom: 20px;
+        }
+
+        // The "Book a discovery call" button inside the menu: keep it a real
+        // button (white text, no divider line) with breathing room above it
+        a.btn {
+            color: #fff;
+            border-bottom: none;
+            margin-top: 14px !important;
+            padding: 12px 16px;
+            font-size: 15px;
         }
     }
 }
@@ -136,6 +161,25 @@
         background-size: 120px 120px;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpath d='M10 10H110M10 10V110M60 10V60H110M10 60H60M60 60V110' stroke='%233fae29' stroke-width='1' fill='none'/%3E%3Ccircle cx='10' cy='10' r='2.5' fill='%233fae29'/%3E%3Ccircle cx='110' cy='10' r='2.5' fill='%233fae29'/%3E%3Ccircle cx='10' cy='110' r='2.5' fill='%233fae29'/%3E%3Ccircle cx='60' cy='60' r='2.5' fill='%233fae29'/%3E%3Ccircle cx='110' cy='110' r='2.5' fill='%233fae29'/%3E%3C/svg%3E");
         animation: globx-digital-pulse 6s ease-in-out infinite;
+    }
+
+    .globx-cursor-glow {
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle,
+            rgba(63, 174, 41, 0.35) 0%,
+            rgba(63, 174, 41, 0.12) 40%,
+            transparent 70%
+        );
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 0;
+        mix-blend-mode: screen;
     }
 
     .globx-hero-blob {
@@ -289,6 +333,7 @@
     .globx-hero-chip-row .globx-hero-chip-top:nth-child(3) { animation-delay: 2.6s; }
 
     .globx-hero-chip-orbit-wrap {
+        display: none;
         position: absolute;
         right: calc(4% + 250px);
         left: auto;
@@ -296,6 +341,10 @@
         width: 1px;
         height: 1px;
         z-index: 2;
+
+        @media (min-width: 768px) {
+            display: block;
+        }
     }
 
     .globx-module-backdrop {
@@ -485,6 +534,177 @@
     &:hover { background: #eee; color: var(--globx-text-dark); }
 }
 
+// ---------- Curtain reveal ----------
+.globx_curtain_section {
+    background: var(--globx-bg-dark);
+}
+
+.globx-curtain-wrap {
+    position: relative;
+    min-height: 320px;
+    border-radius: var(--globx-radius-box);
+    overflow: hidden;
+    box-shadow: var(--globx-shadow-box);
+    background: var(--globx-bg-dark-2);
+}
+
+.globx-curtain-reveal {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    z-index: 1;
+
+    h2 {
+        font-weight: 700;
+        max-width: 620px;
+        margin: 8px 0 14px;
+    }
+
+    p {
+        color: #ffffff;
+        font-size: 14px;
+        max-width: 480px;
+        margin: 0;
+    }
+}
+
+.globx-curtain-kicker {
+    color: var(--globx-green);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.globx-curtain-rod {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: linear-gradient(180deg, #f0e6c8 0%, #c9a24a 35%, #8a6b23 65%, #5c4917 100%);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    z-index: 3;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: -4px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 30%, #f5eccb 0%, #c9a24a 45%, #6e5420 100%);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    }
+    &::before { left: -6px; }
+    &::after  { right: -6px; }
+}
+
+.globx-curtain-rod-rings {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    right: 10px;
+    height: 12px;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+
+    span {
+        width: 10px;
+        height: 10px;
+        margin-top: 1px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 30%, #fff6dd 0%, #d8b45c 50%, #7a5d24 100%);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.globx-curtain-panel {
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    width: 50%;
+    z-index: 2;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 92%, 96% 100%, 90% 92%, 84% 100%, 78% 92%, 72% 100%, 66% 92%, 60% 100%, 54% 92%, 48% 100%, 42% 92%, 36% 100%, 30% 92%, 24% 100%, 18% 92%, 12% 100%, 6% 92%, 0% 100%);
+    transform: scaleX(1);
+    transition: transform 1.7s cubic-bezier(0.34, 1.56, 0.64, 1), filter 1.7s ease, box-shadow 1.7s ease;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #04140d 0%,
+            #06231a 3%,
+            #123f2c 6%,
+            #1d6b45 9%,
+            #2f8f5c 10.5%,
+            #1d6b45 12%,
+            #123f2c 14.5%,
+            #06231a 17%,
+            #04140d 20%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.14) 0%,
+            rgba(255, 255, 255, 0) 12%,
+            rgba(0, 0, 0, 0) 78%,
+            rgba(0, 0, 0, 0.5) 100%
+        );
+    background-blend-mode: overlay, normal;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 14px;
+        background: linear-gradient(180deg, #e8c874 0%, #a9812f 100%);
+        clip-path: inherit;
+        opacity: 0.9;
+        mix-blend-mode: multiply;
+    }
+}
+
+.globx-curtain-left {
+    left: 0;
+    transform-origin: left center;
+    box-shadow: inset -10px 0 30px rgba(0, 0, 0, 0.55), 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+.globx-curtain-right {
+    right: 0;
+    transform-origin: right center;
+    box-shadow: inset 10px 0 30px rgba(0, 0, 0, 0.55), 0 0 40px rgba(0, 0, 0, 0.6);
+    transition-delay: 0.15s;
+}
+
+.globx-curtain-open {
+    .globx-curtain-left,
+    .globx-curtain-right {
+        // Scaling toward the rod-side edge (not the center) makes the
+        // fabric visually gather and bunch at the sides, like a real
+        // curtain being drawn open, instead of just shrinking in place.
+        transform: scaleX(0.12);
+        filter: brightness(0.72) saturate(1.15);
+    }
+
+    .globx-curtain-left {
+        box-shadow: inset -14px 0 34px rgba(0, 0, 0, 0.7), 6px 0 30px rgba(0, 0, 0, 0.7);
+    }
+    .globx-curtain-right {
+        box-shadow: inset 14px 0 34px rgba(0, 0, 0, 0.7), -6px 0 30px rgba(0, 0, 0, 0.7);
+    }
+}
+
 // ---------- Manual Chaos ----------
 .globx_manual_chaos {
     background: var(--globx-bg-dark-2);
@@ -512,91 +732,388 @@
         span { display: block; font-size: 12px; color: #556; }
     }
 
-    .globx-chaos-photo {
-        display: block;
+    .globx-before-after {
+        position: relative;
         width: 100%;
         aspect-ratio: 16 / 9;
-        object-fit: cover;
         border-radius: var(--globx-radius-box);
         box-shadow: var(--globx-shadow-box);
         border: 1.5px solid #7fa38e;
-    }
-}
-
-// ---------- Our process (vertical timeline) ----------
-.globx_process {
-    background: var(--globx-bg-dark);
-    color: var(--globx-text-light);
-
-    .globx-timeline {
-        position: relative;
+        overflow: hidden;
+        cursor: ew-resize;
+        user-select: none;
     }
 
-    .globx-timeline-line {
-        display: none;
+    .globx-ba-photo {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .globx-ba-before {
+        position: absolute;
+        inset: 0;
+    }
+
+    .globx-ba-after-wrap {
+        position: absolute;
+        inset: 0;
+        left: auto;
+        right: 0;
+        width: 50%;
+        overflow: hidden;
+
+        .globx-ba-photo {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: var(--globx-ba-container-width, 100%);
+            max-width: none;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .globx-ba-chip {
+        position: absolute;
+        background: #fff;
+        color: var(--globx-text-dark);
+        font-size: 11px;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 20px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+        white-space: nowrap;
+    }
+
+    .globx-ba-handle {
         position: absolute;
         top: 0;
         bottom: 0;
         left: 50%;
-        width: 2px;
-        background: rgba(255, 255, 255, 0.15);
+        width: 3px;
+        background: #fff;
         transform: translateX(-50%);
-        overflow: hidden;
-    }
+        cursor: ew-resize;
+        z-index: 3;
 
-    .globx-timeline-line-fill {
-        width: 100%;
-        height: 0%;
-        background: var(--globx-green);
-        transition: height 1.4s ease;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 38px;
+            height: 38px;
+            background: var(--globx-green);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            animation: globx-handle-glow 2s ease-in-out infinite;
+            z-index: 1;
+        }
 
-        &.globx-visible {
-            height: 100%;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--globx-green);
+            opacity: 0.55;
+            transform: translate(-50%, -50%) scale(1);
+            animation: globx-handle-ping 2s ease-out infinite;
+            pointer-events: none;
+            z-index: 0;
         }
     }
 
-    .globx-timeline-item {
-        position: relative;
+    .globx-ba-handle-arrows {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        pointer-events: none;
+        z-index: 4;
+    }
+
+    .globx-ba-label {
+        position: absolute;
+        top: 12px;
+        font-size: 11px;
+        font-weight: 700;
+        color: #fff;
+        background: rgba(13, 51, 39, 0.75);
+        padding: 4px 10px;
+        border-radius: 14px;
+        pointer-events: none;
+    }
+
+    .globx-ba-label-before {
+        left: 12px;
+    }
+
+    .globx-ba-label-after {
+        right: 12px;
+    }
+}
+
+// ---------- Manual work cost calculator ----------
+.globx_calculator {
+    background: var(--globx-bg-dark);
+    color: var(--globx-text-light);
+}
+
+.globx-calc-card {
+    background: var(--globx-card-bg);
+    color: var(--globx-text-dark);
+    border-radius: var(--globx-radius-box);
+    box-shadow: var(--globx-shadow-box);
+    padding: 36px;
+
+    h3 {
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+}
+
+.globx-calc-sub {
+    font-size: 14px;
+    color: #556;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.globx-calc-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+
+    &:not(:first-of-type) {
+        margin-top: 20px;
+    }
+}
+
+.globx-calc-hours-value,
+.globx-calc-rate-value {
+    color: var(--globx-green);
+    font-weight: 700;
+}
+
+.globx-calc-slider {
+    width: 100%;
+    accent-color: var(--globx-green);
+    cursor: pointer;
+}
+
+.globx-calc-results {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.globx-calc-result {
+    background: var(--globx-bg-dark);
+    color: var(--globx-text-light);
+    border-radius: var(--globx-radius-btn);
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    b {
+        font-size: 22px;
+        font-weight: 700;
+    }
+    span {
+        font-size: 12px;
+        color: var(--globx-text-muted);
+        text-align: right;
+        max-width: 55%;
+    }
+}
+
+.globx-calc-result-accent {
+    background: var(--globx-green);
+
+    b, span {
+        color: #fff;
+    }
+}
+
+.globx-calc-cta {
+    width: 100%;
+    text-align: center;
+}
+
+// ---------- Our process (push/pull carousel + leaning character) ----------
+.globx_process {
+    background: var(--globx-bg-dark);
+    color: var(--globx-text-light);
+
+    .globx-carousel {
         display: flex;
-        align-items: flex-start;
-        gap: 16px;
-        margin-bottom: 40px;
-        max-width: 480px;
+        align-items: center;
+        gap: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
 
-        &:last-child {
-            margin-bottom: 0;
+    .globx-carousel-main {
+        position: relative;
+        flex: 1;
+        min-width: 0;
+        max-width: 560px;
+        margin: 0 auto;
+    }
+
+    .globx-process-character {
+        position: absolute;
+        right: 520px;
+        bottom: 90px;
+        height: 300px;
+        width: auto;
+        z-index: 3;
+        pointer-events: none;
+        filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.35));
+    }
+
+    .globx-carousel-side {
+        display: none;
+        flex: none;
+        width: 150px;
+        cursor: pointer;
+    }
+
+    @media (min-width: 992px) {
+        .globx-carousel-side {
+            display: block;
         }
+    }
+
+    .globx-carousel-preview {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: var(--globx-radius-box);
+        padding: 20px 16px;
+        opacity: 0.55;
+        transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+
+        &:hover {
+            opacity: 1;
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    .globx-carousel-preview-num {
+        display: block;
+        color: var(--globx-green);
+        font-weight: 700;
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .globx-carousel-preview-title {
+        display: block;
+        color: var(--globx-text-light);
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+    .globx-carousel-track {
+        position: relative;
+        min-height: 260px;
+        overflow: hidden;
+        perspective: 1200px;
+    }
+
+    .globx-carousel-slide {
+        position: absolute;
+        inset: 0;
+        transform: translateX(100%) rotateY(-25deg);
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-style: preserve-3d;
+        pointer-events: none;
+        visibility: hidden;
+    }
+
+    .globx-carousel-slide.globx-carousel-active {
+        transform: translateX(0) rotateY(0deg);
+        pointer-events: auto;
+        visibility: visible;
+    }
+
+    .globx-carousel-slide.globx-carousel-push-out {
+        transform: translateX(-100%) rotateY(25deg);
+        visibility: visible;
+    }
+    .globx-carousel-slide.globx-carousel-push-in {
+        transform: translateX(100%) rotateY(-25deg);
+        visibility: visible;
+    }
+    .globx-carousel-slide.globx-carousel-push-in.globx-carousel-active {
+        transform: translateX(0) rotateY(0deg);
+    }
+
+    .globx-carousel-slide.globx-carousel-pull-out {
+        transform: translateX(100%) rotateY(-25deg);
+        visibility: visible;
+    }
+    .globx-carousel-slide.globx-carousel-pull-in {
+        transform: translateX(-100%) rotateY(25deg);
+        visibility: visible;
+    }
+    .globx-carousel-slide.globx-carousel-pull-in.globx-carousel-active {
+        transform: translateX(0) rotateY(0deg);
+    }
+
+    .globx-carousel-card {
+        background: var(--globx-card-bg);
+        color: var(--globx-text-dark);
+        border-radius: var(--globx-radius-box);
+        box-shadow: var(--globx-shadow-box);
+        padding: 32px 28px;
+        text-align: left;
+        height: 100%;
     }
 
     .globx-timeline-marker {
-        flex: none;
-        width: 44px;
-        height: 44px;
+        display: inline-flex;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
-        background: var(--globx-card-bg);
+        background: var(--globx-bg-dark);
         color: var(--globx-green);
         font-weight: 700;
-        font-size: 15px;
-        display: flex;
+        font-size: 14px;
         align-items: center;
         justify-content: center;
-        box-shadow: var(--globx-shadow-box);
+        margin-bottom: 14px;
     }
 
     .globx-timeline-icon {
-        width: 30px;
-        height: 30px;
+        width: 34px;
+        height: 34px;
         border-radius: 50%;
         background: var(--globx-bg-dark);
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 10px;
+        margin: 0 0 14px 10px;
         box-shadow: 0 0 12px 2px rgba(63, 174, 41, 0.55);
 
         svg {
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             fill: none;
             stroke: var(--globx-green);
             stroke-width: 1.8;
@@ -605,89 +1122,91 @@
         }
     }
 
-    .globx-timeline-content {
-        text-align: left;
-        background: var(--globx-card-bg);
-        color: var(--globx-text-dark);
-        border-radius: var(--globx-radius-box);
-        box-shadow: var(--globx-shadow-box);
-        padding: 20px 22px;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-        b {
-            display: block;
-            font-size: 17px;
-            margin-bottom: 4px;
-        }
-        p {
-            font-size: 13.5px;
-            color: #556;
-            line-height: 1.6;
-            margin: 0;
-        }
+    .globx-carousel-card b {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 8px;
     }
 
-    .globx-timeline-content:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 14px 34px rgba(63, 174, 41, 0.45);
+    .globx-carousel-card > p {
+        font-size: 14px;
+        color: #556;
+        line-height: 1.6;
+        margin: 0 0 12px;
     }
 
-    .globx-timeline-detail {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease, margin-top 0.35s ease;
-        margin-top: 0;
-
-        p {
-            font-size: 13px;
-            color: #556;
-            line-height: 1.6;
-        }
+    .globx-carousel-detail {
+        font-size: 13px;
+        color: #778;
+        line-height: 1.6;
+        border-top: 1px solid #eee;
+        padding-top: 12px;
+        margin: 0;
     }
 
-    .globx-timeline-item.globx-open .globx-timeline-detail {
-        max-height: 200px;
-        margin-top: 10px;
-    }
-
-    .globx-timeline-toggle {
-        background: none;
+    .globx-carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--globx-green);
         border: none;
-        color: var(--globx-green);
-        font-size: 12px;
-        font-weight: 600;
-        padding: 8px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
+        transition: background 0.2s ease, transform 0.2s ease;
+        z-index: 2;
+
+        svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: #fff;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
 
         &:hover {
-            text-decoration: underline;
+            background: var(--globx-green-deep);
         }
     }
 
-    @media (min-width: 992px) {
-        .globx-timeline-line {
-            display: block;
-        }
+    .globx-carousel-prev {
+        left: -20px;
+    }
+    .globx-carousel-next {
+        right: -20px;
+    }
 
-        .globx-timeline-item {
-            width: 50%;
-        }
+    .globx-carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 24px;
+    }
 
-        .globx-timeline-left {
-            margin-left: 0;
-            padding-right: 40px;
-            flex-direction: row-reverse;
-        }
+    .globx-carousel-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.2s ease;
+    }
 
-        .globx-timeline-right {
-            margin-left: 50%;
-            padding-left: 40px;
-        }
+    .globx-carousel-dot-active {
+        background: var(--globx-green);
+        transform: scale(1.3);
     }
 }
 
-.globx-reveal:not(.globx-process-line-fill):not(.globx-timeline-line-fill) {
+.globx-reveal {
     opacity: 0;
+    transition: opacity 0.6s ease;
 
     &.globx-visible {
         opacity: 1;
@@ -753,6 +1272,25 @@
 
     .globx-feature-media-wrap:hover .globx-feature-media {
         transform: scale(1.06);
+    }
+}
+
+// ---------- Partners ----------
+.globx_partners {
+    background: var(--globx-bg-dark);
+}
+
+.globx-partners-sub {
+    color: var(--globx-text-muted);
+    font-size: 14px;
+    max-width: 480px;
+}
+
+.globx-partners-grid {
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -842,11 +1380,21 @@
         border-radius: 50%;
         background: #e4e9e5;
         border: 1.5px solid #b7c4bb;
+        object-fit: cover;
     }
 }
 
 // ---------- Footer ----------
 .globx_footer {
+
+    .globx-footer-copyright {
+        margin-top: 32px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 12px;
+        color: var(--globx-text-muted);
+        text-align: center;
+    }
     background: var(--globx-bg-dark-2);
     color: var(--globx-text-muted);
     border-top: 1px solid #234f3c;
@@ -864,5 +1412,509 @@
 
     ul li {
         margin-bottom: 4px;
+    }
+
+    .globx-social-links {
+        display: flex;
+        gap: 10px;
+        margin-top: 12px;
+
+        a {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease, transform 0.2s ease;
+            text-decoration: none;
+
+            svg {
+                width: 18px;
+                height: 18px;
+
+                path, rect, circle {
+                    fill: #ffffff;
+                }
+            }
+
+            &:hover {
+                background: var(--globx-green);
+                transform: translateY(-3px);
+
+                svg path, svg rect, svg circle {
+                    fill: #fff;
+                }
+            }
+        }
+    }
+}
+
+// Instagram icon stays outline-style, not solid fill like the others
+.globx-social-links a svg.globx-icon-instagram {
+    rect,
+    circle:first-of-type {
+        fill: none !important;
+    }
+    circle:last-of-type {
+        fill: #ffffff !important;
+    }
+}
+
+.globx-social-links a:hover svg.globx-icon-instagram {
+    rect,
+    circle:first-of-type {
+        fill: none !important;
+    }
+    circle:last-of-type {
+        fill: #fff !important;
+    }
+}
+// ---------- Partners grid (individual cards) ----------
+.globx-partners-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+@media (min-width: 576px) {
+    .globx-partners-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width: 768px) {
+    .globx-partners-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (min-width: 992px) {
+    .globx-partners-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.globx-partner-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: var(--globx-shadow-box);
+    padding: 10px;
+    aspect-ratio: 1.4 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.globx-partner-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(63, 174, 41, 0.4);
+}
+
+.globx-partner-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.globx-partner-card {
+    opacity: 0;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s ease, box-shadow 0.2s ease;
+}
+
+.globx-partner-card:nth-child(odd) {
+    transform: translateX(-70px);
+}
+.globx-partner-card:nth-child(even) {
+    transform: translateX(70px);
+}
+
+.globx-partners-visible .globx-partner-card {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.globx-partners-visible .globx-partner-card:nth-child(1) { transition-delay: 0s; }
+.globx-partners-visible .globx-partner-card:nth-child(2) { transition-delay: 0.03s; }
+.globx-partners-visible .globx-partner-card:nth-child(3) { transition-delay: 0.06s; }
+.globx-partners-visible .globx-partner-card:nth-child(4) { transition-delay: 0.09s; }
+.globx-partners-visible .globx-partner-card:nth-child(5) { transition-delay: 0.12s; }
+.globx-partners-visible .globx-partner-card:nth-child(6) { transition-delay: 0.15s; }
+.globx-partners-visible .globx-partner-card:nth-child(7) { transition-delay: 0.18s; }
+.globx-partners-visible .globx-partner-card:nth-child(8) { transition-delay: 0.21s; }
+.globx-partners-visible .globx-partner-card:nth-child(9) { transition-delay: 0.24s; }
+.globx-partners-visible .globx-partner-card:nth-child(10) { transition-delay: 0.27s; }
+.globx-partners-visible .globx-partner-card:nth-child(11) { transition-delay: 0.3s; }
+.globx-partners-visible .globx-partner-card:nth-child(12) { transition-delay: 0.33s; }
+.globx-partners-visible .globx-partner-card:nth-child(13) { transition-delay: 0.36s; }
+.globx-partners-visible .globx-partner-card:nth-child(14) { transition-delay: 0.39s; }
+.globx-partners-visible .globx-partner-card:nth-child(15) { transition-delay: 0.42s; }
+.globx-partners-visible .globx-partner-card:nth-child(16) { transition-delay: 0.45s; }
+.globx-partners-visible .globx-partner-card:nth-child(17) { transition-delay: 0.48s; }
+.globx-partners-visible .globx-partner-card:nth-child(18) { transition-delay: 0.51s; }
+.globx-partners-visible .globx-partner-card:nth-child(19) { transition-delay: 0.54s; }
+
+// ---------- Odoo Silver Partner announcement popup ----------
+.globx-partner-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.d-none {
+        display: none;
+    }
+
+    .globx-partner-popup-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .globx-partner-popup-card {
+        position: relative;
+        max-width: 90vw;
+        max-height: 85vh;
+
+        img {
+            display: block;
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: var(--globx-radius-box);
+            box-shadow: var(--globx-shadow-box);
+        }
+    }
+
+    .globx-partner-popup-close {
+        position: absolute;
+        top: -14px;
+        right: -14px;
+
+        @media (max-width: 480px) {
+            top: 8px;
+            right: 8px;
+        }
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #fff;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.15s ease;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--globx-text-dark);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+// ---------- Smooth fade for before/after corner labels ----------
+.globx-ba-label {
+    transition: opacity 0.15s ease;
+}
+
+@keyframes globx-handle-glow {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 6px 2px rgba(63, 174, 41, 0.5);
+    }
+    50% {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 16px 6px rgba(63, 174, 41, 0.85);
+    }
+}
+
+@keyframes globx-handle-ping {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.55;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.8);
+        opacity: 0;
+    }
+}
+
+// ---------- "Drag to compare" hint on the before/after slider ----------
+.globx-ba-hint {
+    position: absolute;
+    top: calc(50% + 34px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(13, 51, 39, 0.85);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    padding: 6px 14px;
+    border-radius: 14px;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 3;
+    transition: opacity 0.3s ease;
+}
+
+.globx-ba-hint-hidden {
+    opacity: 0;
+}
+
+// ---------- Cost calculator benchmark footnote ----------
+.globx-calc-footnote {
+    font-size: 11px;
+    color: #778;
+    text-align: center;
+    margin: 10px 0 0;
+}
+
+// ---------- Cost calculator explainer (opportunity-cost clarification) ----------
+.globx-calc-explainer {
+    font-size: 12.5px;
+    color: #778;
+    line-height: 1.6;
+    margin: 4px 0 16px;
+}
+
+// ---------- Orbit chip: functional tap-to-reveal grid on mobile ----------
+// The circular "orbit" arrangement needs more room than a phone screen
+// has, so on mobile, tapping the chip instead fades in a simple grid of
+// module icons below it - same tap interaction (module_cycle.js already
+// toggles the .globx-expanded class), just laid out differently.
+// Scoped under .globx_hero so these rules outrank the desktop ones
+// (.globx_hero .globx-hero-chip-orbit-wrap { display: none }), which
+// previously kept the chip hidden on phones.
+.globx_hero {
+    @media (max-width: 767px) {
+        .globx-hero-chip-orbit-wrap {
+            display: block;
+            position: absolute;
+            top: 260px;
+            left: 4%;
+            right: auto;
+            bottom: auto;
+            width: auto;
+            height: auto;
+        }
+
+        .globx-hero-chip-orbit {
+            position: static;
+            animation: none;
+            width: max-content;
+        }
+
+        // While the module grid is open, it takes the place of the stat chips
+        .globx-hero-chip-row {
+            transition: opacity 0.2s ease;
+        }
+
+        .globx_hero_media.globx-modules-open .globx-hero-chip-row {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        // Keep the chip visible on phones so a second tap closes the grid
+        .globx-hero-chip-orbit-wrap.globx-expanded .globx-hero-chip-orbit {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .globx-module-backdrop {
+            display: none;
+        }
+
+        .globx-module-polygon {
+            position: absolute;
+            top: auto;
+            bottom: calc(100% + 12px);   // open upwards, inside the hero box
+            left: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            width: 220px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .globx-hero-chip-orbit-wrap.globx-expanded .globx-module-polygon {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .globx-module-node {
+            position: static;
+            transform: none !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+    }
+}
+
+
+// ---------- Process character on tablets & phones ----------
+// On desktop he leans on the left edge of the process card. Below 992px the
+// card is full width, so he stands on top of it at the left and rests his
+// elbow on the "Our process" heading instead.
+.globx_process {
+    @media (max-width: 991.98px) {
+        > .container > h2 {
+            position: relative;
+            max-width: 560px;          // same width as the card, so he lines up with both
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 92px;
+            margin-bottom: 104px !important;
+            line-height: 1.2;
+        }
+
+        .globx-process-character {
+            display: block;
+            left: 2px;
+            right: auto;
+            bottom: calc(100% - 2px);
+            height: 170px;
+        }
+    }
+}
+
+// ---------- Footer: logo, badge, contact list, CTA ----------
+.globx_footer {
+    .globx-footer-logo img {
+        display: block;
+        height: 34px;
+        width: auto;
+        background: #fff;
+        padding: 6px 10px;
+        border-radius: var(--globx-radius-btn);
+    }
+
+    p {
+        max-width: 420px;
+        line-height: 1.6;
+    }
+
+    // Shiny silver pill - same metallic gradient, shimmer sweeps and glow
+    // pulse as the Silver Partner badge on the About page (keyframes in about.scss)
+    .globx-footer-badge {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        padding: 5px 14px;
+        border-radius: 999px;
+        border: 1px solid #c8c8d0;
+        background: linear-gradient(135deg, #e8e8ec 0%, #ffffff 45%, #d4d4da 55%, #ffffff 100%);
+        color: #55555f;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+        animation: globx-footer-badge-glow 2.4s ease-in-out infinite;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -60%;
+            width: 35%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.85) 50%, transparent 100%);
+            transform: skewX(-20deg);
+            animation: globx-badge-shimmer 3.5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        &::before {
+            width: 20%;
+            opacity: 0.6;
+            animation-delay: 1.2s;
+        }
+    }
+
+    ul li a {
+        text-decoration: none;
+
+        &:hover { text-decoration: underline; }
+    }
+
+    .globx-footer-contact li {
+        margin-bottom: 6px;
+    }
+
+    .globx-footer-cta {
+        color: #fff;
+        text-decoration: none;
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+}
+
+// ---------- Outline button (used on the 404 page) ----------
+.globx-btn-outline {
+    color: var(--globx-text-light);
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--globx-radius-btn);
+    font-weight: 600;
+    padding: 10px 20px;
+    background: transparent;
+    transition: background 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+        color: var(--globx-text-light);
+        border-color: var(--globx-green);
+        background: rgba(63, 174, 41, 0.15);
+    }
+}
+
+// ---------- 404 page ----------
+.globx_404 {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+
+    .globx-404-code {
+        display: block;
+        font-size: clamp(88px, 18vw, 160px);
+        font-weight: 800;
+        line-height: 1;
+        color: var(--globx-green);
+        letter-spacing: -4px;
+        margin-bottom: 8px;
+    }
+
+    .globx-404-lead {
+        max-width: 520px;
+        color: var(--globx-text-muted);
+    }
+}
+
+.globx_404 .btn {
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+
+@keyframes globx-footer-badge-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(200, 200, 215, 0.35); }
+    50%      { box-shadow: 0 0 12px 2px rgba(220, 220, 235, 0.55); }
+}
+
+// Respect visitors who ask their device to reduce motion
+@media (prefers-reduced-motion: reduce) {
+    .globx_footer .globx-footer-badge,
+    .globx_footer .globx-footer-badge::before,
+    .globx_footer .globx-footer-badge::after {
+        animation: none;
     }
 }

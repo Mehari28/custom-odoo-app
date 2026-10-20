@@ -1,53 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!--
-        Hard-coded page: rendered only through the controller in
-        controllers/main.py, not registered as a Website Builder page.
-        No oe_structure/oe_empty zones - nothing here is editable from
-        the front-end builder, everything lives in this XML.
-    -->
     <template id="globx_home_page" name="GlobX Home">
         <t t-call="website.layout">
             <div id="wrap" class="globx_page">
 
-                <!-- ============ HEADER ============ -->
-                <header class="globx_header">
-                    <div class="container d-flex align-items-center justify-content-between flex-wrap py-3 gap-3">
-                        <a href="/home-globx" class="globx-logo">Globx</a>
+                <t t-call="globx_website.globx_chat_widget"/>
 
-                        <nav class="globx-nav d-none d-lg-flex align-items-center gap-4">
-                            <a href="/home-globx">Home</a>
-                            <a href="/solutions">solutions</a>
-                            <a href="/casestudies">casestudies</a>
-                            <a href="/news">news</a>
-                            <a href="/about">about</a>
-                            <a href="/contactus">contact</a>
-                        </nav>
-
-                        <a href="/contactus" class="btn globx-btn-primary globx-header-cta d-none d-lg-inline-block">
-                            Book a discovery call
-                        </a>
-
-                        <!-- Mobile-only hamburger toggle -->
-                        <button class="globx-nav-toggle d-lg-none" type="button" aria-label="Toggle navigation" aria-expanded="false">
-                            <span/>
-                            <span/>
-                            <span/>
+                <!-- ============ ODOO SILVER PARTNER POPUP ============ -->
+                <div id="globx_partner_popup" class="globx-partner-popup" style="display:none;">
+                    <div class="globx-partner-popup-backdrop"/>
+                    <div class="globx-partner-popup-card">
+                        <button type="button" class="globx-partner-popup-close" aria-label="Close">
+                            <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
                         </button>
+                        <img src="/globx_website/static/src/img/globx_odoo_partner_final.webp"
+                             alt="Globx is now Official: Odoo Silver Partner" decoding="async"/>
                     </div>
+                </div>
 
-                    <!-- Mobile dropdown panel -->
-                    <div class="globx-mobile-nav d-lg-none">
-                        <a href="/home-globx">Home</a>
-                        <a href="/solutions">solutions</a>
-                        <a href="/casestudies">casestudies</a>
-                        <a href="/news">news</a>
-                        <a href="/about">about</a>
-                        <a href="/contactus">contact</a>
-                        <a href="/contactus" class="btn globx-btn-primary mt-2">Book a discovery call</a>
-                    </div>
-                </header>
+                <!-- ============ HEADER ============ -->
+                <t t-set="globx_active" t-value="'/home-globx'"/>
+                <t t-call="globx_website.globx_header"/>
 
                 <!-- ============ HERO ============ -->
                 <section class="globx_hero py-5">
@@ -55,7 +29,7 @@
                         <div class="row align-items-start gy-4">
                             <div class="col-lg-5">
                                 <div class="globx_hero_copy">
-                                    <h1 class="text-white">Scale your business,</h1>
+                                    <h1 class="text-white">Scale your business, not your stress!</h1>
                                     <p class="mb-4">
                                         We replace manual bottlenecks with intelligent Odoo
                                         workflows, helping you grow without the administrative
@@ -79,9 +53,9 @@
                                         <div class="globx-hero-blob globx-hero-blob-2"/>
                                     </div>
 
-                                    <img class="globx-hero-character d-none d-md-block"
-                                         src="/globx_website/static/src/img/hero_character.png"
-                                         alt="GlobX consultant"/>
+                                    <img class="globx-hero-character"
+                                         src="/globx_website/static/src/img/hero_character.webp"
+                                         alt="GlobX consultant" decoding="async" fetchpriority="high"/>
 
                                     <div class="globx-hero-chip-row">
                                         <div class="globx-hero-chip globx-hero-chip-top">
@@ -183,6 +157,33 @@
                     </div>
                 </section>
 
+                <!-- ============ CURTAIN REVEAL ============ -->
+                <section class="globx_curtain_section py-5">
+                    <div class="container">
+                        <div class="globx-curtain-wrap js_globx_curtain">
+                            <div class="globx-curtain-reveal">
+                                <span class="globx-curtain-kicker">The real story</span>
+                                <h2 class="text-white">
+                                    The businesses winning today all have one thing in
+                                    common: a unified system.
+                                </h2>
+                                <p>
+                                    No more chasing spreadsheets, no more guessing where things
+                                    stand. Just one connected system your whole team can trust.
+                                </p>
+                            </div>
+
+                            <div class="globx-curtain-rod">
+                                <div class="globx-curtain-rod-rings">
+                                    <span/><span/><span/><span/><span/><span/><span/><span/>
+                                </div>
+                            </div>
+                            <div class="globx-curtain-panel globx-curtain-left"/>
+                            <div class="globx-curtain-panel globx-curtain-right"/>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- ============ THE DIFFERENCE IS MANUAL CHAOS ============ -->
                 <section class="globx_manual_chaos py-5">
                     <div class="container">
@@ -190,11 +191,11 @@
 
                             <div class="col-lg-6">
                                 <h2 class="text-white">
-                                    The difference is<br/>Manual Chaos
+                                    The Issue Lies in<br/>Manual Processes
                                 </h2>
                                 <p class="globx-quote fst-italic">
-                                    "Where is that invoice? I'm sure I saved it in the
-                                    spreadsheet..."
+                                    Are you facing consistent issues like hours lost
+                                    daily, manual data entry, and costly human error?
                                 </p>
 
                                 <div class="row g-3 my-3">
@@ -214,11 +215,99 @@
                             </div>
 
                             <div class="col-lg-6">
-                                <img class="globx-chaos-photo"
-                                     src="/globx_website/static/src/img/manual_chaos_photo.jpg"
-                                     alt="Frustrated employee searching for a lost invoice"/>
+                                <div class="globx-before-after js_globx_before_after">
+                                    <img class="globx-ba-photo globx-ba-before"
+                                         src="/globx_website/static/src/img/manual_chaos_photo.webp"
+                                         alt="Manual, chaotic workflow" loading="lazy" decoding="async"/>
+
+                                    <div class="globx-ba-chip" style="top:18%; left:6%;">✗ Manual entry</div>
+                                    <div class="globx-ba-chip" style="top:45%; left:4%;">✗ No visibility</div>
+                                    <div class="globx-ba-chip" style="bottom:14%; left:10%;">✗ Paper everywhere</div>
+
+                                    <div class="globx-ba-after-wrap">
+                                        <img class="globx-ba-photo"
+                                             src="/globx_website/static/src/img/manual_chaos_after.webp"
+                                             alt="Happy business owner using Odoo apps" loading="lazy" decoding="async"/>
+                                        <div class="globx-ba-chip" style="top:18%; left:8%;">✓ Invoices synced</div>
+                                        <div class="globx-ba-chip" style="top:45%; right:8%;">✓ Real-time visibility</div>
+                                        <div class="globx-ba-chip" style="bottom:14%; left:14%;">✓ Zero manual entry</div>
+                                    </div>
+
+                                    <div class="globx-ba-handle">
+                                        <span class="globx-ba-handle-arrows">&#8596;</span>
+                                    </div>
+
+                                    <span class="globx-ba-label globx-ba-label-before">Before</span>
+                                    <span class="globx-ba-label globx-ba-label-after">After</span>
+
+                                    <div class="globx-ba-hint">&#8596; Drag to compare</div>
+                                </div>
                             </div>
 
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ COST CALCULATOR ============ -->
+                <section class="globx_calculator py-5">
+                    <div class="container">
+                        <div class="globx-calc-card js_globx_calculator">
+                            <div class="row align-items-center gy-4">
+                                <div class="col-lg-6">
+                                    <h3>What's manual work really costing you?</h3>
+                                    <p class="globx-calc-sub">
+                                        Estimate the hours and cost your team loses to
+                                        spreadsheets, re-entry, and manual reconciliation
+                                        every year.
+                                    </p>
+
+                                    <label for="globx_calc_hours" class="globx-calc-label">
+                                        Total hours per day your team spends on manual work (all employees combined)
+                                        <span class="globx-calc-hours-value">2</span>
+                                    </label>
+                                    <input type="range" id="globx_calc_hours"
+                                           class="globx-calc-slider"
+                                           min="0.5" max="8" step="0.5" value="2"/>
+
+                                    <label for="globx_calc_rate" class="globx-calc-label">
+                                        Average hourly cost per employee ($)
+                                        <span class="globx-calc-rate-value">15</span>
+                                    </label>
+                                    <input type="range" id="globx_calc_rate"
+                                           class="globx-calc-slider"
+                                           min="5" max="60" step="1" value="15"/>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="globx-calc-results">
+                                        <div class="globx-calc-result">
+                                            <b class="globx-calc-hours-year">0</b>
+                                            <span>Hours lost per year</span>
+                                        </div>
+                                        <div class="globx-calc-result">
+                                            <b class="globx-calc-cost-year">$0</b>
+                                            <span>Value of wasted capacity per year</span>
+                                        </div>
+                                        <div class="globx-calc-result globx-calc-result-accent">
+                                            <b class="globx-calc-weeks">0</b>
+                                            <span>Work-weeks of capacity, freed up</span>
+                                        </div>
+                                    </div>
+                                    <p class="globx-calc-explainer">
+                                        This reflects time currently lost to manual work,
+                                        not direct cash back. Recovering it means fewer
+                                        hires needed as you grow, fewer costly errors, and
+                                        more hours spent on work that actually makes you
+                                        money.
+                                    </p>
+                                    <a href="/contactus" class="btn globx-btn-primary globx-calc-cta">
+                                        See what this looks like for your business
+                                    </a>
+                                    <p class="globx-calc-footnote">
+                                        Based on a standard 250-working-day year.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -228,84 +317,106 @@
                     <div class="container">
                         <h2 class="text-white mb-5">Our process</h2>
 
-                        <div class="globx-timeline globx-reveal-group">
-                            <div class="globx-timeline-line">
-                                <div class="globx-timeline-line-fill globx-reveal"/>
-                            </div>
-
-                            <div class="globx-timeline-item globx-timeline-left globx-reveal js_globx_accordion">
-                                <div class="globx-timeline-marker">01</div>
-                                <div class="globx-timeline-content">
-                                    <div class="globx-timeline-icon">
-                                        <svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><line x1="20" y1="20" x2="14.5" y2="14.5"/></svg>
-                                    </div>
-                                    <b>Discover</b>
-                                    <p>We audit your current workflows and identify bottlenecks.</p>
-                                    <div class="globx-timeline-detail">
-                                        <p>
-                                            We start with stakeholder interviews, current-workflow
-                                            audits, and system inventory to map exactly where time
-                                            and accuracy are being lost.
-                                        </p>
-                                    </div>
-                                    <button type="button" class="globx-timeline-toggle">Read more</button>
+                        <div class="globx-carousel js_globx_process_carousel">
+                            <div class="globx-carousel-side globx-carousel-side-prev">
+                                <div class="globx-carousel-preview">
+                                    <span class="globx-carousel-preview-num">04</span>
+                                    <span class="globx-carousel-preview-title">Drive</span>
                                 </div>
                             </div>
 
-                            <div class="globx-timeline-item globx-timeline-right globx-reveal js_globx_accordion">
-                                <div class="globx-timeline-marker">02</div>
-                                <div class="globx-timeline-content">
-                                    <div class="globx-timeline-icon">
-                                        <svg viewBox="0 0 24 24"><path d="M3 21l3.5-1 11-11a2 2 0 000-2.8L15.8 4.5a2 2 0 00-2.8 0l-11 11z"/></svg>
+                            <div class="globx-carousel-main">
+                                <div class="globx-carousel-track">
+
+                                    <div class="globx-carousel-slide globx-carousel-active">
+                                        <div class="globx-carousel-card">
+                                            <div class="globx-timeline-marker">01</div>
+                                            <div class="globx-timeline-icon">
+                                                <svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><line x1="20" y1="20" x2="14.5" y2="14.5"/></svg>
+                                            </div>
+                                            <b>Discover</b>
+                                            <p>We audit your current workflows and identify bottlenecks.</p>
+                                            <p class="globx-carousel-detail">
+                                                We start with stakeholder interviews, current-workflow
+                                                audits, and system inventory to map exactly where time
+                                                and accuracy are being lost.
+                                            </p>
+                                        </div>
                                     </div>
-                                    <b>Design</b>
-                                    <p>Architecting a custom Odoo solution for your unique DNA.</p>
-                                    <div class="globx-timeline-detail">
-                                        <p>
-                                            Our architects translate findings into a scoped Odoo
-                                            blueprint — modules, customizations, and data model —
-                                            tailored to your operations.
-                                        </p>
+
+                                    <div class="globx-carousel-slide">
+                                        <div class="globx-carousel-card">
+                                            <div class="globx-timeline-marker">02</div>
+                                            <div class="globx-timeline-icon">
+                                                <svg viewBox="0 0 24 24"><path d="M3 21l3.5-1 11-11a2 2 0 000-2.8L15.8 4.5a2 2 0 00-2.8 0l-11 11z"/></svg>
+                                            </div>
+                                            <b>Design</b>
+                                            <p>Architecting a custom Odoo solution for your unique DNA.</p>
+                                            <p class="globx-carousel-detail">
+                                                Our architects translate findings into a scoped Odoo
+                                                blueprint covering modules, customizations, and data model,
+                                                tailored to your operations.
+                                            </p>
+                                        </div>
                                     </div>
-                                    <button type="button" class="globx-timeline-toggle">Read more</button>
+
+                                    <div class="globx-carousel-slide">
+                                        <div class="globx-carousel-card">
+                                            <div class="globx-timeline-marker">03</div>
+                                            <div class="globx-timeline-icon">
+                                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+                                            </div>
+                                            <b>Deploy</b>
+                                            <p>Seamless migration with zero downtime and full support.</p>
+                                            <p class="globx-carousel-detail">
+                                                A phased rollout with parallel testing, staff training,
+                                                and a zero-downtime cutover, backed by hypercare
+                                                support in week one.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="globx-carousel-slide">
+                                        <div class="globx-carousel-card">
+                                            <div class="globx-timeline-marker">04</div>
+                                            <div class="globx-timeline-icon">
+                                                <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+                                            </div>
+                                            <b>Drive</b>
+                                            <p>Continuous optimization and advanced growth analytics.</p>
+                                            <p class="globx-carousel-detail">
+                                                Ongoing monitoring dashboards, quarterly reviews, and
+                                                iterative tuning keep the system improving as your
+                                                business scales.
+                                            </p>
+                                        </div>
+                                    </div>
+
                                 </div>
+
+                                <button type="button" class="globx-carousel-arrow globx-carousel-prev" aria-label="Previous step">
+                                    <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+                                </button>
+                                <button type="button" class="globx-carousel-arrow globx-carousel-next" aria-label="Next step">
+                                    <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                                </button>
+
+                                <div class="globx-carousel-dots">
+                                    <span class="globx-carousel-dot globx-carousel-dot-active"/>
+                                    <span class="globx-carousel-dot"/>
+                                    <span class="globx-carousel-dot"/>
+                                    <span class="globx-carousel-dot"/>
+                                </div>
+
+                                <img class="globx-process-character"
+                                     src="/globx_website/static/src/img/process_leaning_character.webp"
+                                     alt="Consultant leaning on the process card" loading="lazy" decoding="async"/>
                             </div>
 
-                            <div class="globx-timeline-item globx-timeline-left globx-reveal js_globx_accordion">
-                                <div class="globx-timeline-marker">03</div>
-                                <div class="globx-timeline-content">
-                                    <div class="globx-timeline-icon">
-                                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
-                                    </div>
-                                    <b>Deploy</b>
-                                    <p>Seamless migration with zero downtime and full support.</p>
-                                    <div class="globx-timeline-detail">
-                                        <p>
-                                            A phased rollout with parallel testing, staff training,
-                                            and a zero-downtime cutover, backed by hypercare
-                                            support in week one.
-                                        </p>
-                                    </div>
-                                    <button type="button" class="globx-timeline-toggle">Read more</button>
-                                </div>
-                            </div>
-
-                            <div class="globx-timeline-item globx-timeline-right globx-reveal js_globx_accordion">
-                                <div class="globx-timeline-marker">04</div>
-                                <div class="globx-timeline-content">
-                                    <div class="globx-timeline-icon">
-                                        <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
-                                    </div>
-                                    <b>Drive</b>
-                                    <p>Continuous optimization and advanced growth analytics.</p>
-                                    <div class="globx-timeline-detail">
-                                        <p>
-                                            Ongoing monitoring dashboards, quarterly reviews, and
-                                            iterative tuning keep the system improving as your
-                                            business scales.
-                                        </p>
-                                    </div>
-                                    <button type="button" class="globx-timeline-toggle">Read more</button>
+                            <div class="globx-carousel-side globx-carousel-side-next">
+                                <div class="globx-carousel-preview">
+                                    <span class="globx-carousel-preview-num">02</span>
+                                    <span class="globx-carousel-preview-title">Design</span>
                                 </div>
                             </div>
                         </div>
@@ -334,8 +445,8 @@
                             <div class="col-lg-6 globx-reveal">
                                 <div class="globx-feature-media-wrap">
                                     <img class="globx-feature-media"
-                                         src="/globx_website/static/src/img/strategic_planning.jpg"
-                                         alt="Strategic planning"/>
+                                         src="/globx_website/static/src/img/strategic_planning.webp"
+                                         alt="Strategic planning" loading="lazy" decoding="async"/>
                                 </div>
                             </div>
                         </div>
@@ -345,8 +456,8 @@
                             <div class="col-lg-6 order-lg-1 globx-reveal">
                                 <div class="globx-feature-media-wrap">
                                     <img class="globx-feature-media"
-                                         src="/globx_website/static/src/img/system_integration.jpg"
-                                         alt="System Integration"/>
+                                         src="/globx_website/static/src/img/system_integration.webp"
+                                         alt="System Integration" loading="lazy" decoding="async"/>
                                 </div>
                             </div>
                             <div class="col-lg-6 order-lg-2 globx-reveal">
@@ -360,6 +471,22 @@
                             </div>
                         </div>
 
+                    </div>
+                </section>
+
+                <!-- ============ PARTNERS ============ -->
+                <section class="globx_partners py-5">
+                    <div class="container">
+                        <h2 class="text-white mb-1">Our Partners</h2>
+                        <p class="globx-partners-sub mb-4">
+                            Trusted by businesses across East Africa, India, and the UAE
+                        </p>
+                        <div class="globx-partners-grid">
+                            <div class="globx-partner-card" t-foreach="[(1, 'Al-Tahs Ltd'), (2, 'Orbiz'), (3, 'Gonexgla Enterprises'), (4, 'DP Singh &amp; Associates Ltd'), (5, 'GPO Partners'), (6, 'Gorillas Hotels'), (7, 'International School of Kigali'), (8, 'Njari Acctax'), (9, 'Dr. Nambi'), (10, 'Homelink Mabati'), (11, 'Growth Partners'), (12, 'Ultimate Logistics'), (13, 'AC Mobility'), (14, 'Event &amp; Media Service Ltd'), (15, 'Office of Professional Auditors (OPA)'), (16, 'Safiya Ibn Garba'), (17, 'Zara General Trading'), (18, 'Engineering Quality'), (19, 'Ortus')]" t-as="partner">
+                                <img t-attf-src="/globx_website/static/src/img/partner_logo_{{ '%02d' % partner[0] }}.png"
+                                     t-att-alt="partner[1] + ' logo'" loading="lazy" decoding="async"/>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -377,14 +504,20 @@
                                 <div class="globx-testi-bubble">
                                     <div class="globx-testi-quote-mark">"</div>
                                     <p>
-                                        GlobX transformed our supply chain. ROI exceeded every
-                                        projection in Q1.
+                                        Collaborating with Globx has been an immensely beneficial
+                                        experience for both AC Mobility and Safiya Ibn Garba DTRF.
+                                        Their team consistently operates with an exceptional level
+                                        of professionalism, taking the time to deliver truly
+                                        personalized support tailored perfectly to our specific
+                                        organizational needs.
                                     </p>
                                     <div class="globx-testi-footer">
-                                        <div class="globx-testi-avatar"/>
+                                        <img class="globx-testi-avatar"
+                                             src="/globx_website/static/src/img/testimonial_safiya.webp"
+                                             alt="Safiya Ibn Garba" loading="lazy" decoding="async"/>
                                         <div>
-                                            <b>Supply Chain Lead</b>
-                                            <span>Manufacturing client</span>
+                                            <b>Safiya Ibn Garba DTRF</b>
+                                            <span>CEO and Lead Consultant, Kenya</span>
                                         </div>
                                     </div>
                                 </div>
@@ -393,14 +526,19 @@
                                 <div class="globx-testi-bubble">
                                     <div class="globx-testi-quote-mark">"</div>
                                     <p>
-                                        The Globx expertise is unmatched. They reimagined how
-                                        we work.
+                                        As a healthcare practitioner, patient accessibility is
+                                        important to me. GlobX helped us achieve that with a
+                                        well-designed website and an efficient appointment booking
+                                        system. Their support throughout the project was
+                                        professional, timely, and dependable.
                                     </p>
                                     <div class="globx-testi-footer">
-                                        <div class="globx-testi-avatar"/>
+                                        <img class="globx-testi-avatar"
+                                             src="/globx_website/static/src/img/testimonial_nambi.webp"
+                                             alt="Dr. Pallatheri Nambi Namboodiri" loading="lazy" decoding="async"/>
                                         <div>
-                                            <b>Operations Director</b>
-                                            <span>Retail client</span>
+                                            <b>Dr. Pallatheri Nambi Namboodiri</b>
+                                            <span>Chief Physician, Ayushoveda / Dr. Nambi Clinic, India</span>
                                         </div>
                                     </div>
                                 </div>
@@ -409,14 +547,19 @@
                                 <div class="globx-testi-bubble">
                                     <div class="globx-testi-quote-mark">"</div>
                                     <p>
-                                        Seamless migration with zero downtime. Our long-term
-                                        digital partner.
+                                        Working with GlobX has been a great experience for us at
+                                        Homelink Mabati. Their Odoo ERP implementation has helped us
+                                        bring better structure and visibility into our production
+                                        processes, making it easier to manage our operations as we
+                                        continue to grow.
                                     </p>
                                     <div class="globx-testi-footer">
-                                        <div class="globx-testi-avatar"/>
+                                        <img class="globx-testi-avatar"
+                                             src="/globx_website/static/src/img/testimonial_homelink_logo.webp"
+                                             alt="Homelink Mabati" loading="lazy" decoding="async"/>
                                         <div>
-                                            <b>IT Manager</b>
-                                            <span>Logistics client</span>
+                                            <b>Catherine Kathure</b>
+                                            <span>CEO, Homelink Mabati, Rwanda</span>
                                         </div>
                                     </div>
                                 </div>
@@ -427,30 +570,7 @@
                 </section>
 
                 <!-- ============ FOOTER ============ -->
-                <footer class="globx_footer py-5">
-                    <div class="container">
-                        <div class="row gy-4">
-                            <div class="col-lg-6">
-                                <b class="d-block mb-2">GlobX</b>
-                                <p class="mb-0">
-                                    Official Odoo Silver Partner. Empowering East Africa,
-                                    India, and UAE with intelligent ERP solutions since 2018.
-                                </p>
-                            </div>
-                            <div class="col-lg-3">
-                                <b class="d-block mb-2">Quick Links</b>
-                                <ul class="list-unstyled mb-0">
-                                    <li><a href="/solutions">Solutions</a></li>
-                                    <li><a href="/casestudies">Case Studies</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-3">
-                                <b class="d-block mb-2">Contact</b>
-                                <a href="mailto:info@globx.rw">info@globx.rw</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+                <t t-call="globx_website.globx_footer"/>
 
             </div>
         </t>

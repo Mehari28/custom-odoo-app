@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="globx_contact_page" name="GlobX Contact">
+        <t t-call="website.layout">
+            <div id="wrap" class="globx_page">
+
+                <t t-call="globx_website.globx_chat_widget"/>
+
+                <!-- ============ HEADER ============ -->
+                <t t-set="globx_active" t-value="'/contactus'"/>
+                <t t-call="globx_website.globx_header"/>
+
+                <!-- ============ CONTACT ============ -->
+                <section class="globx_contact py-5">
+                    <div class="container">
+                        <div class="row gy-4">
+
+                            <div class="col-lg-7">
+                                <div class="globx-contact-form-card">
+                                    <form id="globx_contact_form">
+                                        <div class="globx-form-field">
+                                            <label for="fullName">Full name</label>
+                                            <input type="text" id="fullName" name="fullName" required="required" autocomplete="name"/>
+                                        </div>
+                                        <div class="globx-form-field">
+                                            <label for="workEmail">Work email</label>
+                                            <input type="email" id="workEmail" name="workEmail" required="required" autocomplete="email"/>
+                                        </div>
+                                        <div class="globx-form-field">
+                                            <label for="company">Company</label>
+                                            <input type="text" id="company" name="company" required="required" autocomplete="organization"/>
+                                        </div>
+                                        <div class="globx-form-field">
+                                            <label for="phone">Phone / WhatsApp <span class="globx-optional">(optional)</span></label>
+                                            <input type="tel" id="phone" name="phone" placeholder="+250 7XX XXX XXX" autocomplete="tel"/>
+                                        </div>
+                                        <!-- Honeypot: hidden from people, filled in by spam bots -->
+                                        <div class="globx-hp" aria-hidden="true">
+                                            <label for="website_hp">Leave this empty</label>
+                                            <input type="text" id="website_hp" name="website_hp" tabindex="-1" autocomplete="off"/>
+                                        </div>
+                                        <div class="globx-form-field">
+                                            <label for="industry">Industry</label>
+                                            <select id="industry" name="industry">
+                                                <option value="" disabled="disabled" selected="selected">Select your industry</option>
+                                                <option value="Manufacturing">Manufacturing</option>
+                                                <option value="Retail &amp; Ecommerce">Retail &amp; Ecommerce</option>
+                                                <option value="Distribution &amp; Logistics">Distribution &amp; Logistics</option>
+                                                <option value="Finance &amp; Accounting">Finance &amp; Accounting</option>
+                                                <option value="Construction">Construction</option>
+                                                <option value="Healthcare">Healthcare</option>
+                                                <option value="Professional Services">Professional Services</option>
+                                                <option value="Technology">Technology</option>
+                                                <option value="Agriculture">Agriculture</option>
+                                                <option value="Hospitality">Hospitality</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                        <div class="globx-form-field globx-industry-other-field" style="display:none;">
+                                            <label for="industryOther">Please specify</label>
+                                            <input type="text" id="industryOther" name="industryOther" placeholder="Tell us your industry"/>
+                                        </div>
+                                        <div class="globx-form-field">
+                                            <label for="problem">What are you hoping to solve?</label>
+                                            <textarea id="problem" name="problem" rows="4"/>
+                                        </div>
+                                        <div class="globx-form-error" role="alert" aria-live="polite"/>
+                                        <button type="submit" class="btn globx-btn-primary globx-form-submit">
+                                            Book a discovery call
+                                        </button>
+                                    </form>
+
+                                    <div class="globx-thankyou-panel">
+                                        <div class="globx-thankyou-icon">
+                                            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                                        </div>
+                                        <h3>Thank you!</h3>
+                                        <p>
+                                            Your discovery call request has been received. A GlobX
+                                            consultant will reach out within one business day to
+                                            find a time that works for you.
+                                        </p>
+
+                                        <div class="globx-thankyou-steps">
+                                            <div class="globx-thankyou-step">
+                                                <span class="globx-thankyou-step-num">1</span>
+                                                <span>We review your request</span>
+                                            </div>
+                                            <div class="globx-thankyou-step">
+                                                <span class="globx-thankyou-step-num">2</span>
+                                                <span>A specialist reaches out within 24 hours</span>
+                                            </div>
+                                            <div class="globx-thankyou-step">
+                                                <span class="globx-thankyou-step-num">3</span>
+                                                <span>We schedule your discovery call</span>
+                                            </div>
+                                        </div>
+
+                                        <a href="/home-globx" class="btn globx-btn-primary">
+                                            Back to Home
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5">
+                                <div class="globx-contact-info-card">
+                                    <h3>Let's map the highest-value path</h3>
+                                    <p>
+                                        A scoped conversation with a solutions consultant
+                                        about where your operations are breaking down.
+                                    </p>
+                                    <ol class="globx-contact-steps">
+                                        <li>We analyze your current business processes.</li>
+                                        <li>We send you a Functional Requirements Document (FRD) outlining exactly what we'll build.</li>
+                                        <li>We begin implementation. Nothing starts until you've approved the plan.</li>
+                                    </ol>
+                                    <div class="globx-contact-direct">
+                                        <span>Or reach us directly</span>
+                                        <a href="mailto:info@globx.rw">info@globx.rw</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ FOOTER ============ -->
+<t t-call="globx_website.globx_footer"/>
+            </div>
+        </t>
+    </template>
+
+</odoo>

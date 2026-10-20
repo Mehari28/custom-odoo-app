@@ -5,9 +5,9 @@
     --globx-green:        #3fae29; // primary accent / buttons
     --globx-green-deep:   #2f8b1f; // hover state for accent
     --globx-card-bg:      #ffffff; // white cards / stat boxes
-    --globx-text-light:   #f3f7f2; // body text on dark backgrounds
-    --globx-text-muted:   #c6d8cc; // secondary text on dark backgrounds
-    --globx-text-dark:    #12261c; // text on white cards
+    --globx-text-light:   #ffffff; // body text on dark backgrounds - true white, deeper contrast
+    --globx-text-muted:   #e2e9e5; // secondary text on dark backgrounds - neutral off-white, reads crisper against green bg than a green-tinted pastel
+    --globx-text-dark:    #0d1f16; // text on white cards - deeper near-black green
     --globx-radius:       2px;
     --globx-radius-btn:   8px;   // rounded buttons
     --globx-radius-box:   14px;  // rounded content boxes (cards, media placeholders)

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Schema.org structured data (JSON-LD) so Google understands who GlobX is.
+         Only added to GlobX pages. -->
+    <template id="globx_structured_data" inherit_id="website.layout" name="GlobX Structured Data">
+        <xpath expr="//head" position="inside">
+            <t t-if="main_object and main_object._name == 'ir.ui.view' and (main_object.sudo().key or '').startswith('globx_website.')">
+                <t t-set="globx_base" t-value="website.get_base_url()"/>
+                <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "GlobX",
+  "url": "<t t-out="globx_base"/>/home-globx",
+  "logo": "<t t-out="globx_base"/>/globx_website/static/src/img/globx_logo.webp",
+  "description": "Odoo Silver Partner providing ERP implementation, integration and support across East Africa, India and the UAE.",
+  "email": "info@globx.rw",
+  "telephone": "+250790100100",
+  "areaServed": ["Rwanda", "Kenya", "East Africa", "India", "United Arab Emirates"],
+  "sameAs": [
+    "https://www.linkedin.com/company/globxgroup",
+    "https://x.com/GlobxLimited",
+    "https://www.instagram.com/globxlimited",
+    "https://www.facebook.com/share/1Ei1xs1AQY/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "telephone": "+250790100100",
+    "email": "info@globx.rw"
+  }
+}</script>
+            </t>
+        </xpath>
+    </template>
+</odoo>

@@ -41,11 +41,14 @@ publicWidget.registry.GlobxModuleCycle = publicWidget.Widget.extend({
     _expand() {
         this._expanded = true;
         this.el.classList.add("globx-expanded");
+        // Lets the hero hide its stat chips while the module grid is open (used on mobile)
+        this.el.closest(".globx_hero_media")?.classList.add("globx-modules-open");
     },
 
     _collapse() {
         this._expanded = false;
         this.el.classList.remove("globx-expanded");
+        this.el.closest(".globx_hero_media")?.classList.remove("globx-modules-open");
     },
 });
 

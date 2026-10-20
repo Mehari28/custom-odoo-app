@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="globx_news_page" name="GlobX News">
+        <t t-call="website.layout">
+            <div id="wrap" class="globx_page">
+
+                <t t-call="globx_website.globx_chat_widget"/>
+
+                <!-- ============ HEADER ============ -->
+                <t t-set="globx_active" t-value="'/news'"/>
+                <t t-call="globx_website.globx_header"/>
+
+                <!-- ============ NEWS HERO ============ -->
+                <section class="globx_news_hero py-5">
+                    <div class="container">
+                        <h1 class="text-white">In the press</h1>
+                        <p class="globx-news-sub">
+                            What media outlets and industry publications are saying
+                            about GlobX and our work across the region.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- ============ BREAKING NEWS TICKER ============ -->
+                <div class="globx-news-ticker">
+                    <span class="globx-ticker-label">
+                        <span class="globx-ticker-dot"/>
+                        Breaking
+                    </span>
+                    <div class="globx-ticker-track">
+                        <div class="globx-ticker-content">
+                            <span>Rwanda firms turn to integrated software as Odoo draws 800+ to Kigali</span>
+                            <span>•</span>
+                            <span>Nearly 1,000 gather as GlobX, Odoo host Rwanda's largest enterprise tech event</span>
+                            <span>•</span>
+                            <span>GlobX unveils ERP solutions for Africa's business future at ACOA 2025</span>
+                            <span>•</span>
+                            <!-- duplicate content for seamless loop -->
+                            <span>Rwanda firms turn to integrated software as Odoo draws 800+ to Kigali</span>
+                            <span>•</span>
+                            <span>Nearly 1,000 gather as GlobX, Odoo host Rwanda's largest enterprise tech event</span>
+                            <span>•</span>
+                            <span>GlobX unveils ERP solutions for Africa's business future at ACOA 2025</span>
+                            <span>•</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============ NEWS LIST ============ -->
+                <section class="globx_news_list pb-5">
+                    <div class="container">
+                        <div class="globx-news-filters">
+                            <button type="button" class="globx-news-filter-btn globx-news-filter-active" data-region="all">All Regions</button>
+                            <button type="button" class="globx-news-filter-btn" data-region="east-africa">East Africa</button>
+                            <button type="button" class="globx-news-filter-btn" data-region="india">India</button>
+                            <button type="button" class="globx-news-filter-btn" data-region="uae">UAE</button>
+                        </div>
+
+                        <p class="globx-news-empty">No articles yet for this region. Check back soon.</p>
+
+                        <div class="globx-news-items globx-reveal-group">
+
+                            <a href="https://thekfj.com/rwanda-firms-turn-to-integrated-software-as-odoo-draws-800-plus-to-kigali/" target="_blank" rel="noopener" class="globx-news-item globx-reveal" data-region="east-africa">
+                                <div class="globx-news-outlet">The Kigali Financial Journal</div>
+                                <h3>
+                                    Rwanda firms turn to integrated software as
+                                    Odoo draws 800-plus to Kigali
+                                </h3>
+                                <p>
+                                    Coverage of the Odoo Business Show in Kigali, where
+                                    GlobX Country Lead Ines Dushime spoke on helping
+                                    Rwandan businesses move from manual processes to one
+                                    connected system, alongside a client testimonial from
+                                    AC Group.
+                                </p>
+                                <span class="globx-news-date">
+                                    August 2026
+                                    <span class="globx-live-badge">
+                                        <span class="globx-live-dot"/>
+                                        LIVE
+                                    </span>
+                                </span>
+                            </a>
+
+                            <a href="https://www.newtimes.co.rw/article/31759/news/featured/nearly-1000-gather-as-globx-odoo-host-rwandas-largest-enterprise-tech-event" target="_blank" rel="noopener" class="globx-news-item globx-reveal" data-region="east-africa">
+                                <div class="globx-news-outlet">The New Times</div>
+                                <h3>
+                                    Nearly 1,000 gather as GlobX, Odoo host
+                                    Rwanda's largest enterprise tech event
+                                </h3>
+                                <p>
+                                    The New Times reports on GlobX and Odoo Rwanda's
+                                    largest enterprise technology event to date, with
+                                    opening remarks from GlobX Rwanda Managing Director
+                                    Vinay Dev to an audience of nearly 1,000 attendees.
+                                </p>
+                                <span class="globx-news-date">December 2025</span>
+                            </a>
+
+                            <a href="https://thekfj.com/globx-rides-digital-wave-to-empower-africas-business-future-unveils-erp-solutions-at-acoa-2025/" target="_blank" rel="noopener" class="globx-news-item globx-reveal" data-region="east-africa">
+                                <div class="globx-news-outlet">The Kigali Financial Journal</div>
+                                <h3>
+                                    GlobX rides digital wave to empower Africa's
+                                    business future at ACOA 2025
+                                </h3>
+                                <p>
+                                    Profile of GlobX's presence at the Africa Congress of
+                                    Accountants 2025, featuring CEO Vinay Dev on how
+                                    affordable ERP tools are helping African businesses
+                                    replace spreadsheets with real-time, cloud-based
+                                    systems.
+                                </p>
+                                <span class="globx-news-date">May 2025</span>
+                            </a>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ FOOTER ============ -->
+                <t t-call="globx_website.globx_footer"/>
+
+            </div>
+        </t>
+    </template>
+
+</odoo>

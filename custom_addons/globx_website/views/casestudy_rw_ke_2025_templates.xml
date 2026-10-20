@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="globx_cs_rw_ke_2025_page" name="GlobX Case Study - Powering Digital Transformation">
+        <t t-call="website.layout">
+            <div id="wrap" class="globx_page">
+
+                <t t-call="globx_website.globx_chat_widget"/>
+
+                <!-- ============ HEADER ============ -->
+                <t t-set="globx_active" t-value="'/casestudies'"/>
+                <t t-call="globx_website.globx_header"/>
+
+                <!-- ============ ARTICLE ============ -->
+                <section class="globx_cs_detail py-5">
+                    <div class="container">
+                        <a href="/casestudies" class="globx-cs-back" style="text-decoration: none;">
+                            <span class="globx-back-arrow">&#8592;</span>
+                            <span class="globx-back-label" style="text-decoration: none;">Back to Case Studies</span>
+                        </a>
+
+                        <div class="globx-cs-detail-meta">
+                            Kigali, Rwanda &#183; Jul 2025
+                        </div>
+                        <h1 class="text-white">
+                            Powering Digital Transformation
+                        </h1>
+
+                        <img class="globx-cs-detail-media"
+                             src="/globx_website/static/src/img/cs_rw_ke_2025_detail_1.jpg"
+                             alt="Panel discussion at Odoo Business Show 2025" decoding="async"/>
+
+                        <div class="globx-cs-detail-body">
+                            <p>
+                                GlobX was proud to exhibit at the Odoo Business Show 2025 held
+                                in Kigali, Rwanda, a key event bringing together
+                                forward-thinking businesses and technology leaders from across
+                                Africa. At the show, we presented our streamlined, Odoo-based
+                                ERP solutions designed to help companies of all sizes simplify
+                                operations, boost efficiency, and drive growth.
+                            </p>
+                            <p>
+                                The response was overwhelming, and we're grateful to all who
+                                visited our booth to explore how GlobX is helping businesses
+                                in Africa embrace digital transformation with Odoo.
+                            </p>
+                            <p>
+                                Together, we're building smarter businesses for a smarter
+                                Africa.
+                            </p>
+                        </div>
+
+                        <div class="globx-cs-detail-cta">
+                            <p>Want to see what Odoo could do for your business?</p>
+                            <a href="/contactus" class="btn globx-btn-primary">
+                                Book a discovery call
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ FOOTER ============ -->
+<t t-call="globx_website.globx_footer"/>
+
+            </div>
+        </t>
+    </template>
+
+</odoo>

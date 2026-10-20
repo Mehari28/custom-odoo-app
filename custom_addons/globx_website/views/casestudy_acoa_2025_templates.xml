@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="globx_cs_acoa_2025_page" name="GlobX Case Study - ACOA 2025">
+        <t t-call="website.layout">
+            <div id="wrap" class="globx_page">
+
+                <t t-call="globx_website.globx_chat_widget"/>
+
+                <!-- ============ HEADER ============ -->
+                <t t-set="globx_active" t-value="'/casestudies'"/>
+                <t t-call="globx_website.globx_header"/>
+
+                <!-- ============ ARTICLE ============ -->
+                <section class="globx_cs_detail py-5">
+                    <div class="container">
+                        <a href="/casestudies" class="globx-cs-back" style="text-decoration: none;">
+                            <span class="globx-back-arrow">&#8592;</span>
+                            <span class="globx-back-label" style="text-decoration: none;">Back to Case Studies</span>
+                        </a>
+
+                        <div class="globx-cs-detail-meta">
+                            Kigali, Rwanda &#183; May 2025
+                        </div>
+                        <h1 class="text-white">
+                            GlobX Brings Odoo ERP to Africa's Financial Future at ACOA 2025
+                        </h1>
+
+                        <img class="globx-cs-detail-media"
+                             src="/globx_website/static/src/img/cs_acoa_2025_detail_1.jpg"
+                             alt="GlobX team at the Odoo booth during ACOA 2025" decoding="async"/>
+
+                        <div class="globx-cs-detail-body">
+                            <p>
+                                GlobX Group, a Rwanda-headquartered business transformation
+                                firm, is stepping onto the continental stage with a bold
+                                proposition: African enterprises deserve the same operational
+                                agility and digital intelligence as their global counterparts.
+                            </p>
+                            <p>
+                                As an official Odoo partner and a key exhibitor at the Africa
+                                Congress of Accountants (ACOA) 2025, the company is showcasing
+                                how affordable enterprise resource planning (ERP) tools are
+                                revolutionizing how the continent does business. With
+                                operations spanning East Africa, the UAE, and India, GlobX is
+                                not just selling software, it's architecting transformation.
+                            </p>
+                            <p>
+                                "Odoo isn't just a system, it's an enabler of discipline,
+                                clarity, and control," GlobX Group CEO, Vinay Dev said in an
+                                interview. "When businesses run smarter, they grow faster.
+                                That's what Africa needs right now," he added.
+                            </p>
+                            <p>
+                                The company's ERP implementations replace inefficient
+                                spreadsheets and siloed workflows with real-time dashboards
+                                and cloud-based business apps, over 80 of them, from
+                                accounting to CRM, HR, and inventory. Odoo's modular and
+                                mobile-friendly structure makes it particularly attractive to
+                                Africa's growing cohort of SMEs and mid-size firms seeking
+                                cost-effective growth tools.
+                            </p>
+                            <p>
+                                The road hasn't been without challenges. From limited digital
+                                readiness to budget constraints, African enterprises face
+                                uphill battles in adopting such systems. But GlobX counters
+                                these hurdles through localized onboarding, flexible
+                                implementation models, and ongoing, sector-specific training.
+                            </p>
+                            <p>
+                                "Our strength lies in understanding the nuance of how African
+                                businesses operate and tailoring global tools to local needs,"
+                                Dev says. "We focus on people and processes first. Technology
+                                follows."
+                            </p>
+                            <p>
+                                At ACOA 2025, where the continent's top financial leaders
+                                convene under the theme "Creating Value for Africa," GlobX is
+                                positioning ERP as more than software, it's financial
+                                discipline at scale. Live demos, real-time case studies, and
+                                interactive sessions at their booth are aimed at sparking a
+                                broader wave of digital adoption across Africa's finance
+                                community.
+                            </p>
+                            <p>
+                                By blending ERP precision with boots-on-the-ground insight,
+                                GlobX is building what Dev calls "a future where African
+                                businesses no longer chase efficiency, they lead with it."
+                            </p>
+                        </div>
+
+                        <div class="globx-cs-detail-cta">
+                            <p>Want to see what Odoo could do for your business?</p>
+                            <a href="/contactus" class="btn globx-btn-primary">
+                                Book a discovery call
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+               <!-- ============ FOOTER ============ -->
+<t t-call="globx_website.globx_footer"/>
+            </div>
+        </t>
+    </template>
+
+</odoo>

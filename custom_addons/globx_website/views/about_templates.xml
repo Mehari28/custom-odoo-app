@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="globx_about_page" name="GlobX About">
+        <t t-call="website.layout">
+            <div id="wrap" class="globx_page">
+
+                <t t-call="globx_website.globx_chat_widget"/>
+
+                <!-- ============ HEADER ============ -->
+                <t t-set="globx_active" t-value="'/about'"/>
+                <t t-call="globx_website.globx_header"/>
+
+                <!-- ============ ABOUT HERO ============ -->
+                <section class="globx_about_hero py-5">
+                    <div class="container">
+                        <div class="row align-items-center gy-4">
+                            <div class="col-lg-6">
+                                <h1 class="text-white">About GlobX</h1>
+                                <p class="globx-about-sub">
+                                    GlobX is an Odoo-partnered ERP solutions provider with
+                                    operations across East Africa, India, and the UAE. We help
+                                    businesses optimize their operations, digitize their
+                                    processes, and scale with confidence, replacing spreadsheet
+                                    sprawl with one connected, measurable system.
+                                </p>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="globx-about-hero-media">
+                                    <img src="/globx_website/static/src/img/about_team_group.webp"
+                                         alt="The GlobX team" decoding="async"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ MISSION ============ -->
+                <section class="globx_about_mission py-5">
+                    <div class="container">
+                        <div class="globx-mission-box">
+                            <div class="row align-items-center gy-3">
+                                <div class="col-auto">
+                                    <img class="globx-mission-avatar"
+                                         src="/globx_website/static/src/img/about_ceo_vinay_dev.webp"
+                                         alt="Vinay Dev, CEO of GlobX" decoding="async"/>
+                                </div>
+                                <div class="col">
+                                    <span class="globx-mission-label">Our mission</span>
+                                    <p class="globx-mission-quote">
+                                        "Our mission is to empower African businesses with
+                                        smart, scalable tools that fuel growth and innovation."
+                                    </p>
+                                    <span class="globx-mission-credit">Vinay Dev, CEO, GlobX</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ DIFFERENTIATOR ============ -->
+                <section class="globx_about_differentiator py-4">
+                    <div class="container">
+                        <div class="globx-differentiator-card">
+                            <span class="globx-differentiator-kicker">The difference</span>
+                            <p class="globx-differentiator-line">
+                                Most Odoo partners know one market.
+                                <strong>We are experienced across all four markets.</strong>
+                            </p>
+                            <div class="globx-differentiator-flags">
+                                <img src="https://flagcdn.com/w40/rw.png" alt="Rwanda" title="Rwanda" loading="lazy" decoding="async"/>
+                                <img src="https://flagcdn.com/w40/ke.png" alt="Kenya" title="Kenya" loading="lazy" decoding="async"/>
+                                <img src="https://flagcdn.com/w40/in.png" alt="India" title="India" loading="lazy" decoding="async"/>
+                                <img src="https://flagcdn.com/w40/ae.png" alt="UAE" title="UAE" loading="lazy" decoding="async"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ WHAT WE DO ============ -->
+                <section class="globx_about_whatwedo py-5">
+                    <div class="container">
+                        <h3 class="text-white mb-4">What we do</h3>
+
+                        <div class="row gy-4 globx-reveal-group">
+                            <div class="col-md-6 globx-reveal">
+                                <div class="globx-value-card">
+                                    <div class="globx-value-icon">
+                                        <svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                                    </div>
+                                    <b>Digital Transformation</b>
+                                    <p>
+                                        As an Odoo partner, we empower businesses to
+                                        optimize their operations and enhance
+                                        productivity through tailored ERP solutions.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 globx-reveal">
+                                <div class="globx-value-card">
+                                    <div class="globx-value-icon">
+                                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+                                    </div>
+                                    <b>Odoo Solutions &amp; Support</b>
+                                    <p>
+                                        We specialize in delivering tailored Odoo
+                                        implementations and integrations, backed by a
+                                        portfolio of successful projects across
+                                        industries.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ TIMELINE ============ -->
+                <section class="globx_timeline_section py-5">
+                    <div class="container">
+                        <h3 class="text-white mb-5">Our journey</h3>
+
+                        <div class="globx-journey-timeline js_globx_journey_scroll">
+                            <div class="globx-journey-track">
+                                <div class="globx-journey-dot"/>
+                            </div>
+
+                            <div class="globx-journey-item globx-journey-left">
+                                <div class="globx-journey-marker">2018</div>
+                                <div class="globx-journey-content">
+                                    <b>The Global Foundation</b>
+                                    <p>
+                                        GlobX is founded as a multidisciplinary corporate
+                                        consulting framework, delivering high-level IT
+                                        architecture, operational strategy, and system
+                                        integrations for enterprise clients across
+                                        international business corridors.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="globx-journey-item globx-journey-right">
+                                <div class="globx-journey-marker">2021</div>
+                                <div class="globx-journey-content">
+                                    <b>Cross-Border &amp; Regional Formulation</b>
+                                    <p>
+                                        The company expands its multi-region presence
+                                        across India, the UAE, and East Africa, designing
+                                        custom workflow architectures and process
+                                        management solutions tailored to dynamic markets.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="globx-journey-item globx-journey-left">
+                                <div class="globx-journey-marker">2023</div>
+                                <div class="globx-journey-content">
+                                    <b>Launching in Kigali</b>
+                                    <p>
+                                        GlobX establishes its permanent African
+                                        headquarters in Kigali, Rwanda, under local
+                                        leadership, adapting global enterprise solutions
+                                        to the compliance and scaling needs of East
+                                        African businesses.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="globx-journey-item globx-journey-right">
+                                <div class="globx-journey-marker">2024</div>
+                                <div class="globx-journey-content">
+                                    <b>The Odoo ERP Pivot</b>
+                                    <p>
+                                        GlobX becomes an official Odoo Partner in Rwanda,
+                                        migrating its first cohorts of SMEs from manual
+                                        spreadsheets and fragmented legacy tracking into
+                                        unified cloud ecosystems.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="globx-journey-item globx-journey-left">
+                                <div class="globx-journey-marker">2025</div>
+                                <div class="globx-journey-content">
+                                    <b>Tech Scaling &amp; Pan-African Milestones</b>
+                                    <p>
+                                        GlobX exhibits at the Africa Congress of
+                                        Accountants (ACOA 2025) and partners with Odoo
+                                        Rwanda to host the country's largest-ever
+                                        enterprise technology event, bringing together
+                                        nearly 1,000 business and policy leaders.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="globx-journey-item globx-journey-right">
+                                <div class="globx-journey-marker">2026</div>
+                                <div class="globx-journey-content globx-journey-silver">
+                                    <b>Silver Partner Status &amp; 200+ Clients</b>
+                                    <p>
+                                        GlobX achieves official Odoo Silver Partner
+                                        status and joins the Rwanda ICT Chamber, now
+                                        serving over 200 active enterprise clients
+                                        across logistics, retail, and manufacturing.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ TEAM ============ -->
+                <section class="globx_about_team py-5">
+                    <div class="container">
+                        <h3 class="text-white mb-1">Get to know our experts</h3>
+                        <p class="globx-about-sub mb-4">Expert consultants driving your success</p>
+
+                        <div class="row gy-4 globx-reveal-group">
+                            <div class="col-md-6 col-lg-4 globx-reveal">
+                                <div class="globx-team-card">
+                                    <img class="globx-team-avatar"
+                                         src="/globx_website/static/src/img/about_ceo_vinay_dev.webp"
+                                         alt="Vinay Dev, CEO" decoding="async"/>
+                                    <b>Vinay Dev</b>
+                                    <span class="globx-team-role">Principal Consultant</span>
+                                    <p>
+                                        Vinay spearheads our Odoo implementation and
+                                        integration initiatives.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 globx-reveal">
+                                <div class="globx-team-card">
+                                    <img class="globx-team-avatar"
+                                         src="/globx_website/static/src/img/about_pratheesh.webp"
+                                         alt="Pratheesh Ezhuthupura" loading="lazy" decoding="async"/>
+                                    <b>Pratheesh Ezhuthupura</b>
+                                    <span class="globx-team-role">Project Lead</span>
+                                    <p>
+                                        Pratheesh delivers impactful Odoo projects,
+                                        bridging tech and business strategy.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 globx-reveal">
+                                <div class="globx-team-card">
+                                    <img class="globx-team-avatar"
+                                         src="/globx_website/static/src/img/about_ines.webp"
+                                         alt="Ines Dushime" loading="lazy" decoding="async"/>
+                                    <b>Ines Dushime</b>
+                                    <span class="globx-team-role">Country Lead</span>
+                                    <p>
+                                        Ines drives GlobX's network expansion,
+                                        partnership development, and brand presence in
+                                        Rwanda.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 globx-reveal">
+                                <div class="globx-team-card">
+                                    <img class="globx-team-avatar"
+                                         src="/globx_website/static/src/img/about_aditi.webp"
+                                         alt="Aditi Dev" loading="lazy" decoding="async"/>
+                                    <b>Aditi Dev</b>
+                                    <span class="globx-team-role">Client Experience Executive</span>
+                                    <p>
+                                        Aditi expertly analyses client needs and
+                                        delivers smart, scalable, and customised Odoo
+                                        solutions.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 globx-reveal">
+                                <div class="globx-team-card">
+                                    <img class="globx-team-avatar"
+                                         src="/globx_website/static/src/img/about_judith.webp"
+                                         alt="Judith" loading="lazy" decoding="async"/>
+                                    <b>Judith</b>
+                                    <span class="globx-team-role">Technical Lead</span>
+                                    <p>
+                                        Judith ensures and delivers all implementation,
+                                        customisation, and development.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 globx-reveal">
+                                <div class="globx-team-card">
+                                    <img class="globx-team-avatar"
+                                         src="/globx_website/static/src/img/about_shiba.webp"
+                                         alt="Shiba Shiju" loading="lazy" decoding="async"/>
+                                    <b>Shiba Shiju</b>
+                                    <span class="globx-team-role">Country Lead</span>
+                                    <p>
+                                        Shiba drives GlobX's network expansion,
+                                        partnership development, and brand presence in
+                                        India.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ STATS ============ -->
+                <section class="globx_about_stats py-4">
+                    <div class="container">
+                        <div class="row g-3 globx-reveal-group">
+                            <div class="col-6 col-md-4 globx-reveal">
+                                <div class="globx-stat-box">
+                                    <b>200+</b>
+                                    <span>Successful customers</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4 globx-reveal">
+                                <div class="globx-stat-box">
+                                    <b>3</b>
+                                    <span>Regions: East Africa, India &amp; UAE</span>
+                                    <div class="globx-region-flags">
+                                        <img src="https://flagcdn.com/w40/rw.png" alt="Rwanda" title="Rwanda" loading="lazy" decoding="async"/>
+                                        <img src="https://flagcdn.com/w40/ke.png" alt="Kenya" title="Kenya" loading="lazy" decoding="async"/>
+                                        <img src="https://flagcdn.com/w40/in.png" alt="India" title="India" loading="lazy" decoding="async"/>
+                                        <img src="https://flagcdn.com/w40/ae.png" alt="UAE" title="UAE" loading="lazy" decoding="async"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4 globx-reveal">
+                                <div class="globx-stat-box globx-stat-badge">
+                                    <div class="globx-badge-icon-wrap">
+                                        <svg class="globx-badge-medal" viewBox="0 0 24 24">
+                                            <defs>
+                                                <linearGradient id="globxMedalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#f4f4f8"/>
+                                                    <stop offset="45%" stop-color="#c8c8d2"/>
+                                                    <stop offset="55%" stop-color="#eaeaee"/>
+                                                    <stop offset="100%" stop-color="#b8b8c4"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M8 12l-3 8 4-1.5 2.5 3 2-6" fill="url(#globxMedalGrad)" stroke="#9a9aa5" stroke-width="0.5"/>
+                                            <path d="M16 12l3 8-4-1.5-2.5 3-2-6" fill="url(#globxMedalGrad)" stroke="#9a9aa5" stroke-width="0.5"/>
+                                            <circle cx="12" cy="10" r="7" fill="url(#globxMedalGrad)" stroke="#9a9aa5" stroke-width="0.8"/>
+                                            <path d="M12 5.5l1.2 2.4 2.6.4-1.9 1.9.4 2.6-2.3-1.2-2.3 1.2.4-2.6-1.9-1.9 2.6-.4z" fill="#fff" opacity="0.85"/>
+                                        </svg>
+                                        <span class="globx-sparkle globx-sparkle-1"/>
+                                        <span class="globx-sparkle globx-sparkle-2"/>
+                                        <span class="globx-sparkle globx-sparkle-3"/>
+                                    </div>
+                                    <b>Silver</b>
+                                    <span>Official Odoo Partner status</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ FOOTER ============ -->
+                <t t-call="globx_website.globx_footer"/>
+
+            </div>
+        </t>
+    </template>
+
+</odoo>
