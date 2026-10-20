@@ -1,6 +1,6 @@
 {
     'name': 'GlobX Website',
-    'version': '19.0.1.4.0',
+    'version': '19.0.1.5.2',
     'category': 'Website',
     'summary': 'GlobX custom landing page (built from the approved prototype)',
     'description': """
@@ -24,6 +24,8 @@
     'author': 'GlobX',
     'depends': ['website', 'website_crm'],
     'data': [
+        'data/website_data.xml',
+        'views/layout_templates.xml',
         'views/assets_head_templates.xml',
         'views/chat_widget_templates.xml',
         'views/home_templates.xml',

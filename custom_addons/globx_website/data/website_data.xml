@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Browser-tab icon: the GlobX "x" mark instead of Odoo's default icon -->
+    <function model="website" name="_globx_set_favicon"/>
+</odoo>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Shared layout pieces used by every GlobX page.
+        Header: set `globx_active` to the current page's URL before calling it,
+        e.g. <t t-set="globx_active" t-value="'/about'"/>
+    -->
+    <template id="globx_header" name="GlobX Header">
+        <header class="globx_header">
+            <div class="container d-flex align-items-center justify-content-between flex-wrap py-3 gap-3">
+                <a href="/home-globx" class="globx-logo">
+                    <img src="/globx_website/static/src/img/globx_logo.webp" alt="GlobX" decoding="async"/>
+                </a>
+
+                <nav class="globx-nav d-none d-lg-flex align-items-center gap-4">
+                    <a href="/home-globx" t-att-class="'globx-nav-active' if globx_active == '/home-globx' else None">Home</a>
+                    <a href="/solutions" t-att-class="'globx-nav-active' if globx_active == '/solutions' else None">Solutions</a>
+                    <a href="/casestudies" t-att-class="'globx-nav-active' if globx_active == '/casestudies' else None">Case Studies</a>
+                    <a href="/news" t-att-class="'globx-nav-active' if globx_active == '/news' else None">News</a>
+                    <a href="/about" t-att-class="'globx-nav-active' if globx_active == '/about' else None">About</a>
+                    <a href="/contactus" t-att-class="'globx-nav-active' if globx_active == '/contactus' else None">Contact</a>
+                </nav>
+
+                <a href="/contactus" class="btn globx-btn-primary globx-header-cta d-none d-lg-inline-block">
+                    Book a discovery call
+                </a>
+
+                <button class="globx-nav-toggle d-lg-none" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                    <span/>
+                    <span/>
+                    <span/>
+                </button>
+            </div>
+
+            <div class="globx-mobile-nav d-lg-none">
+                <a href="/home-globx" t-att-class="'globx-nav-active' if globx_active == '/home-globx' else None">Home</a>
+                <a href="/solutions" t-att-class="'globx-nav-active' if globx_active == '/solutions' else None">Solutions</a>
+                <a href="/casestudies" t-att-class="'globx-nav-active' if globx_active == '/casestudies' else None">Case Studies</a>
+                <a href="/news" t-att-class="'globx-nav-active' if globx_active == '/news' else None">News</a>
+                <a href="/about" t-att-class="'globx-nav-active' if globx_active == '/about' else None">About</a>
+                <a href="/contactus" t-att-class="'globx-nav-active' if globx_active == '/contactus' else None">Contact</a>
+                <a href="/contactus" class="btn globx-btn-primary mt-2">Book a discovery call</a>
+            </div>
+        </header>
+    </template>
+
+    <template id="globx_footer" name="GlobX Footer">
+        <footer class="globx_footer py-5">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-5">
+                        <a href="/home-globx" class="globx-footer-logo" aria-label="GlobX home">
+                            <img src="/globx_website/static/src/img/globx_logo.webp" alt="GlobX" loading="lazy" decoding="async"/>
+                        </a>
+                        <p class="mt-3 mb-3">
+                            Official Odoo Silver Partner. Empowering East Africa,
+                            India, and UAE with intelligent ERP solutions since 2018.
+                        </p>
+                        <span class="globx-footer-badge">Odoo Silver Partner</span>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <b class="d-block mb-2">Company</b>
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="/home-globx">Home</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/news">News</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <b class="d-block mb-2">Explore</b>
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="/solutions">Solutions</a></li>
+                            <li><a href="/casestudies">Case Studies</a></li>
+                            <li><a href="/contactus">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <b class="d-block mb-2">Get in touch</b>
+                        <ul class="list-unstyled globx-footer-contact mb-0">
+                            <li><a href="mailto:info@globx.rw">info@globx.rw</a></li>
+                            <li><a href="tel:+250790100100">+250 790 100 100</a></li>
+                            <li>Kigali, Rwanda</li>
+                        </ul>
+            <div class="globx-social-links">
+            <a href="https://www.linkedin.com/company/globxgroup/posts/?feedView=all" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5.001A2.5 2.5 0 014.98 3.5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.55 4.78 5.87V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V21h-4z"/></svg>
+            </a>
+            <a href="https://x.com/GlobxLimited" target="_blank" rel="noopener" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-6.9L4.4 22H1.3l8-9.2L1 2h7l4.9 6.3zm-1.2 18h1.9L6.4 3.9H4.4z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/globxlimited" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg class="globx-icon-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.facebook.com/share/1Ei1xs1AQY/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H16.7V3.7C16.4 3.65 15.4 3.5 14.2 3.5c-2.4 0-4 1.46-4 4.15V9.9H7.5V13h2.7v8z"/></svg>
+            </a>
+            <a href="https://wa.me/250790100100" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M12.02 2.5c-5.25 0-9.5 4.25-9.5 9.5 0 1.68.44 3.25 1.2 4.62L2.5 21.5l4.98-1.3a9.44 9.44 0 004.54 1.16h.01c5.25 0 9.5-4.25 9.5-9.5s-4.25-9.36-9.51-9.36zm0 17.32c-1.42 0-2.8-.38-4-1.1l-.29-.17-2.95.77.79-2.88-.19-.3a7.85 7.85 0 01-1.2-4.14c0-4.35 3.54-7.89 7.9-7.89 2.11 0 4.09.82 5.58 2.31a7.85 7.85 0 012.31 5.58c0 4.35-3.54 7.82-7.95 7.82zm4.32-5.87c-.24-.12-1.4-.69-1.62-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.17-.7-.62-1.18-1.39-1.32-1.63-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28z"/></svg>
+            </a>
+            </div>
+                        <a href="/contactus" class="btn globx-btn-primary globx-footer-cta mt-3">Book a discovery call</a>
+                    </div>
+                </div>
+                <div class="globx-footer-copyright">
+                    &#169; <t t-out="datetime.date.today().year"/> GlobX. All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </template>
+
+    <!-- Branded "page not found" page, replacing Odoo's default one -->
+    <template id="globx_404_page" name="GlobX 404 Page">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Page not found</t>
+            <div class="globx_page">
+                <t t-set="globx_active" t-value="False"/>
+                <t t-call="globx_website.globx_header"/>
+                <section class="globx_404 py-5">
+                    <div class="container text-center">
+                        <span class="globx-404-code">404</span>
+                        <h1 class="text-white mb-3">This page took a wrong turn</h1>
+                        <p class="globx-404-lead mx-auto mb-4">
+                            The page you're looking for doesn't exist or has moved.
+                            These will get you back on track:
+                        </p>
+                        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+                            <a href="/home-globx" class="btn globx-btn-primary">Back to home</a>
+                            <a href="/solutions" class="btn globx-btn-outline">Our solutions</a>
+                            <a href="/casestudies" class="btn globx-btn-outline">Case studies</a>
+                            <a href="/contactus" class="btn globx-btn-outline">Contact us</a>
+                        </div>
+                    </div>
+                </section>
+                <t t-call="globx_website.globx_footer"/>
+            </div>
+        </t>
+    </template>
+
+    <!-- Unknown URLs on the website (most 404s) go through http_routing.404 -->
+    <template id="globx_http_routing_404" inherit_id="http_routing.404" name="GlobX 404 (routing)">
+        <xpath expr="//t[@t-call='web.frontend_layout']" position="attributes">
+            <attribute name="t-if">not website</attribute>
+        </xpath>
+        <xpath expr="//t[@t-call='web.frontend_layout']" position="after">
+            <t t-else="" t-call="globx_website.globx_404_page"/>
+        </xpath>
+    </template>
+
+    <!-- Pages Odoo itself reports as missing go through website.page_404 -->
+    <template id="globx_page_404" inherit_id="website.page_404" name="GlobX 404">
+        <xpath expr="//t[@t-call='http_routing.404']" position="replace">
+            <t t-call="globx_website.globx_404_page"/>
+        </xpath>
+    </template>
+</odoo>

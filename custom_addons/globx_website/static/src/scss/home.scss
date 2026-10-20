@@ -1787,3 +1787,134 @@
         }
     }
 }
+
+// ---------- Footer: logo, badge, contact list, CTA ----------
+.globx_footer {
+    .globx-footer-logo img {
+        display: block;
+        height: 34px;
+        width: auto;
+        background: #fff;
+        padding: 6px 10px;
+        border-radius: var(--globx-radius-btn);
+    }
+
+    p {
+        max-width: 420px;
+        line-height: 1.6;
+    }
+
+    // Shiny silver pill - same metallic gradient, shimmer sweeps and glow
+    // pulse as the Silver Partner badge on the About page (keyframes in about.scss)
+    .globx-footer-badge {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        padding: 5px 14px;
+        border-radius: 999px;
+        border: 1px solid #c8c8d0;
+        background: linear-gradient(135deg, #e8e8ec 0%, #ffffff 45%, #d4d4da 55%, #ffffff 100%);
+        color: #55555f;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+        animation: globx-footer-badge-glow 2.4s ease-in-out infinite;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -60%;
+            width: 35%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.85) 50%, transparent 100%);
+            transform: skewX(-20deg);
+            animation: globx-badge-shimmer 3.5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        &::before {
+            width: 20%;
+            opacity: 0.6;
+            animation-delay: 1.2s;
+        }
+    }
+
+    ul li a {
+        text-decoration: none;
+
+        &:hover { text-decoration: underline; }
+    }
+
+    .globx-footer-contact li {
+        margin-bottom: 6px;
+    }
+
+    .globx-footer-cta {
+        color: #fff;
+        text-decoration: none;
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+}
+
+// ---------- Outline button (used on the 404 page) ----------
+.globx-btn-outline {
+    color: var(--globx-text-light);
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--globx-radius-btn);
+    font-weight: 600;
+    padding: 10px 20px;
+    background: transparent;
+    transition: background 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+        color: var(--globx-text-light);
+        border-color: var(--globx-green);
+        background: rgba(63, 174, 41, 0.15);
+    }
+}
+
+// ---------- 404 page ----------
+.globx_404 {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+
+    .globx-404-code {
+        display: block;
+        font-size: clamp(88px, 18vw, 160px);
+        font-weight: 800;
+        line-height: 1;
+        color: var(--globx-green);
+        letter-spacing: -4px;
+        margin-bottom: 8px;
+    }
+
+    .globx-404-lead {
+        max-width: 520px;
+        color: var(--globx-text-muted);
+    }
+}
+
+.globx_404 .btn {
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+
+@keyframes globx-footer-badge-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(200, 200, 215, 0.35); }
+    50%      { box-shadow: 0 0 12px 2px rgba(220, 220, 235, 0.55); }
+}
+
+// Respect visitors who ask their device to reduce motion
+@media (prefers-reduced-motion: reduce) {
+    .globx_footer .globx-footer-badge,
+    .globx_footer .globx-footer-badge::before,
+    .globx_footer .globx-footer-badge::after {
+        animation: none;
+    }
+}
